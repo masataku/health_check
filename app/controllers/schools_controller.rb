@@ -3,6 +3,9 @@ class SchoolsController < ApplicationController
 
   end
 
+  def show 
+  end  
+
   def new
     @school = School.new
   end
