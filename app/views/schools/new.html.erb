@@ -1,6 +1,7 @@
 <%= form_with model: @school, url: schools_path, local: true do |f| %>
   <%= f.text_field :school_name %>
   <%= f.text_field :email %>
-  <%= f.text_field :password %>
+  <%= f.password_field :password %>
+  <%= f.password_field :password_confirmation %>
   <%= f.submit 'Create Shool' %>
 <% end %>

@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_01_02_092514) do
 
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
-    t.string "password", null: false
+    t.string "password_digest", null: false
     t.string "school_name", null: false
     t.string "teacher_password", null: false
     t.string "student_password", null: false
