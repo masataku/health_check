@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'schools/index'
   root to: 'schools#index'
+  resources :schools, only: [:new, :create]
 end
