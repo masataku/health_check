@@ -1,12 +1,27 @@
-li {
-  list-style: none;
-}
-
 header {
   display: flex;
+  height: 50px;
   background: orange;
-  .header-lists {
+  padding: 0px 40px;
+  .heading {
     display: flex;
+    align-items: center;
+    width: 50%;
+    font-size: 30px;
+  }
+  .header-nav {
+    width: 50%;
+    background: red;
+    display: flex;
+    justify-content: flex-end;
+    .header-lists {
+      display: flex;
+      align-items: center;
+      background: pink;
+      .header-list {
+        margin-left: 50px;
+      }
+    }
   }
 }
 
