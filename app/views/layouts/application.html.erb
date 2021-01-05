@@ -10,6 +10,27 @@
   </head>
 
   <body>
+    <header>
+      <div class="heading">
+        HealtySchool
+      </div>
+      <div class="header-nav">  
+        <ul class="header-lists">
+          <li class="header-list">
+            <%= link_to "設定する", "#" %>
+          </li>
+          <li class="header-list">
+            <%= link_to "使い方ガイド", "#" %>
+          </li>
+          <li class="header-list">
+            <%= link_to "学校名", "#" %>
+          </li>
+        </ul>
+      </div>        
+    </header>
     <%= yield %>
+    <footer>
+      HealtySchool
+    </footer>
   </body>
 </html>
