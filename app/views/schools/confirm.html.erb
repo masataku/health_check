@@ -1,0 +1,20 @@
+<div class="top-wrapper">
+  <div class="container">
+    <%= form_tag(edit_school_path, method: :get) do |f| %>
+      <div class="form-group">
+        <div class="label">メールアドレス</div>
+        <%= f.text_field :email, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">パスワード</div>
+        <%= f.password_field :password, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">パスワード(確認)</div>
+        <%= f.password_field :password_confirmation, class: "form" %>
+      </div>
+      <%= f.submit 'Create Shool', class: "submit-btn" %>
+      <%= link_to "Back", school_path(@school) %>
+    <% end %>
+  </div>
+</div>

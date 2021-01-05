@@ -22,6 +22,7 @@ class SchoolsController < ApplicationController
   end
 
   def confirm
+    @school = School.find(params[:id])
   end  
   
   private
