@@ -29,10 +29,16 @@ class SchoolsController < ApplicationController
   end  
 
   def update
+    @school = School.find(params[:id])
+    if @school.update(school_params)
+      redirect_to school_path(@school)
+    else
+      render 'edit'
+    end    
   end  
 
   def confirm
-    @school = School.new
+    @school = School.find(params[:id])
   end  
   
   private

@@ -1,6 +1,6 @@
 <div class="top-wrapper">
   <div class="container">
-    <%= form_with model: @school, class: "school-form", local: true do |f| %>
+    <%= form_with model: @school, url: school_path, class: "school-form", local: true do |f| %>
       <div class="form-group">
         <div class="label">学校名</div>
         <%= f.text_field :school_name, class: "form" %>
@@ -8,14 +8,6 @@
       <div class="form-group">
         <div class="label">メールアドレス</div>
         <%= f.text_field :email, class: "form" %>
-      </div>
-      <div class="form-group">
-        <div class="label">パスワード</div>
-        <%= f.password_field :password, class: "form" %>
-      </div>
-      <div class="form-group">
-        <div class="label">パスワード(確認)</div>
-        <%= f.password_field :password_confirmation, class: "form" %>
       </div>
       <div class="form-group">
         <div class="label">教員用パスワード</div>
@@ -26,7 +18,6 @@
         <%= f.text_field :student_password, class: "form" %>
       </div>
       <%= f.submit 'Create Shool', class: "submit-btn" %>
-      <%= link_to "Back", root_path %>
     <% end %>
   </div>
 </div>
