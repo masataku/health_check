@@ -19,11 +19,11 @@
       </div>
       <div class="form-group">
         <div class="label">教員用パスワード</div>
-        <%= f.text_field :teacher_password, class: "form" %>
+        <%= f.password_field :teacher_password, class: "form" %>
       </div>
       <div class="form-group">
         <div class="label">生徒用パスワード</div>
-        <%= f.text_field :student_password, class: "form" %>
+        <%= f.password_field :student_password, class: "form" %>
       </div>
       <%= f.submit 'Create Shool', class: "submit-btn" %>
       <%= link_to "Back", root_path %>
