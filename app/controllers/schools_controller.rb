@@ -20,6 +20,9 @@ class SchoolsController < ApplicationController
       render 'new'
     end    
   end
+
+  def confirm
+  end  
   
   private
 
