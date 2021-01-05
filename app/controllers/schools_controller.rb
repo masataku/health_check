@@ -22,10 +22,17 @@ class SchoolsController < ApplicationController
   end
 
   def edit
+    @school = School.find(params[:id])
+    unless @school.authenticate(school_params[:password]) && @school.email == school_params[:email]
+      render 'confirm'
+    end  
+  end  
+
+  def update
   end  
 
   def confirm
-    @school = School.find(params[:id])
+    @school = School.new
   end  
   
   private
