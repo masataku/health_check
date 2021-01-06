@@ -1,4 +1,6 @@
 class SchoolsController < ApplicationController
+before_action :ensure_correct_school, except: [:index, :login_form, :login, :logout]
+
   def index
 
   end
@@ -68,5 +70,11 @@ class SchoolsController < ApplicationController
 
   def school_params 
     params.require(:school).permit(:school_name, :email, :password, :password_confirmation, :teacher_password, :student_password)
-  end  
+  end 
+  
+  def ensure_correct_school
+    if @current_school == nil || @current_school.id != params[:id].to_i
+      redirect_to root_path
+    end  
+  end
 end

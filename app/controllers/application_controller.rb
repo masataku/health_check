@@ -4,4 +4,6 @@ class ApplicationController < ActionController::Base
   def set_current_school
     @current_school = School.find_by_id(session[:school_id])
   end  
+
+  
 end
