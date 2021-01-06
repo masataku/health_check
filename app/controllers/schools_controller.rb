@@ -47,6 +47,9 @@ class SchoolsController < ApplicationController
   
   def login
   end  
+
+  def logout
+  end  
   
   private
 

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     collection do
       get 'login_form'
       get 'login'
+      get 'logout'
     end   
   end  
 end
