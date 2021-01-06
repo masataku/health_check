@@ -1,0 +1,64 @@
+.top-wrapper {
+  height: 100vh;
+  .container {
+    margin: 20px 40px;
+
+  }
+}
+
+// index.html.erb///////////////////////////////////////
+.school-btns {
+  background: red;
+  height: 500px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  .school-btn {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+  }
+}
+
+
+// show.html.erb////////////////////////////////////////
+.school-name {
+  background: red;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 200px;
+  font-size: 80px;
+}
+
+.join-btns {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100px;
+  width: 800px;
+  margin: 0 auto;
+  background: pink;
+  .join-btn {
+    font-size: 50px;
+    background: red;
+  }
+}
+
+// new.html.erb/////////////////////////////////////////
+.school-form {
+  width: 650px;
+  margin: 0 auto;
+  
+  .form-group {
+    margin-bottom: 10px;
+    .form {
+      height: 30px;
+      width: 100%;
+    }
+  }
+}

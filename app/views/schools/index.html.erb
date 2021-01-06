@@ -1,0 +1,13 @@
+<div class="top-wrapper">
+  <div class="container">
+    <div class="school-btns">
+    <% if @current_school == nil %>
+      <%= link_to "Start at School Now", new_school_path, class: "school-btn" %>
+      <%= link_to "GoTo your School", login_form_schools_path, class: "school-btn" %>
+    <% else %>
+      <%= link_to "#{@current_school.school_name}へ行く", school_path(@current_school), class: "school-btn" %>
+      <%= link_to "#{@current_school.school_name}を出る", logout_schools_path, class: "school-btn" %>  
+    <% end %>  
+    </div>
+  </div>
+</div>

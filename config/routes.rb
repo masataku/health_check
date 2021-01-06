@@ -1,3 +1,13 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: 'schools#index'
+  resources :schools, only: [:show, :new, :create, :edit, :update] do
+    member do
+      get 'confirm'
+    end 
+    collection do
+      get 'login_form'
+      get 'login'
+      get 'logout'
+    end   
+  end  
 end
