@@ -3,27 +3,27 @@
     <%= form_with model: @school, url: schools_path, class: "school-form", local: true do |f| %>
       <div class="form-group">
         <div class="label">学校名</div>
-        <%= f.text_field :school_name, class: "form" %>
+        <%= f.text_field :school_name, class: "form", placeholder: "(例) 青山市立青山中学校" %>
       </div>
       <div class="form-group">
         <div class="label">メールアドレス</div>
-        <%= f.text_field :email, class: "form" %>
+        <%= f.text_field :email, class: "form", placeholder: "(例) Example-school@example.com" %>
       </div>
       <div class="form-group">
         <div class="label">パスワード</div>
-        <%= f.password_field :password, class: "form" %>
+        <%= f.password_field :password, class: "form", placeholder: "6字以上 半角英小文字,数字どちらも含む" %>
       </div>
       <div class="form-group">
         <div class="label">パスワード(確認)</div>
-        <%= f.password_field :password_confirmation, class: "form" %>
+        <%= f.password_field :password_confirmation, class: "form", placeholder: "同じパスワードを入力してください" %>
       </div>
       <div class="form-group">
         <div class="label">教員用パスワード</div>
-        <%= f.password_field :teacher_password, class: "form" %>
+        <%= f.password_field :teacher_password, class: "form", placeholder: "6字以上 半角英小文字,数字どちらも含む" %>
       </div>
       <div class="form-group">
         <div class="label">生徒用パスワード</div>
-        <%= f.password_field :student_password, class: "form" %>
+        <%= f.password_field :student_password, class: "form", placeholder: "6字以上 半角英小文字,数字どちらも含む" %>
       </div>
       <%= f.submit 'Create Shool', class: "submit-btn" %>
       <%= link_to "Back", root_path %>
