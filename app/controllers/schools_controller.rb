@@ -1,5 +1,6 @@
 class SchoolsController < ApplicationController
-before_action :ensure_correct_school, except: [:index, :login_form, :login, :logout]
+before_action :ensure_correct_school, only: [:show, :confirm, :edit, :update]
+before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
 
   def index
 
@@ -77,4 +78,10 @@ before_action :ensure_correct_school, except: [:index, :login_form, :login, :log
       redirect_to root_path
     end  
   end
+
+  def forbit_login_school
+    if @current_school != nil
+      redirect_to school_path(@current_school)
+    end
+  end  
 end
