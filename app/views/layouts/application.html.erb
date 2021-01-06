@@ -19,16 +19,16 @@
           <li class="header-list">
             <%= link_to "使い方ガイド", "#" %>
           </li>
-          <% if current_page?(root_path) %>
+          <% if @current_school == nil %>
             <li class="header-list">
-              <%= link_to "自分の学校へ行く", login_schools_path %>
+              <%= link_to "自分の学校へ行く", login_form_schools_path %>
             </li>
           <% else %>
             <li class="header-list">
-              <%= link_to "設定する", "/schools/#{@school.id}/confirm" %>
+              <%= link_to "設定する", confirm_school_path(@current_school) %>
             </li>
             <li class="header-list">
-              <%= link_to "#{@current_school.school_name}を出る", school_path(@current_school) %>
+              <%= link_to "#{@current_school.school_name}を出る", logout_schools_path %>
             </li>
           <% end %>
         </ul>

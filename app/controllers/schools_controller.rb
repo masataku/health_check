@@ -49,6 +49,8 @@ class SchoolsController < ApplicationController
   end  
 
   def logout
+    session[:school_id] = nil
+    redirect_to root_path
   end  
   
   private
