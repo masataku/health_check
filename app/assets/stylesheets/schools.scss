@@ -6,6 +6,24 @@
   }
 }
 
+// index.html.erb///////////////////////////////////////
+.school-btns {
+  background: red;
+  height: 500px;
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+  .school-btn {
+    display: block;
+    text-align: center;
+    font-size: 50px;
+  }
+}
+
+
 // show.html.erb////////////////////////////////////////
 .school-name {
   background: red;

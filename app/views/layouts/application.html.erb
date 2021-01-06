@@ -28,7 +28,7 @@
               <%= link_to "設定する", confirm_school_path(@current_school) %>
             </li>
             <li class="header-list">
-              <%= link_to "#{@current_school.school_name}を出る", logout_schools_path %>
+              <%= link_to @current_school.school_name, school_path(@current_school) %>
             </li>
           <% end %>
         </ul>
