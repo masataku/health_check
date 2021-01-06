@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   resources :schools, only: [:show, :new, :create, :edit, :update] do
     member do
       get 'confirm'
-    end  
+    end 
+    collection do
+      get 'login_form'
+      get 'login'
+    end   
   end  
 end

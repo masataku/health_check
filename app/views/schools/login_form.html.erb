@@ -1,0 +1,19 @@
+<div class="top-wrapper">
+  <div class="container">
+    <%= form_for :school, url: login_schools_path, method: :get, local: true do |f| %>
+      <div class="form-group">
+        <div class="label">メールアドレス</div>
+        <%= f.text_field :email, class: "form", value: "" %>
+      </div>
+      <div class="form-group">
+        <div class="label">パスワード</div>
+        <%= f.password_field :password, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">パスワード(確認)</div>
+        <%= f.password_field :password_confirmation, class: "form" %>
+      </div>
+      <%= f.submit 'GoTo your Shool', class: "submit-btn" %>
+    <% end %>
+  </div>
+</div>

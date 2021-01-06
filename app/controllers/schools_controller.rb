@@ -15,6 +15,7 @@ class SchoolsController < ApplicationController
     @school = School.new(school_params)
     if @school.valid?
       @school.save
+      session[:school_id] = @school.id
       redirect_to school_path(@school)
     else
       render 'new'
@@ -39,6 +40,12 @@ class SchoolsController < ApplicationController
 
   def confirm
     @school = School.find(params[:id])
+  end
+
+  def login_form
+  end  
+  
+  def login
   end  
   
   private
