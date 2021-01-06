@@ -24,7 +24,7 @@ class SchoolsController < ApplicationController
 
   def edit
     @school = School.find(params[:id])
-    unless @school.authenticate(school_params[:password]) && @school.email == school_params[:email]
+    unless @current_school.authenticate(school_params[:password]) && @current_school.email == school_params[:email]
       render 'confirm'
     end  
   end  
@@ -39,13 +39,24 @@ class SchoolsController < ApplicationController
   end  
 
   def confirm
-    @school = School.find(params[:id])
+    
   end
 
   def login_form
+    @school = School.new
   end  
   
   def login
+    if @school = School.find_by(email: school_params[:email])
+      if @school.authenticate(school_params[:password])
+        session[:school_id] = @school.id
+        redirect_to school_path(@school)
+      else
+        render 'login_form'
+      end
+    else
+      render 'login_form'    
+    end    
   end  
 
   def logout
