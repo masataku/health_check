@@ -133,6 +133,7 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | student_password | string  | null: false                    |
  
 ### Association
+- has_many :sheets
 - has_many :teachers
 - has_many :students
 
@@ -174,7 +175,6 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | school          | references | foreign_key: true, null: false |
 
 ### Association
-- has_many :sheets
 - belongs_to :school
 - has_many :notifications
 
@@ -186,10 +186,10 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | date     | date       | null: false                    |
 | grade    | integer    | null: false                    |
 | my_class | integer    | null: false                    |
-| teacher  | references | foreign_key: true, null: false |
+| school   | references | foreign_key: true, null: false |
 
 ### Association
-- belongs_to :teacher
+- belongs_to :school
 - has_many :students
 - has_many :checks
 
