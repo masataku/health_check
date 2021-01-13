@@ -1,6 +1,6 @@
 <div class="top-wrapper">
   <div class="container">
-    <%= form_with model: [@school, @teacher], url: school_teachers_path, method: :get, local: true do |f| %>
+    <%= form_with model: [@current_school, @teacher], url: school_teachers_path, local: true do |f| %>
       <div class="form-group">
         <div class="label">学年</div>
         <%= f.text_field :grade, class: "form" %>
@@ -16,7 +16,7 @@
         <div class="label">教員確認パスワード</div>
         <%= f.password_field :teacher_password, class: "form" %>
       </div>
-      <%= f.submit 'GoTo your Shool', class: "submit-btn" %>
+      <%= f.submit '教員として入る', class: "submit-btn" %>
     <% end %>
   </div>
 </div>
