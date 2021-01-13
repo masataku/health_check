@@ -162,13 +162,13 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 
 ## teachers テーブル
 
-| Column   | Type       | Options                        |
-| -------- | ---------- | ------------------------------ |
-| password | string     | null: false                    |
-| name     | string     | null: false                    |
-| grade    | integer    | null: false                    |
-| my_class | integer    | null: false                    |
-| school   | references | foreign_key: true, null: false |
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| name             | string     | null: false                    |
+| grade            | integer    | null: false                    |
+| my_class         | integer    | null: false                    |
+| teacher_password | string     | null: false                    |
+| school           | references | foreign_key: true, null: false |
 
 ### Association
 - belongs_to :school
