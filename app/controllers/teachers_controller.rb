@@ -3,9 +3,6 @@ class TeachersController < ApplicationController
   def index
   end
   
-  def login_form
-  end
-  
-  def login
+  def new
   end  
 end
