@@ -27,7 +27,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
 
   def edit
     @school = School.find(params[:id])
-    unless @current_school.authenticate(school_params[:password]) && @current_school.email == school_params[:email]
+    unless @current_school.authenticate(school_params[:password]) && @current_school.email == school_params[:email] && school_params[:password] == school_params[:password_confirmation]
       render 'confirm'
     end  
   end  

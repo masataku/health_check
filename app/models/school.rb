@@ -1,5 +1,6 @@
 class School < ApplicationRecord
   has_secure_password
+  has_many :teachers
 
   with_options presence: true do
     validates :school_name

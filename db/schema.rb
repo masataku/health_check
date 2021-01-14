@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_02_092514) do
+ActiveRecord::Schema.define(version: 2021_01_13_082602) do
 
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
@@ -22,4 +22,16 @@ ActiveRecord::Schema.define(version: 2021_01_02_092514) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "teachers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "grade", null: false
+    t.integer "my_class", null: false
+    t.bigint "school_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "teacher_password"
+    t.index ["school_id"], name: "index_teachers_on_school_id"
+  end
+
+  add_foreign_key "teachers", "schools"
 end

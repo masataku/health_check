@@ -17,6 +17,14 @@
         <div class="label">生徒用パスワード</div>
         <%= f.text_field :student_password, class: "form" %>
       </div>
+      <div class="form-group">
+        <div class="label">新しいパスワード</div>
+        <%= f.text_field :password, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">新しいパスワード(確認)</div>
+        <%= f.text_field :password_confirmation, class: "form" %>
+      </div>
       <%= f.submit 'Edit School', class: "submit-btn" %>
     <% end %>
   </div>

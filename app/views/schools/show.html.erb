@@ -2,7 +2,7 @@
   <div class="container">
     <div class="school-name"><%= @current_school.school_name %>へようこそ</div>
     <div class="join-btns">
-      <div class="join-btn teacher-btn"><%= link_to "教員の参加", "#" %></div>
+      <div class="join-btn teacher-btn"><%= link_to "教員の参加", new_school_teacher_path(@current_school) %></div>
       <div class="join-btn student-btn"><%= link_to "生徒の参加", "#" %></div>
     </div>
   </div>

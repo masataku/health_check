@@ -8,6 +8,8 @@ Rails.application.routes.draw do
       get 'login_form'
       get 'login'
       get 'logout'
-    end   
+    end 
+    resources :teachers, only: [:index, :new, :create] do  
+    end  
   end  
 end
