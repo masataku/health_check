@@ -10,6 +10,7 @@ class TeachersController < ApplicationController
   def create
     @teacher = Teacher.new(teacher_params)
     if @teacher.valid? && @teacher.teacher_password == @current_school.teacher_password
+      @teacher.teacher_password = "correct"
       @teacher.save
       # session[:teacher_id] = @teacher.id
       redirect_to school_teachers_path
