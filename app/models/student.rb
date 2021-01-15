@@ -5,7 +5,7 @@ class Student < ApplicationRecord
     validates :grade, numericality: {only_integer: true, greater_than: 0, less_than: 4}
     validates :my_class, numericality: {only_integer: true, greater_than: 0}
     validates :number, numericality: {only_integer: true, greater_than: 0}
-    validates :teacher_password
+    validates :student_password
     validates :first_name
     validates :last_name
     with_options format: {
