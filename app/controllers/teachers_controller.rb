@@ -23,5 +23,7 @@ class TeachersController < ApplicationController
 
   def teacher_params
     params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: @current_school.id)
-  end  
+  end 
+  
+  
 end
