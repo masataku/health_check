@@ -140,19 +140,18 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 
 ## students テーブル
 
-| Column          | Type    | Options                        |
-| --------------- | ------- | ------------------------------ |
-| email           | string  | null: false                    |
-| password        | string  | null: false                    |
-| first_name      | string  | null: false                    |
-| last_name       | string  | null: false                    |
-| first_name_kana | string  | null: false                    |
-| last_name_kana  | string  | null: false                    |
-| grade           | integer | null: false                    |
-| my_class        | integer | null: false                    |
-| number          | integer | null: false                    |
-| school          | integer | foreign_key: true, null: false | 
-| sheet           | integer | foreign_key: true, null: false | 
+| Column           | Type       | Options                        |
+| ---------------- | ---------- | ------------------------------ |
+| student_password | string     | null: false                    |
+| first_name       | string     | null: false                    |
+| last_name        | string     | null: false                    |
+| first_name_kana  | string     | null: false                    |
+| last_name_kana   | string     | null: false                    |
+| grade            | integer    | null: false                    |
+| my_class         | integer    | null: false                    |
+| number           | integer    | null: false                    |
+| school           | references | foreign_key: true, null: false | 
+| sheet            | references | foreign_key: true, null: false | 
 
 ### Association
 - belongs_to :school
