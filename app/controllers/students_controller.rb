@@ -14,6 +14,7 @@ class StudentsController < ApplicationController
     if @student.valid? && @student.student_password == @student.school.student_password
       @student.student_password = "correct"
       @student.save
+      session[:student_id] = @student.id
       redirect_to school_students_path(@student.school)
     else
       render 'new'
@@ -36,8 +37,10 @@ class StudentsController < ApplicationController
   end  
 
   def is_fiscal_year? 
-    if @current_student.year != fiscal_year
-      session[:student_id] = nil
-    end 
+    if @current_student
+      if @current_student.year != fiscal_year
+        session[:student_id] = nil
+      end 
+    end  
   end  
 end
