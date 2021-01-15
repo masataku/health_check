@@ -151,12 +151,12 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | my_class         | integer    | null: false                    |
 | number           | integer    | null: false                    |
 | school           | references | foreign_key: true, null: false | 
-| sheet            | references | foreign_key: true, null: false | 
+
 
 ### Association
 - belongs_to :school
 - has_many :checks
-- belongs_to :sheet
+
 
 
 ## teachers テーブル
@@ -178,14 +178,12 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 
 | Column   | Type       | Options                        |
 | ---------| ---------- | ------------------------------ |
-| date     | date       | null: false                    |
 | grade    | integer    | null: false                    |
 | my_class | integer    | null: false                    |
 | school   | references | foreign_key: true, null: false |
 
 ### Association
 - belongs_to :school
-- has_many :students
 - has_many :checks
 
 
