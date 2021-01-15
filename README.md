@@ -150,6 +150,7 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | grade            | integer    | null: false                    |
 | my_class         | integer    | null: false                    |
 | number           | integer    | null: false                    |
+| year             | integer    | null: false                    |
 | school           | references | foreign_key: true, null: false | 
 
 

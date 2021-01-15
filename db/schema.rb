@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_15_061254) do
+ActiveRecord::Schema.define(version: 2021_01_15_070548) do
 
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_01_15_061254) do
     t.bigint "school_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "year", null: false
     t.index ["school_id"], name: "index_students_on_school_id"
   end
 
