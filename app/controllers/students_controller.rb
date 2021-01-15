@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :is_fiscal_year?
+
   def index
   end  
   
@@ -31,5 +33,11 @@ class StudentsController < ApplicationController
     else
       return fiscal_year
     end    
+  end  
+
+  def is_fiscal_year? 
+    if @current_student.year != fiscal_year
+      session[:student_id] = nil
+    end 
   end  
 end
