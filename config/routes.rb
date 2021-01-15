@@ -10,6 +10,8 @@ Rails.application.routes.draw do
       get 'logout'
     end 
     resources :teachers, only: [:index, :new, :create] do  
-    end  
+    end
+    resources :students, only: [:new] do
+    end    
   end  
 end
