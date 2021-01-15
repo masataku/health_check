@@ -11,7 +11,7 @@ Rails.application.routes.draw do
     end 
     resources :teachers, only: [:index, :new, :create] do  
     end
-    resources :students, only: [:new] do
+    resources :students, only: [:new, :create] do
     end    
   end  
 end
