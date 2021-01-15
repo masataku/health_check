@@ -1,6 +1,6 @@
 <div class="top-wrapper">
   <div class="container">
-    <%= form_with model: [@current_school, @student], url: school_students_path, local: true do |f| %>
+    <%= form_with model: [@school, @student], url: school_students_path, local: true do |f| %>
       <div class="form-group">
         <div class="label">学年</div>
         <%= f.text_field :grade, class: "form", maxlength: 1 %>
