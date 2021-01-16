@@ -8,6 +8,7 @@ class Student < ApplicationRecord
     validates :student_password
     validates :first_name
     validates :last_name
+    validates :year, numericality: {only_integer: true}, length: {is: 4}
     with_options format: {
       with: /\A[\p{katakana} ー－&&[^ -~｡-ﾟ]]+\z/,
       message: "全角カタカナのみで入力して下さい"} do
