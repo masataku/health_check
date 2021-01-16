@@ -19,6 +19,7 @@ class TeachersController < ApplicationController
       render 'new'
     end    
   end
+
   
   private 
 

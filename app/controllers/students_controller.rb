@@ -1,7 +1,9 @@
 class StudentsController < ApplicationController
   before_action :is_fiscal_year?
-
+  before_action :ensure_correct_student, only: [:index]
+  before_action :forbit_current_student, only: [:new]
   def index
+    
   end  
   
   def new
@@ -20,6 +22,11 @@ class StudentsController < ApplicationController
       render 'new'
     end    
   end
+
+  def destroy
+    session[:student_id] = nil
+    redirect_to new_school_student_path
+  end  
   
   private
 
@@ -37,10 +44,25 @@ class StudentsController < ApplicationController
   end  
 
   def is_fiscal_year? 
-    if @current_student
+    if @current_student != nil
       if @current_student.year != fiscal_year
         session[:student_id] = nil
       end 
     end  
-  end  
+  end 
+  
+  def ensure_correct_student
+    @school = School.find(params[:school_id])
+    if @current_student == nil
+      redirect_to new_school_student_path(@school)  
+    end  
+  end
+
+  def forbit_current_student
+    if @current_student 
+      @school = School.find(params[:school_id])
+      redirect_to school_students_path(@school)
+    end  
+  end
+  
 end
