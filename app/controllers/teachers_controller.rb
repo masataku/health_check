@@ -4,12 +4,13 @@ class TeachersController < ApplicationController
   end
   
   def new
+    @school = School.find(params[:school_id])
     @teacher = Teacher.new
   end
   
   def create
     @teacher = Teacher.new(teacher_params)
-    if @teacher.valid? && @teacher.teacher_password == @current_school.teacher_password
+    if @teacher.valid? && @teacher.teacher_password == @teacher.school.teacher_password
       @teacher.teacher_password = "correct"
       @teacher.save
       # session[:teacher_id] = @teacher.id
@@ -18,10 +19,13 @@ class TeachersController < ApplicationController
       render 'new'
     end    
   end
+
   
   private 
 
   def teacher_params
-    params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: @current_school.id)
-  end  
+    params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: params[:school_id])
+  end 
+  
+  
 end

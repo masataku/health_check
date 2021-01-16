@@ -1,0 +1,39 @@
+<div class="top-wrapper">
+  <div class="container">
+    <%= form_with model: [@school, @student], url: school_students_path, local: true do |f| %>
+      <div class="form-group">
+        <div class="label">学年</div>
+        <%= f.text_field :grade, class: "form", maxlength: 1 %>
+      </div>
+      <div class="form-group">
+        <div class="label">クラス</div>
+        <%= f.text_field :my_class, class: "form", maxlength: 2 %>
+      </div>
+      <div class="form-group">
+        <div class="label">出席番号</div>
+        <%= f.text_field :number, class: "form", maxlength: 2 %>
+      </div>
+      <div class="form-group">
+        <div class="label">苗字</div>
+        <%= f.text_field :last_name, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">名前</div>
+        <%= f.text_field :first_name, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">苗字(カタカナ)</div>
+        <%= f.text_field :last_name_kana, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">名前(カタカナ)</div>
+        <%= f.text_field :first_name_kana, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">生徒確認パスワード</div>
+        <%= f.text_field :student_password, class: "form" %>
+      </div>
+      <%= f.submit '生徒登録する', class: "submit-btn" %>
+    <% end %>
+  </div>
+</div>
