@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_060722) do
+ActiveRecord::Schema.define(version: 2021_01_17_064750) do
+
+  create_table "checks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "date", null: false
+    t.integer "condition_id", null: false
+    t.integer "symptoms_id"
+    t.text "opinion"
+    t.boolean "attend", default: true, null: false
+    t.boolean "check", default: false, null: false
+    t.boolean "breakfast", default: true, null: false
+    t.integer "bed_time_id", null: false
+    t.integer "temperature_id", null: false
+    t.boolean "leave_early", default: false, null: false
+    t.boolean "late", default: false, null: false
+    t.bigint "student_id", null: false
+    t.bigint "sheet_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["sheet_id"], name: "index_checks_on_sheet_id"
+    t.index ["student_id"], name: "index_checks_on_student_id"
+  end
 
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", null: false
@@ -60,6 +80,8 @@ ActiveRecord::Schema.define(version: 2021_01_17_060722) do
     t.index ["school_id"], name: "index_teachers_on_school_id"
   end
 
+  add_foreign_key "checks", "sheets"
+  add_foreign_key "checks", "students"
   add_foreign_key "sheets", "schools"
   add_foreign_key "students", "schools"
   add_foreign_key "teachers", "schools"

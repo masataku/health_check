@@ -199,7 +199,7 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | symptoms_id    | integer    |                                |
 | opinion        | text       |                                |
 | attend         | boolean    | null: false, default: true     |
-| check          | boolean    | null: false, default: true     |
+| check          | boolean    | null: false, default: false    |
 | breakfast      | boolean    | null: false, default: true     |
 | bed_time_id    | integer    | null: false                    |
 | temperature_id | integer    | null: false                    |
@@ -210,7 +210,7 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 
 ### Association
 - has_many :notifications
-- belongs_to :students
+- belongs_to :student
 - belongs_to :sheet
 
 
