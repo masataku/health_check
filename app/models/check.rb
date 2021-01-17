@@ -10,4 +10,5 @@ class Check < ApplicationRecord
     validates :check
     validates :bed_time_id, numericality: {only_integer: true, other_than: 1}
   end  
+  validates :opinion, length: {maximum: 40}
 end
