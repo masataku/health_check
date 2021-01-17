@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_17_064750) do
+ActiveRecord::Schema.define(version: 2021_01_17_125516) do
 
   create_table "checks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date", null: false
@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2021_01_17_064750) do
     t.boolean "check", default: false, null: false
     t.boolean "breakfast", default: true, null: false
     t.integer "bed_time_id", null: false
-    t.integer "temperature_id", null: false
     t.boolean "leave_early", default: false, null: false
     t.boolean "late", default: false, null: false
     t.bigint "student_id", null: false

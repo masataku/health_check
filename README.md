@@ -202,7 +202,6 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | check          | boolean    | null: false, default: false    |
 | breakfast      | boolean    | null: false, default: true     |
 | bed_time_id    | integer    | null: false                    |
-| temperature_id | integer    | null: false                    |
 | leave_early    | boolean    | null: false, default: false    |
 | late           | boolean    | null: false, default: false    |
 | student        | references | foreign_key: true, null: false |
