@@ -18,7 +18,7 @@
     </div>
     <div class="check-group">
       <div class="check-label">Q4.就寝時刻は何時ごろですか？</div>
-        就寝時刻
+        就寝時刻<%= f.collection_select(:bed_time_id, BedTime.all, :id, :name, {}) %>
     </div>
     <div class="check-group">
       <div class="check-label">Q5.本日の出欠確認</div>
