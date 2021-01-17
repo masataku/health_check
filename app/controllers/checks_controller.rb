@@ -4,5 +4,7 @@ class ChecksController < ApplicationController
   end
   
   def create
+      return sheet_today.id  
+    end
   end  
 end
