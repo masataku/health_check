@@ -1,0 +1,35 @@
+<div class="check-container">
+  <%= form_with model: [@current_student.school, @current_student, @check], url: school_student_checks_path, local: true do |f| %>
+    <div class="check-group">
+      <div class="check-label">Q1.今日の体調はいかがですか？</div>
+      <%= f.radio_button :condition_id, 1, checked: true %>元気
+      <%= f.radio_button :condition_id, 2 %>少し悪い
+      <%= f.radio_button :condition_id, 3 %>悪い
+    </div>
+    <div class="check-group">
+      <div class="check-label">Q2.何か症状はありますか？</div>
+      <%= f.radio_button :symptoms_id, 1, checked: true %>特に無し
+      <%= f.radio_button :symptoms_id, 2 %>有り
+    </div>
+    <div class="check-group">
+      <div class="check-label">Q3.朝ごはんは食べましたか？</div>
+      <%= f.radio_button :breakfast, true, checked: true %>食べた
+      <%= f.radio_button :breakfast, false %>食べていない
+    </div>
+    <div class="check-group">
+      <div class="check-label">Q4.就寝時刻は何時ごろですか？</div>
+        就寝時刻
+    </div>
+    <div class="check-group">
+      <div class="check-label">Q5.本日の出欠確認</div>
+        <%= f.radio_button :attend, true, checked: true %>出席
+        <%= f.radio_button :attend, false %>欠席
+    </div>
+    <div class="check-group">
+      <div class="check-label">所見欄(任意)</div>
+      <%= text_area :opinion, row: "3" %>
+    </div>
+    保護者チェック欄<%= f.check_box :check %>
+    <%= f.submit "送信する" %>
+  <% end %>
+</div>
