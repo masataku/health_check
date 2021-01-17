@@ -192,21 +192,21 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 
 ## checks テーブル
 
-| Column       | Type       | Options                        |
-| ------------ | ---------- | ------------------------------ |
-| date         | date       | null: false                    |
-| condition_id | integer    | null: false                    |
-| symptoms_id  | integer    |                                |
-| opinion      | text       |                                |
-| attend       | boolean    | null: false                    |
-| check        | boolean    | null: false                    |
-| breakfast    | boolean    | null: false                    |
-| bed_time     | string     | null: false                    |
-| temperature  | string     | null: false                    |
-| leave_early  | boolean    | default: false                 |
-| late         | boolean    | default: false                 |
-| student      | references | foreign_key: true, null: false |
-| sheet        | references | foreign_key: true, null: false |
+| Column         | Type       | Options                        |
+| -------------- | ---------- | ------------------------------ |
+| date           | date       | null: false                    |
+| condition_id   | integer    | null: false                    |
+| symptoms_id    | integer    |                                |
+| opinion        | text       |                                |
+| attend         | boolean    | null: false, default: true     |
+| check          | boolean    | null: false, default: true     |
+| breakfast      | boolean    | null: false, default: true     |
+| bed_time_id    | integer    | null: false                    |
+| temperature_id | integer    | null: false                    |
+| leave_early    | boolean    | null: false, default: false    |
+| late           | boolean    | null: false, default: false    |
+| student        | references | foreign_key: true, null: false |
+| sheet          | references | foreign_key: true, null: false |
 
 ### Association
 - has_many :notifications
