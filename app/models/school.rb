@@ -2,6 +2,7 @@ class School < ApplicationRecord
   has_secure_password
   has_many :teachers
   has_many :students
+  has_many :sheets
 
   with_options presence: true do
     validates :school_name

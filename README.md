@@ -199,10 +199,9 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 | symptoms_id    | integer    |                                |
 | opinion        | text       |                                |
 | attend         | boolean    | null: false, default: true     |
-| check          | boolean    | null: false, default: true     |
+| check          | boolean    | null: false, default: false    |
 | breakfast      | boolean    | null: false, default: true     |
 | bed_time_id    | integer    | null: false                    |
-| temperature_id | integer    | null: false                    |
 | leave_early    | boolean    | null: false, default: false    |
 | late           | boolean    | null: false, default: false    |
 | student        | references | foreign_key: true, null: false |
@@ -210,8 +209,10 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 
 ### Association
 - has_many :notifications
-- belongs_to :students
+- belongs_to :student
 - belongs_to :sheet
+- has_many :symptoms, through: :check_symptoms
+- has_many :check_symptoms
 
 
 ## notifications テーブル
@@ -225,3 +226,26 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 ### Association
 - belongs_to :teacher
 - belongs_to :check
+
+
+## check_symptoms テーブル
+
+| Column   | Type       | Options                        |
+| ---------| ---------- | ------------------------------ |
+| check    | references | foreign_key: true, null: false |
+| symptom  | references | foreign_key: true, null: false |
+
+### Association
+- belongs_to :check
+- belongs_to :symptom
+
+
+## symptoms テーブル
+
+| Column   | Type       | Options     |
+| ---------| ---------- | ----------- |
+| name     | string     | null: false |
+
+### Association
+- has_many :checks, through: :check_symptoms
+- has_many :check_symptoms

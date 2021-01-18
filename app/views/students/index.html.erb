@@ -1,5 +1,5 @@
 <%# <%= @current_student.first_name %>
-<%= link_to "セッション削除", school_student_path(@current_student.school, @current_student), method: :delete 
+<%= link_to "セッション削除", school_student_path(@current_student.school, @current_student), method: :delete %>
 
 <div class="parent-container">
   <div class="left-container">
@@ -12,7 +12,7 @@
         </div>
       </div>
       <div class="checked-info">
-        <p>本日のCHECK</p>
+        <p><%= link_to "本日のCHECKを始める", new_school_student_check_path(@current_student.school, @current_student) %></p>
         <p>送信済みですor未送信です</p>
       </div>
       <div class="health-info">
