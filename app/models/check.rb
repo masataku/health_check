@@ -3,6 +3,8 @@ class Check < ApplicationRecord
   belongs_to :bed_time
   belongs_to :student
   belongs_to :sheet
+  has_many :symptoms, through: :check_symptoms
+  has_many :check_symptoms
 
   with_options presence: true do
     validates :date
