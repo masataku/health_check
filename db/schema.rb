@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_18_054531) do
+ActiveRecord::Schema.define(version: 2021_01_18_055059) do
+
+  create_table "check_symptoms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "check_id", null: false
+    t.bigint "symptom_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["check_id"], name: "index_check_symptoms_on_check_id"
+    t.index ["symptom_id"], name: "index_check_symptoms_on_symptom_id"
+  end
 
   create_table "checks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "date", null: false
@@ -85,6 +94,8 @@ ActiveRecord::Schema.define(version: 2021_01_18_054531) do
     t.index ["school_id"], name: "index_teachers_on_school_id"
   end
 
+  add_foreign_key "check_symptoms", "checks"
+  add_foreign_key "check_symptoms", "symptoms"
   add_foreign_key "checks", "sheets"
   add_foreign_key "checks", "students"
   add_foreign_key "sheets", "schools"
