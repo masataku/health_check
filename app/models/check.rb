@@ -8,11 +8,11 @@ class Check < ApplicationRecord
 
   with_options presence: true do
     validates :date
-    validates :condition_id, numericality: {only_integer: true}
+    validates :condition_id, numericality: {only_integer: true, greater_than: 0, less_than: 4}
     validates :check
-    validates :bed_time_id, numericality: {only_integer: true, other_than: 1}
+    validates :bed_time_id, numericality: {only_integer: true, greater_than: 1, less_than: 13}
+    validates :symptoms_id, numericality: {only_integer: true, greater_than: 0, less_than: 3}
   end  
+  validates :breakfast, :attend, :leave_early, :late, inclusion: {in: [true, false]}
   validates :opinion, length: {maximum: 40}
-  validates :symptoms_id, inclusion: {in: [true, false]}
-  validates :breakfast, inclusion: {in: [true, false]}
 end
