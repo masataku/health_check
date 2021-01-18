@@ -211,6 +211,7 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 - has_many :notifications
 - belongs_to :student
 - belongs_to :sheet
+- has_many :check_symptoms
 
 
 ## notifications テーブル
@@ -224,3 +225,16 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 ### Association
 - belongs_to :teacher
 - belongs_to :check
+
+
+## check_symptoms テーブル
+
+| Column   | Type       | Options                        |
+| ---------| ---------- | ------------------------------ |
+| check    | references | foreign_key: true, null: false |
+| symptom  | references | foreign_key: true, null: false |
+
+### Association
+- belongs_to :check
+- belongs_to_active_hash :symptom
+
