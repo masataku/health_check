@@ -211,7 +211,7 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 - has_many :notifications
 - belongs_to :student
 - belongs_to :sheet
-- has_many :check_symptoms
+- has_many :symptoms, through: :check_symptoms
 
 
 ## notifications テーブル
@@ -236,5 +236,14 @@ https://gyazo.com/baa3ac8aa7ba008cae81d4319bdf6d8a
 
 ### Association
 - belongs_to :check
-- belongs_to_active_hash :symptom
+- belongs_to :symptom
 
+
+## symptoms テーブル
+
+| Column   | Type       | Options     |
+| ---------| ---------- | ----------- |
+| name     | string     | null: false |
+
+### Association
+- has_many :checks, through: :check_symptoms
