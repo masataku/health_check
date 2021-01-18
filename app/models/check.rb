@@ -13,4 +13,6 @@ class Check < ApplicationRecord
     validates :bed_time_id, numericality: {only_integer: true, other_than: 1}
   end  
   validates :opinion, length: {maximum: 40}
+  validates :symptoms_id, inclusion: {in: [true, false]}
+  validates :breakfast, inclusion: {in: [true, false]}
 end
