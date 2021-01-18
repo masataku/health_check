@@ -10,6 +10,9 @@
       <div class="check-label">Q2.何か症状はありますか？</div>
       <%= f.radio_button :symptoms_id, 1, checked: true %>特に無し
       <%= f.radio_button :symptoms_id, 2 %>有り
+      <%= collection_check_boxes(:check, :symptom_ids, Symptom.all, :id, :name) do |b| %>
+        <%= b.label {b.check_box + b.text} %>
+      <% end %>
     </div>
     <div class="check-group">
       <div class="check-label">Q3.朝ごはんは食べましたか？</div>

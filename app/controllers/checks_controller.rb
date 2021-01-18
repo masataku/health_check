@@ -17,7 +17,7 @@ class ChecksController < ApplicationController
   private
 
   def check_params
-    params.require(:check).permit(:condition_id, :symptoms_id, :opinion, :attend, :check, :breakfast, :bed_time_id, :leave_early, :late).merge(student_id: @current_student.id, sheet_id: todays_sheet_id, date: Date.today)
+    params.require(:check).permit(:condition_id, :symptoms_id, :opinion, :attend, :check, :breakfast, :bed_time_id, :leave_early, :late, symptom_ids: []).merge(student_id: @current_student.id, sheet_id: todays_sheet_id, date: Date.today)
   end  
 
   def todays_sheet_id
