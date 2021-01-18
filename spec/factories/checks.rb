@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :check do
     date {Date.today}
     condition_id {2}
-    symptom_id {1}
+    symptoms_id {1}
     opinion {"あいうえお"}
     attend {false}
     check {true}
