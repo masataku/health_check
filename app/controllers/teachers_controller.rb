@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
 
   def index
+    @sheets = Sheet.where(date: Date.today).order(grade: :asc, my_class: :asc)
   end
   
   def new
