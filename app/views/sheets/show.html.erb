@@ -1,7 +1,7 @@
 <div class="sheet-header">
-  <div class="header-left"><%= 1 %>年<%= 2 %>組</div>
+  <div class="header-left"><%= @sheet.grade %>年<%= @sheet.my_class %>組</div>
   <div class="header-middle">チェックシート</div>
-  <div class="header-right"><%= 2020 %>年<%= 2 %>月<%= 5 %>日</div>
+  <div class="header-right"><%= @sheet.created_at.year %>年<%= @sheet.created_at.month %>月<%= @sheet.created_at.day %>日</div>
 </div>
 <div class="sheet-items">
   <ul class="sheet-items-left">
@@ -20,17 +20,19 @@
 </div>
 <div class="sheet-main">
   <div class="main-left">
+    <% @students.each do |student| %>
     <div class="student-box">
-      <div class="number-box"><%= 2 %>番</div>
+      <div class="number-box"><%= student.number %>番</div>
       <div class="last-name-box">
-        <div class="last-name"><%= "大村" %></div>
-        <div class="last-name-kana"><%= "オオムラ" %></div>
+        <div class="last-name"><%= student.last_name %></div>
+        <div class="last-name-kana"><%= student.last_name_kana %></div>
       </div>
       <div class="first-name-box">
-        <div class="first-name"><%= "太郎" %></div>
-        <div class="first-name-kana"><%= "タロウ" %></div>
+        <div class="first-name"><%= student.first_name %></div>
+        <div class="first-name-kana"><%= student.first_name_kana %></div>
       </div>
     </div>
+    <% end %>
   </div>
   <div class="main-right">
   </div>
