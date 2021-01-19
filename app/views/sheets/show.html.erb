@@ -1,2 +1,37 @@
-<h1>Sheets#show</h1>
-<p>Find me in app/views/sheets/show.html.erb</p>
+<div class="sheet-header">
+  <div class="header-left"><%= 1 %>年<%= 2 %>組</div>
+  <div class="header-middle">チェックシート</div>
+  <div class="header-right"><%= 2020 %>年<%= 2 %>月<%= 5 %>日</div>
+</div>
+<div class="sheet-items">
+  <ul class="sheet-items-left">
+    <li>番号</li>
+    <li>氏名</li>
+  </ul>
+  <ul class="sheet-items-right">
+    <li>体調</li>
+    <li>症状</li>
+    <li>朝食</li>
+    <li>就寝</li>
+    <li>所見欄</li>
+    <li>出欠</li>
+    <li>お知らせ</li>
+  </ul>
+</div>
+<div class="sheet-main">
+  <div class="main-left">
+    <div class="student-box">
+      <div class="number-box"><%= 2 %>番</div>
+      <div class="last-name-box">
+        <div class="last-name"><%= "大村" %></div>
+        <div class="last-name-kana"><%= "オオムラ" %></div>
+      </div>
+      <div class="first-name-box">
+        <div class="first-name"><%= "太郎" %></div>
+        <div class="first-name-kana"><%= "タロウ" %></div>
+      </div>
+    </div>
+  </div>
+  <div class="main-right">
+  </div>
+</div>

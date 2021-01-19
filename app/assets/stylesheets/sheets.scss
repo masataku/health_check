@@ -1,3 +1,34 @@
-// Place all the styles related to the sheets controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.sheet-header {
+  display: flex;
+  .header-left {
+    width: 10%;
+  }
+  .header-middle {
+    width: 30%;
+  }
+  .header-right {
+    width: 60%;
+  }
+}
+
+.sheet-items {
+  display: flex;
+  .sheet-items-left {
+    display: flex;
+  }
+  .sheet-items-right {
+    display: flex;
+  }
+}
+
+.sheet-main {
+  display: flex;
+  .main-left {
+    .student-box {
+      display: flex;
+    }
+  }
+  .main-right {
+
+  }
+}
