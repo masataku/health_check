@@ -2,7 +2,7 @@ class TeachersController < ApplicationController
 
   def index
     @sheets = Sheet.where(date: Date.today).order(grade: :asc, my_class: :asc)
-    @teachers = Teacher.where(school_id: params[:school_id])
+    @teachers = Teacher.where(school_id: params[:school_id]).order(created_at: :desc)
   end
   
   def new
