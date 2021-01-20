@@ -35,5 +35,25 @@
     <% end %>
   </div>
   <div class="main-right">
+    <% @students.each do |student| %>
+    <div class="main-checks-blank">
+      <% @checks.each do |check| %>
+        <% if student == check.student %>
+        <div class="main-checks">
+          <div class="condition">○</div>
+          <div class="symptoms">なし</div>
+          <div class="breakfast">食べた</div>
+          <div class="bed-time">10:30</div>
+          <div class="opinion">オピニオンです</div>
+          <div class="attend">出席</div>
+          <div class="main-notice">
+            <%= link_to "作成", "#" %>
+            <%= link_to "確認", "#" %>
+          </div>  
+        </div>
+        <% end %>
+      <% end %>
+    </div>  
+    <% end %>
   </div>
 </div>

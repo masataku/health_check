@@ -29,6 +29,12 @@
     }
   }
   .main-right {
-
+    .main-checks-blank {
+      background: red;
+      height: 30px;
+      .main-checks {
+        display: flex;
+      }
+    }  
   }
 }
