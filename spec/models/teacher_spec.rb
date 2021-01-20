@@ -6,9 +6,10 @@ RSpec.describe Teacher, type: :model do
       @teacher = FactoryBot.build(:teacher)
     end
     context "教員の作成が成功する時" do
-      it "name,grade,my_class,teacher_passwordが空ではない,
+      it "name,grade,my_class,year,teacher_passwordが空ではない,
           gradeは数値であり,1~3で入力される,
-          my_classは数値であり,1以上で入力される" do
+          my_classは数値であり,1以上で入力される,
+          yearは数値であり,4字である" do
         expect(@teacher).to be_valid
       end    
     end
@@ -53,6 +54,26 @@ RSpec.describe Teacher, type: :model do
         @teacher.valid?
         expect(@teacher.errors.full_messages).to include("My class must be greater than 0")
       end
+      it "yearが空" do
+        @teacher.year = nil
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("Year can't be blank")
+      end  
+      it "yearが全角数字" do
+        @teacher.year = "２０２０"
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("Year is not a number")
+      end  
+      it "yearが4より小さい" do
+        @teacher.year = 202
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("Year is the wrong length (should be 4 characters)")
+      end  
+      it "yearが4より大きい" do
+        @teacher.year = 20200
+        @teacher.valid?
+        expect(@teacher.errors.full_messages).to include("Year is the wrong length (should be 4 characters)")
+      end  
       it "teacher_passwordが空" do
         @teacher.teacher_password = nil
         @teacher.valid?
