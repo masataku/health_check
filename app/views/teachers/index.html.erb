@@ -5,17 +5,20 @@
       <div class="sheet-link-date">
         <p>Health Check Sheet</p>
         <ul class="sheet-date">
-          <li>OO年</li>
-          <li>O月O日</li>
+          <li><%= sheet.date.year %>年</li>
+          <li><%= sheet.date.month %>月<%= sheet.date.day %>日</li>
         </ul>
       </div>
       <div class="sheet-link-class">
-        O年O組
+        <%= "#{sheet.grade}年#{sheet.my_class}組" %>
       </div>
       <div class="sheet-link-teacher">
         <ul class="sheet-teachers">
-          <li>OO先生</li>
-          <li>OO先生</li>
+        <% @teachers.each do |teacher| %>
+          <% if teacher.grade == sheet.grade && teacher.my_class == sheet.my_class %>
+            <li><%= teacher.name %>先生</li>
+          <% end %>  
+        <% end %>  
         </ul>
       </div>
     <% end %>
