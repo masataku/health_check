@@ -13,6 +13,7 @@ Rails.application.routes.draw do
     end
     resources :students, only: [:index, :new, :create, :destroy] do
       resources :checks, only: [:new, :create]
-    end    
+    end
+    resources :sheets, only: [:show]    
   end  
 end

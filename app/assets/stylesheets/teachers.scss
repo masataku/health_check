@@ -5,12 +5,27 @@
   .left-container {
     background-color: orange;
     width: 68%;
-    .sheet-link {
+    .sheets-links {
       background-color: purple;
       display: flex;
       justify-content: space-around;
       padding: 20px 0;
       margin-bottom: 80px;
+      .sheet-link-date {
+        .sheet-link-lists {
+          .sheet-date {
+            display: flex;
+          }
+        }
+      }
+      .sheet-link-class {
+
+      }
+      .sheet-link-teacher {
+        .sheet-teachers {
+
+        }
+      }
     }
   }
   .right-container {

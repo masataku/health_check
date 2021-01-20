@@ -1,0 +1,40 @@
+.sheet-header {
+  display: flex;
+  .header-left {
+    width: 10%;
+  }
+  .header-middle {
+    width: 30%;
+  }
+  .header-right {
+    width: 60%;
+  }
+}
+
+.sheet-items {
+  display: flex;
+  .sheet-items-left {
+    display: flex;
+  }
+  .sheet-items-right {
+    display: flex;
+  }
+}
+
+.sheet-main {
+  display: flex;
+  .main-left {
+    .student-box {
+      display: flex;
+    }
+  }
+  .main-right {
+    .main-checks-blank {
+      background: red;
+      height: 30px;
+      .main-checks {
+        display: flex;
+      }
+    }  
+  }
+}

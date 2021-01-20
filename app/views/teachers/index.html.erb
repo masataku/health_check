@@ -1,41 +1,28 @@
 <div class="parent-container">
   <div class="left-container">
-    <%= link_to "#", class: "sheet-link" do %>
+  <% @sheets.each do |sheet| %>
+    <%= link_to school_sheet_path(sheet.school, sheet), class: "sheets-links" do %>
       <div class="sheet-link-date">
-        <ul class="sheet-link-lists">
-          <li>Health Check Sheet</li>
-          <li>OO年</li>
-          <li>O月O日</li>
+        <p>Health Check Sheet</p>
+        <ul class="sheet-date">
+          <li><%= sheet.date.year %>年</li>
+          <li><%= "#{sheet.date.month}月#{sheet.date.day}日" %></li>
         </ul>
       </div>
       <div class="sheet-link-class">
-        O年O組
+        <%= "#{sheet.grade}年#{sheet.my_class}組" %>
       </div>
       <div class="sheet-link-teacher">
-        <ul class="sheet-link-lists">
-          <li>OO先生</li>
-          <li>OO先生</li>
+        <ul class="sheet-teachers">
+        <% @teachers.each do |teacher| %>
+          <% if teacher.grade == sheet.grade && teacher.my_class == sheet.my_class %>
+            <li><%= teacher.name %>先生</li>
+          <% end %>  
+        <% end %>  
         </ul>
       </div>
     <% end %>
-    <%= link_to "#", class: "sheet-link" do %>
-      <div class="sheet-link-date">
-        <ul class="sheet-link-lists">
-          <li>Health Check Sheet</li>
-          <li>OO年</li>
-          <li>O月O日</li>
-        </ul>
-      </div>
-      <div class="sheet-link-class">
-        O年O組
-      </div>
-      <div class="sheet-link-teacher">
-        <ul class="sheet-link-lists">
-          <li>OO先生</li>
-          <li>OO先生</li>
-        </ul>
-      </div>
-    <% end %>
+  <% end %>
   </div>
   <div class="right-container">
     カレンダー

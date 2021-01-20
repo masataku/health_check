@@ -1,0 +1,59 @@
+<div class="sheet-header">
+  <div class="header-left"><%= @sheet.grade %>年<%= @sheet.my_class %>組</div>
+  <div class="header-middle">チェックシート</div>
+  <div class="header-right"><%= @sheet.created_at.year %>年<%= @sheet.created_at.month %>月<%= @sheet.created_at.day %>日</div>
+</div>
+<div class="sheet-items">
+  <ul class="sheet-items-left">
+    <li>番号</li>
+    <li>氏名</li>
+  </ul>
+  <ul class="sheet-items-right">
+    <li>体調</li>
+    <li>症状</li>
+    <li>朝食</li>
+    <li>就寝</li>
+    <li>所見欄</li>
+    <li>出欠</li>
+    <li>お知らせ</li>
+  </ul>
+</div>
+<div class="sheet-main">
+  <div class="main-left">
+    <% @students.each do |student| %>
+    <div class="student-box">
+      <div class="number-box"><%= student.number %>番</div>
+      <div class="last-name-box">
+        <div class="last-name"><%= student.last_name %></div>
+        <div class="last-name-kana"><%= student.last_name_kana %></div>
+      </div>
+      <div class="first-name-box">
+        <div class="first-name"><%= student.first_name %></div>
+        <div class="first-name-kana"><%= student.first_name_kana %></div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="main-right">
+    <% @students.each do |student| %>
+    <div class="main-checks-blank">
+      <% @checks.each do |check| %>
+        <% if student == check.student %>
+        <div class="main-checks">
+          <div class="condition">○</div>
+          <div class="symptoms">なし</div>
+          <div class="breakfast">食べた</div>
+          <div class="bed-time">10:30</div>
+          <div class="opinion">オピニオンです</div>
+          <div class="attend">出席</div>
+          <div class="main-notice">
+            <%= link_to "作成", "#" %>
+            <%= link_to "確認", "#" %>
+          </div>  
+        </div>
+        <% end %>
+      <% end %>
+    </div>  
+    <% end %>
+  </div>
+</div>
