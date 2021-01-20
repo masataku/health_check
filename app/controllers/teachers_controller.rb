@@ -26,7 +26,7 @@ class TeachersController < ApplicationController
   private 
 
   def teacher_params
-    params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: params[:school_id])
+    params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: params[:school_id], year: fiscal_year)
   end 
   
   
