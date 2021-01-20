@@ -10,9 +10,6 @@ Rails.application.routes.draw do
       get 'logout'
     end 
     resources :teachers, only: [:index, :new, :create] do  
-      collection do
-        get 'login'
-      end  
     end
     resources :students, only: [:index, :new, :create, :destroy] do
       resources :checks, only: [:new, :create]

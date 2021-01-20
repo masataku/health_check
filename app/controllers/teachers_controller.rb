@@ -22,10 +22,6 @@ class TeachersController < ApplicationController
     end    
   end
 
-  def login
-
-  end  
-
   
   private 
 
