@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       get 'login'
       get 'logout'
     end 
-    resources :teachers, only: [:index, :new, :create] do  
+    resources :teachers, only: [:index, :new, :create, :destroy] do  
     end
     resources :students, only: [:index, :new, :create, :destroy] do
       resources :checks, only: [:new, :create]

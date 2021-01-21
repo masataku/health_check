@@ -1,4 +1,6 @@
 class TeachersController < ApplicationController
+  before_action :ensure_correct_teacher, only: [:index, :destroy]
+  before_action :forbit_current_teacher, only: [:new, :create]
 
   def index
     @sheets = Sheet.where(date: Date.today).order(grade: :asc, my_class: :asc)
@@ -31,6 +33,16 @@ class TeachersController < ApplicationController
     end    
   end
 
+  def destroy
+    @teacher = Teacher.find(params[:id])
+    @teacher.destroy
+    if @current_teacher == @teacher
+      redirect_to new_school_teacher_path(@teacher.school)
+    else
+      redirect_to school_teachers_path(@current_teacher.school)
+    end  
+  end  
+
   
   private 
 
@@ -38,5 +50,16 @@ class TeachersController < ApplicationController
     params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: params[:school_id], year: fiscal_year)
   end 
   
+  def forbit_current_teacher
+    if @current_teacher
+      redirect_to school_teachers_path(@current_teacher.school)  
+    end  
+  end  
+
+  def ensure_correct_teacher
+    if @current_teacher == nil || @current_teacher.school.id != params[:school_id].to_i
+      redirect_to root_path
+    end  
+  end  
   
 end
