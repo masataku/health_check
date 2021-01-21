@@ -32,6 +32,13 @@ class TeachersController < ApplicationController
   end
 
   def destroy
+    @teacher = Teacher.find(params[:id])
+    @teacher.destroy
+    if @current_teacher == @teacher
+      redirect_to new_school_teacher_path(@teacher.school)
+    else
+      redirect_to school_teachers_path(@current_teacher.school)
+    end  
   end  
 
   
