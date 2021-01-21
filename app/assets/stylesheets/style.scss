@@ -1,8 +1,22 @@
+html {
+  color: #5876a3;
+  font: 100%/1.5 "Lato", "Hiragino Maru Gothic Pro", "Meiryo UI", Meiryo, "MS PGothic", sans-serif;
+  a {
+    color: #5876a3;
+    text-decoration: none;
+  }
+}
+
+body {
+  background: #f9fbfe;
+}
+
 header {
   display: flex;
   height: 50px;
   background: white;
-  padding: 0px 40px;
+  padding: 10px 45px;
+  box-shadow: 0 1px 3px rgba(160,166,179,0.3);
   .heading {
     display: flex;
     align-items: center;
@@ -11,13 +25,11 @@ header {
   }
   .header-nav {
     width: 50%;
-    background: red;
     display: flex;
     justify-content: flex-end;
     .header-lists {
       display: flex;
       align-items: center;
-      background: pink;
       .header-list {
         margin-left: 50px;
       }
@@ -26,5 +38,8 @@ header {
 }
 
 footer {
-  background: gray;
+  background: white;
+  border-top: 1px solid #eee;
+  padding: 30px 50px;
+  font-size: 2rem;
 }
