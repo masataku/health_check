@@ -33,18 +33,21 @@
       <ul class="teachers-lists">
         <% @teachers1.each do |teacher| %>
           <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
+          <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete %>
         <% end %>
       </ul>
       第2学年
       <ul class="teachers-lists">
         <% @teachers2.each do |teacher| %>
           <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
+          <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete %>
         <% end %>
       </ul>
       第3学年
       <ul class="teachers-lists">
         <% @teachers3.each do |teacher| %>
           <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
+          <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete %>
         <% end %>
       </ul>
     </div>
