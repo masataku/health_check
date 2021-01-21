@@ -1,7 +1,7 @@
 class StudentsController < ApplicationController
   before_action :is_fiscal_year?
-  before_action :ensure_correct_student, only: [:index]
-  before_action :forbit_current_student, only: [:new]
+  before_action :forbit_logout_student, only: [:index]
+  before_action :forbit_current_student, only: [:new, :create]
   def index
     
   end  
@@ -42,7 +42,7 @@ class StudentsController < ApplicationController
     end  
   end 
   
-  def ensure_correct_student
+  def forbit_logout_student
     @school = School.find(params[:school_id])
     if @current_student == nil
       redirect_to new_school_student_path(@school)  

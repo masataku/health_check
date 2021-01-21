@@ -1,4 +1,6 @@
 class ChecksController < ApplicationController
+  before_action :forbit_logout_student
+  before_action :ensure_correct_student
 
   def new
     @check = Check.new
@@ -37,4 +39,17 @@ class ChecksController < ApplicationController
       return sheet_today.id  
     end
   end  
+
+  def forbit_logout_student
+    @school = School.find(params[:school_id])
+    if @current_student == nil
+      redirect_to new_school_student_path(@school)  
+    end  
+  end  
+
+  def ensure_correct_student
+    if @current_student.id != params[:student_id].to_i  
+      redirect_to school_students_path(@current_student.school, @current_student)
+    end  
+  end
 end
