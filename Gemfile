@@ -67,4 +67,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'bcrypt', '~> 3.1.7'
 gem 'pry-rails'
 gem 'active_hash'
-gem 'hashid-rails', '~> 1.0'
