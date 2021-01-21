@@ -10,7 +10,7 @@ RSpec.describe School, type: :model do
           emailは@が含まれ,半角英数字と-_.の記号のみで入力されており,一意性がある.
           password,teacher_password,student_passwordは6文字以上で入力されている.
           password,teacher_password,student_passwordは半角英小文字数字のみでどちらも含まれる.
-          passwordとpassword_confirmationが不一致' do
+          passwordとpassword_confirmationが一致している' do
         expect(@school).to be_valid
       end  
     end
@@ -72,6 +72,11 @@ RSpec.describe School, type: :model do
         @school.valid?
         expect(@school.errors.full_messages).to include("Password を適切に入力してください")
       end
+      it 'password_confirmationが空' do
+        @school.password_confirmation = nil
+        @school.valid?
+        expect(@school.errors.full_messages).to include("Password confirmation can't be blank")
+      end  
       it 'passwordとpassword_confirmationが不一致' do
         @school.password_confirmation = "12345b"
         @school.valid?
