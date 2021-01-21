@@ -1,6 +1,7 @@
 <div class="top-wrapper">
   <div class="container">
-    <%= form_with model: @current_school, url: edit_school_path, method: :get, local: true do |f| %>
+    <%= form_with model: @current_school, url: edit_school_path, class: "school-form", method: :get, local: true do |f| %>
+      <p class="form-head">認証</p>
       <div class="form-group">
         <div class="label">メールアドレス</div>
         <%= f.text_field :email, class: "form", value: "" %>
@@ -13,8 +14,10 @@
         <div class="label">パスワード(確認)</div>
         <%= f.password_field :password_confirmation, class: "form" %>
       </div>
-      <%= f.submit 'Create Shool', class: "submit-btn" %>
-      <%= link_to "Back", school_path(@current_school) %>
+      <div class="form-btns">
+        <%= f.submit "O K", class: "submit-btn" %>
+        <div class="back-btn"><%= link_to "Back", school_path(@current_school) %></div>
+      </div>
     <% end %>
   </div>
 </div>
