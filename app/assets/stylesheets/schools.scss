@@ -1,12 +1,7 @@
-.top-wrapper {
-  .container {
-    margin: 20px 40px;
-
-  }
-}
 
 // index.html.erb///////////////////////////////////////
 .catch-copy {
+  margin-top: 80px;
   text-align: center;
   letter-spacing: 10px;
   font-size: 3.5rem;
@@ -16,19 +11,75 @@
     margin-bottom: 20px;
   }
 }
-
+.joining-schools {
+  text-align: center;
+}
 .school-btns {
-  height: 500px;
-  width: 800px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  align-items: center;
   margin: 0 auto;
-  .school-btn {
+  letter-spacing: 3px;  
+  .signup-btn {
+    background: rgb(48, 200, 214);
     display: block;
+    width: 20%;
+    padding: 15px 40px;
+    margin: 0 auto;
+    margin-top: 100px;
     text-align: center;
-    font-size: 50px;
+    color: white;
+    border-radius: 6px 6px;
+  }
+  .school-btn {
+
+  } 
+}
+
+// new.html.erb, login_form.html.erb/////////////////////////////////////////
+.school-form {
+  width: 40%;
+  margin: 0 auto;
+  .form-head {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  .form-group {
+    margin-bottom: 30px;
+    .form {
+      height: 48px;
+      width: 100%;
+      border: 1px solid rgb(186, 198, 211);
+      font-size: 1.2rem;
+      border-radius: 10px 10px;
+      &:focus {
+        outline: none;
+        border: 1px solid #8be0e6;
+        transition: 0.4s;
+      }
+    }
+  }
+  .form-btns {
+    padding: 0 80px;
+    .submit-btn {
+      height: 48px;
+      width: 100%;
+      background: rgb(48, 200, 214);
+      border: 1px solid rgb(48, 200, 214);
+      color: white;
+      letter-spacing: 5px;
+      font-weight: 600;
+      border-radius: 10px 10px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+        transition: 0.4s;
+      }
+    }
+    .back-btn {
+      margin-top: 20px;
+      text-align: center;
+    }
   }
 }
 
@@ -59,15 +110,3 @@
 }
 
 // new.html.erb/////////////////////////////////////////
-.school-form {
-  width: 650px;
-  margin: 0 auto;
-  
-  .form-group {
-    margin-bottom: 10px;
-    .form {
-      height: 30px;
-      width: 100%;
-    }
-  }
-}

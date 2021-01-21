@@ -7,10 +7,6 @@ html {
   }
 }
 
-body {
-  background: #f9fbfe;
-}
-
 header {
   display: flex;
   height: 50px;
@@ -34,6 +30,17 @@ header {
         margin-left: 50px;
       }
     }
+  }
+}
+
+body {
+  background: #f9fbfe;
+}
+
+.top-wrapper {
+  min-height: 100vh;
+  .container {
+    margin: 0px 40px;
   }
 }
 
