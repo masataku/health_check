@@ -3,7 +3,7 @@ before_action :ensure_correct_school, only: [:show, :confirm, :edit, :update]
 before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
 
   def index
-
+    @schools = School.all
   end
 
   def show 

@@ -1,5 +1,4 @@
 .top-wrapper {
-  height: 100vh;
   .container {
     margin: 20px 40px;
 
@@ -7,8 +6,18 @@
 }
 
 // index.html.erb///////////////////////////////////////
+.catch-copy {
+  text-align: center;
+  letter-spacing: 10px;
+  font-size: 3.5rem;
+  font-weight: 600;
+  font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
+  p {
+    margin-bottom: 20px;
+  }
+}
+
 .school-btns {
-  background: red;
   height: 500px;
   width: 800px;
   display: flex;
