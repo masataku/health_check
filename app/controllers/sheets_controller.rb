@@ -9,7 +9,7 @@ class SheetsController < ApplicationController
   private 
 
   def ensure_correct_teacher
-    if @current_teacher == nil || @current_teacher.school.id != params[:school_id]
+    if @current_teacher == nil || @current_teacher.school.id != params[:school_id].to_i
       redirect_to root_path
     end  
   end  

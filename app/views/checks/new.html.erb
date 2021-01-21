@@ -30,7 +30,7 @@
     </div>
     <div class="check-group">
       <div class="check-label">所見欄(任意)</div>
-      <%= text_area :opinion, row: "3" %>
+      <%= f.text_area :opinion, row: "3" %>
     </div>
     保護者チェック欄<%= f.check_box :check %>
     <%= f.submit "送信する" %>
