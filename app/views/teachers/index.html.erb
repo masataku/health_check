@@ -25,6 +25,28 @@
   <% end %>
   </div>
   <div class="right-container">
+    <div class="calendor">
     カレンダー
+    </div>
+    <div class="teachers">
+      第１学年
+      <ul class="teachers-lists">
+        <% @teachers1.each do |teacher| %>
+          <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
+        <% end %>
+      </ul>
+      第2学年
+      <ul class="teachers-lists">
+        <% @teachers2.each do |teacher| %>
+          <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
+        <% end %>
+      </ul>
+      第3学年
+      <ul class="teachers-lists">
+        <% @teachers3.each do |teacher| %>
+          <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
