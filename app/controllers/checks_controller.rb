@@ -1,6 +1,7 @@
 class ChecksController < ApplicationController
   before_action :forbit_logout_student
   before_action :ensure_correct_student
+  before_action :already_checked_today
 
   def new
     @check = Check.new
@@ -52,4 +53,10 @@ class ChecksController < ApplicationController
       redirect_to school_students_path(@current_student.school, @current_student)
     end  
   end
+
+  def already_checked_today
+    if Check.find_by(date: Date.today, student_id: @current_student.id)
+      redirect_to school_students_path(@current_student.school, @current_student)
+    end  
+  end  
 end
