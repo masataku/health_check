@@ -4,21 +4,39 @@
     <div class="school-info">
       <div class="school-name"><i class="fas fa-school"></i>    <%= @current_school.school_name %></div>
       <div class="school-head"><i class="far fa-user"></i>  <%= "#{@current_school.head_teacher} 校長" %></div>
-      <div class="school-students">
+      <div class="school-joiner">
         <p><%= "今年度（#{@fiscal_year}年度）" %></p>
-        <p><%= "生徒数： #{@current_school.students.count}人"%></p>
+        <p class="joiner"><%= "生徒数： #{@current_school.students.count}人, 教員数： #{@current_school.teachers.count}人"%></p>
       </div>
     </div>
-    <div class="join-btns">
-      <div class="join-btn teacher-btn"><%= link_to "教員の参加", new_school_teacher_path(@current_school) %>
-        <input id="copyTeacher" type="text" value="<%= new_school_teacher_url(@current_school) %>" readonly>
+  
+  <p class="join-box-title">先生に登録してもらう</p>  
+  <div class="join-box">  
+    <div class="left-box">
+    </div>
+    <div class="right-box">
+      <p class="join-head">教員の参加</p>
+      <div class="join-btn teacher-btn">
+        <%= link_to "ここから参加", new_school_teacher_path(@current_school) %>
         <button id="copyTeacherButton"><i class="far fa-copy"></i>  リンクをコピー</button>
+        <input id="copyTeacher" type="text" value="<%= new_school_teacher_url(@current_school) %>" readonly>
       </div>
-      <div class="join-btn student-btn"><%= link_to "生徒の参加", new_school_student_path(@current_school) %>
-        <input id="copyStudent" type="text" value="<%= new_school_student_url(@current_school) %>" readonly>
-        <button id="copyStudentButton"><i class="far fa-copy"></i>  リンクをコピー</button>
-      </div>
-
     </div>
+  </div>
+  
+  <p class="join-box-title">先生に登録してもらう</p>  
+  <div class="join-box">
+    <div class="left-box">
+    </div>  
+    <div class="right-box">
+      <p class="join-head">生徒の参加</p>
+      <div class="join-btn student-btn">
+        <%= link_to "生徒の参加", new_school_student_path(@current_school) %>
+        <button id="copyStudentButton"><i class="far fa-copy"></i>  リンクをコピー</button>
+        <input id="copyStudent" type="text" value="<%= new_school_student_url(@current_school) %>" readonly>
+      </div>
+    </div>
+  </div>
+    
   </div>
 </div>
