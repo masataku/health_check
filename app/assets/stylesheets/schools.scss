@@ -144,12 +144,76 @@
       font-size: 2rem;
       margin: 20px 0;
       border-bottom: 1px solid #eeeeee;
+      letter-spacing: 6px;
+      font-weight: 600;
+      .join-icon {
+        color: rgb(48, 200, 214);
+      }
     }
-    .join-btn {
+    .join-message {
+      padding: 10px 0;
+      .join-icon {
+        color: orange;
+      }
+    }
+    .join-btns {
       display: flex;
+      margin-top: 30px;
+      .join-right { 
+        width: 50%;
+        .join-btn {
+          display: block;
+          width: 50%;
+          padding: 15px;
+          background: rgb(48, 200, 214);
+          color: white;
+          text-align: center;
+          font-size: 0.8rem;
+          border-radius: 6px 6px;
+          &:hover {
+            opacity: 0.6;
+            transition: 0.4s;
+          }
+        }
+      }
+      .join-left {
+        width: 50%;
+        .join-copy-btn {
+          width: 70%;
+          border-style: none;
+          padding: 10px 10px 0 10px;
+          background: white;
+          color: purple;
+          font-size: 1.1rem;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.6;
+            transition: 0.4s;
+          }
+          &:focus {
+            outline: none;
+          }
+          .copy-icon {
+            font-size: 1.5rem;
+          }
+        }
+        .join-copy-text {
+        
+          opacity: 0;
+        }
+      }
     }
   }
-  
 }
+.copyed {
+  animation: copy 0.6s ease 0s;
+}
+
+@keyframes copy {
+  0% {transform: scale(1,1);}
+  40% {transform: scale(1.2,0.8);}
+  50% {transform: scale(0.8,1.4);}
+  100% {transform: scale(1,1);}
+}  
 
 // new.html.erb/////////////////////////////////////////

@@ -15,25 +15,37 @@
     <div class="left-box">
     </div>
     <div class="right-box">
-      <p class="join-head">教員の参加</p>
-      <div class="join-btn teacher-btn">
-        <%= link_to "ここから参加", new_school_teacher_path(@current_school) %>
-        <button id="copyTeacherButton"><i class="far fa-copy"></i>  リンクをコピー</button>
-        <input id="copyTeacher" type="text" value="<%= new_school_teacher_url(@current_school) %>" readonly>
+      <p class="join-head"><i class="fas fa-sign-in-alt join-icon"></i>  教員の参加</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  この学校の先生にURLを共有しましょう</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  教員用パスワードを教えてあげましょう</p>
+      <div class="join-btns teacher-btn">
+        <div class="join-left">
+          <button id="copyTeacherButton" class="join-copy-btn"><div id="copyedT"><i class="far fa-copy copy-icon"></i>  リンクをコピー</div></button>
+          <input id="copyTeacher" class="join-copy-text" type="text" value="<%= new_school_teacher_url(@current_school) %>" readonly>
+        </div>
+        <div class="join-right">
+          <%= link_to "ここから参加", new_school_teacher_path(@current_school), class: "join-btn" %>
+        </div>
       </div>
     </div>
   </div>
   
-  <p class="join-box-title">先生に登録してもらう</p>  
+  <p class="join-box-title">生徒に登録してもらう</p>  
   <div class="join-box">
     <div class="left-box">
     </div>  
     <div class="right-box">
-      <p class="join-head">生徒の参加</p>
-      <div class="join-btn student-btn">
-        <%= link_to "生徒の参加", new_school_student_path(@current_school) %>
-        <button id="copyStudentButton"><i class="far fa-copy"></i>  リンクをコピー</button>
-        <input id="copyStudent" type="text" value="<%= new_school_student_url(@current_school) %>" readonly>
+      <p class="join-head"><i class="fas fa-sign-in-alt join-icon"></i>  生徒の参加</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  この学校の生徒(保護者)にURLを共有しましょう</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  生徒用パスワードを教えてあげましょう</p>
+      <div class="join-btns student-btn">
+        <div class="join-left">
+          <button id="copyStudentButton" class="join-copy-btn"><div id="copyedS"><i class="far fa-copy"></i>  リンクをコピー</div></button>
+          <input id="copyStudent" class="join-copy-text" type="text" value="<%= new_school_student_url(@current_school) %>" readonly>
+        </div>
+        <div class="join-right">
+          <%= link_to "生徒の参加", new_school_student_path(@current_school), class: "join-btn" %>
+        </div>
       </div>
     </div>
   </div>

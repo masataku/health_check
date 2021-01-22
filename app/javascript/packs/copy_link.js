@@ -1,37 +1,25 @@
-window.addEventListener('load', function () {
-  var copyButton = document.getElementById("copyTeacherButton");
-  copyButton.addEventListener('click', () => {
+window.addEventListener('load', () => {
+  var copyTeacherButton = document.getElementById("copyTeacherButton");
+  copyTeacherButton.addEventListener('click', () => {
+    var copyedT = document.getElementById("copyedT");
+    if(copyedT.classList.contains('copyed') == true){
+      copyedT.removeAttribute('class','copyed');
+    } 
     var copyTarget = document.getElementById("copyTeacher");
     copyTarget.select();
     document.execCommand('Copy');
+    copyedT.setAttribute('class', 'copyed');
   });
   
-  var copyButton = document.getElementById("copyStudentButton");
-  copyButton.addEventListener('click', () => {
+  var copyStudentButton = document.getElementById("copyStudentButton");
+  copyStudentButton.addEventListener('click', () => {
+    var copyedS = document.getElementById("copyedS");
+    if(copyedS.classList.contains('copyed') == true){
+      copyedS.removeAttribute('class','copyed');
+    } 
     var copyTarget = document.getElementById("copyStudent");
     copyTarget.select();
     document.execCommand('Copy');
+    copyedS.setAttribute('class', 'copyed');
   });
 }); 
-
-// function copyToClipboard() {
-//   var copyTarget = document.getElementById("copyTarget");
-//   copyTarget.select();
-//   document.execCommand("Copy");
-// }
-
-
-
-
-// window.addEventListener('load', function () {
-//   const priceInput = document.getElementById("item-price");
-//   priceInput.addEventListener('input', () =>{
-//     const inputValue = priceInput.value;
-//     const fee = inputValue / 10;
-//     const profit = inputValue - Math.floor(fee);
-//     const addTaxDom = document.getElementById("add-tax-price");
-//     const profitDom = document.getElementById("profit");
-//     addTaxDom.innerHTML = Math.floor(fee);
-//     profitDom.innerHTML = Math.floor(profit);
-//   });
-// });
