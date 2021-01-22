@@ -70,7 +70,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
   private
 
   def school_params 
-    params.require(:school).permit(:school_name, :email, :password, :password_confirmation, :teacher_password, :student_password)
+    params.require(:school).permit(:school_name, :head_teacher, :email, :password, :password_confirmation, :teacher_password, :student_password)
   end 
   
   def ensure_correct_school
