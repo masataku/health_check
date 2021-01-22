@@ -8,6 +8,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
 
   def show 
     @school = School.find(params[:id])
+    @fiscal_year = fiscal_year
   end  
 
   def new
