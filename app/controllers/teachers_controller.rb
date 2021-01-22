@@ -19,6 +19,7 @@ class TeachersController < ApplicationController
   def new
     @school = School.find(params[:school_id])
     @teacher = Teacher.new
+    @url = request.url
   end
   
   def create
