@@ -11,6 +11,18 @@
     margin-bottom: 20px;
   }
 }
+.catch-image {
+  display: flex;
+  .left-image {
+    width: 40%;
+  }
+  .middle-space {
+    width: 20%;
+  }
+  .right-image {
+    width: 40%;
+  }
+}
 .joining-schools {
   text-align: center;
 }
@@ -23,7 +35,8 @@
     width: 20%;
     padding: 15px 40px;
     margin: 0 auto;
-    margin-top: 100px;
+    margin-top: 90px;
+    margin-bottom: 40px;
     text-align: center;
     color: white;
     border-radius: 6px 6px;
@@ -137,6 +150,9 @@
   background: white;
   .left-box {
     width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .right-box {
     width: 60%;
