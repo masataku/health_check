@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
   before_action :forbit_current_teacher, only: [:new, :create]
 
   def index
-    @sheets = Sheet.where(date: Date.today).order(grade: :asc, my_class: :asc)
+    @sheets = Sheet.where(date: Date.today, school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
     @teachers = Teacher.where(school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
     @teachers1 = @teachers.select do |t|
       t.grade == 1
@@ -45,11 +45,12 @@ class TeachersController < ApplicationController
   end  
 
   
-  private 
+  private  
 
   def teacher_params
     params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: params[:school_id], year: fiscal_year)
   end 
+ 
   
   def forbit_current_teacher
     if @current_teacher
