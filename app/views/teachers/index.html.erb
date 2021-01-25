@@ -2,14 +2,15 @@
   <div class="container">
     <div class="parent-container">
       <div class="left-container">
+      <p class="sheet-head">チェックシート</p>
       <% @sheets.each do |sheet| %>
         <%= link_to school_sheet_path(sheet.school, sheet), class: "sheets-links" do %>
           <div class="sheet-image-box">
             <%= image_tag "427595.png", class: "sheet-link-image" %>
           </div>
           <div class="sheet-link-class">
-            <%= "#{sheet.grade}年#{sheet.my_class}組" %>
             <p>Check Sheet</p>
+            <%= "#{sheet.grade}年#{sheet.my_class}組" %>
           </div>
           <div class="sheet-link-date">
             <%= "#{sheet.date.year}/#{sheet.date.month}/#{sheet.date.day}" %>

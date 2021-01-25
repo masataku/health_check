@@ -2,6 +2,12 @@
   display: flex;
   .left-container {
     width: 68%;
+    .sheet-head {
+      margin-bottom: 30px;
+      border-bottom: 1px solid #eeeeee;
+      font-size: 2.5rem;
+      text-align: center;
+    }
     .sheets-links {
       background-color: white;
       display: flex;
@@ -25,6 +31,10 @@
       }
       .sheet-link-class {
         width: 30%;
+        p {
+          padding: 5px 0;
+          font-size: 1.2rem;
+        }
       }  
       .sheet-link-date {
         width: 30%;
