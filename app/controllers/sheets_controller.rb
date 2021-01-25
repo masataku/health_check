@@ -1,5 +1,9 @@
 class SheetsController < ApplicationController
   before_action :ensure_correct_teacher
+
+  def index
+  end  
+
   def show
     @sheet = Sheet.find(params[:id])
     @students = Student.where(grade: @sheet.grade, my_class: @sheet.my_class, year: @sheet.year, school_id: @sheet.school.id).order(number: :asc)
