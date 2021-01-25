@@ -50,15 +50,15 @@
             <li class="header-list">
               <%= link_to "設定する", confirm_school_path(@current_school) %>
             </li>
-          <% elsif @current_teacher && current_page?(school_teachers_path(@current_teacher.school)) || @current_teacher && current_page?(school_sheet_path) %> 
+          <% elsif @current_teacher && current_page?(school_teachers_path(@current_teacher.school)) || @current_teacher && current_page?(school_sheets_path(@current_teacher.school)) || @current_teacher && current_page?(school_sheet_path(@current_teacher.school)) %> 
             <li class="header-list">
               <%= link_to @current_teacher.school.school_name, school_teachers_path(@current_teacher.school) %>
             </li>
             <li class="header-list">
-              <%= @current_teacher.name %> 
-            </li>
-            <li class="header-list">
               お知らせ 
+            </li>
+            <li class="header-list name">
+              <%= @current_teacher.name %> 
             </li>
           <% elsif @current_student && current_page?(school_students_path(@current_student.school)) || @current_student && current_page?(new_school_student_check_path(@current_student.school, @current_student)) %>  
             <li class="header-list">
