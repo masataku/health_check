@@ -1,6 +1,7 @@
 class Check < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :bed_time
+  belongs_to :temperature
   belongs_to :student
   belongs_to :sheet
   has_many :check_symptoms

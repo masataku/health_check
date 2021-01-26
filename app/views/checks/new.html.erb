@@ -29,7 +29,11 @@
             就寝時刻<%= f.collection_select(:bed_time_id, BedTime.all, :id, :name, {}) %>
         </div>
         <div class="check-group">
-          <div class="check-label">Q5.本日の出欠確認</div>
+          <div class="check-label">Q5.体温は何度ですか？</div>
+            体温<%= f.collection_select(:temperature_id, Temperature.all, :id, :name, {}) %>
+        </div>
+        <div class="check-group">
+          <div class="check-label">Q6.本日の出欠確認</div>
             <%= f.radio_button :attend, true, checked: true %>出席
             <%= f.radio_button :attend, false %>欠席
         </div>
