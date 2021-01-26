@@ -1,0 +1,8 @@
+<p class="right-title"><i class="far fa-calendar-check"></i>  カレンダー</p>
+<%= form_tag school_sheets_path, class: "calendor", method: :get do %>
+  <p><i class="far fa-lightbulb"></i>  以前のシートを確認</p>
+  <div class="calendor-form">
+    <%= date_field_tag :date, class: "calendor-date" %>
+    <input type="submit" value="シートを見にいく" class="calendor-btn">
+  </div>
+<% end %>

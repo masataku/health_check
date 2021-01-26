@@ -2,64 +2,11 @@
   <div class="container">
     <div class="parent-container">
       <div class="left-container">
-      <p class="sheet-head">チェックシート</p>
-      <% @sheets.each do |sheet| %>
-        <%= link_to school_sheet_path(sheet.school, sheet), class: "sheets-links" do %>
-          <div class="sheet-image-box">
-            <%= image_tag "427595.png", class: "sheet-link-image" %>
-          </div>
-          <div class="sheet-link-class">
-            <p>Check Sheet</p>
-            <%= "#{sheet.grade}年#{sheet.my_class}組" %>
-          </div>
-          <div class="sheet-link-date">
-            <%= "#{sheet.date.year}/#{sheet.date.month}/#{sheet.date.day}" %>
-          </div>
-          <div class="sheet-link-teacher">
-            <ul class="sheet-teachers">
-            <% @teachers.each do |teacher| %>
-              <% if teacher.grade == sheet.grade && teacher.my_class == sheet.my_class %>
-                <li><%= teacher.name %>先生</li>
-              <% end %>  
-            <% end %>  
-            </ul>
-          </div>
-        <% end %>
-      <% end %>
+        <%= render partial: "sheets/index" %>
       </div>
       <div class="right-container">
-        <p class="right-title"><i class="far fa-calendar-check"></i>  カレンダー</p>
-        <%= form_tag school_sheets_path, class: "calendor", method: :get do %>
-          <p><i class="far fa-lightbulb"></i>  以前のシートを確認</p>
-          <div class="calendor-form">
-            <%= date_field_tag :date, class: "calendor-date" %>
-            <input type="submit" value="シートを見にいく" class="calendor-btn">
-          </div>
-        <% end %>
-        <p class="right-title"><i class="fas fa-chalkboard-teacher"></i>  先生一覧</p>
-        <div class="teachers">
-          <p>第１学年</p>
-          <ul class="teachers-lists">
-            <% @teachers1.each do |teacher| %>
-              <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
-              <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
-            <% end %>
-          </ul>
-          <p>第２学年</p>
-          <ul class="teachers-lists">
-            <% @teachers2.each do |teacher| %>
-              <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
-              <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
-            <% end %>
-          </ul>
-          <p>第３学年</p>
-          <ul class="teachers-lists">
-            <% @teachers3.each do |teacher| %>
-              <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
-              <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
-            <% end %>
-          </ul>
-        </div>
+        <%= render partial: "sheets/calendar" %>
+        <%= render partial: "index" %>
         <%= image_tag "096505.png", class: "right-image" %>
       </div>
     </div>
