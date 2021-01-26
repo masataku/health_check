@@ -1,24 +1,24 @@
 <p class="right-title"><i class="fas fa-chalkboard-teacher"></i>  先生一覧</p>
 <div class="teachers">
   <p>第１学年</p>
-  <ul class="teachers-lists">
-    <% @teachers1.each do |teacher| %>
+  <% @teachers1.each do |teacher| %>
+    <ul class="teachers-lists">
       <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
       <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
-    <% end %>
-  </ul>
+    </ul>   
+  <% end %>
   <p>第２学年</p>
-  <ul class="teachers-lists">
-    <% @teachers2.each do |teacher| %>
+  <% @teachers2.each do |teacher| %>
+    <ul class="teachers-lists">
       <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
       <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
-    <% end %>
-  </ul>
+    </ul>
+  <% end %>
   <p>第３学年</p>
-  <ul class="teachers-lists">
-    <% @teachers3.each do |teacher| %>
+  <% @teachers3.each do |teacher| %>
+    <ul class="teachers-lists">
       <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
       <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
-    <% end %>
-  </ul>
+    </ul>
+  <% end %>
 </div>
