@@ -1,3 +1,69 @@
 #symptoms {
   display: none;
 }
+
+.check-head {
+  margin-top: 40px;
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 2.5rem;
+  border-bottom: 1px solid #eee;
+}
+.check-container {
+  width: 60%;
+  margin-right: auto;
+  margin-left: auto;
+  margin-bottom: 60px;
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  .check-group {
+    text-align: center;
+    .check-label {
+      padding: 40px 0;
+      font-size: 1.8rem;
+    }
+    .symptoms-form {
+      padding: 40px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 1.5rem;
+    }
+    p {
+      padding: 40px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 1.5rem;
+      .select-form {
+        margin-left: 5px;
+        font-size: 1.5rem;
+        opacity: 0.6;
+      }
+    }
+    .opinion-form {
+      border: 1px solid #5876a3;
+      &:focus {
+        outline: none;
+        border: 1px solid #8be0e6;
+        transition: 0.4s;
+      }
+    }
+  }
+  .check-group-submit {
+    text-align: center;
+    p {
+      padding: 30px;
+    }
+    .check-submit-btn {
+      padding: 15px 60px;
+      margin-bottom: 40px;
+      background: rgb(48, 200, 214);
+      border: 1px solid rgb(48, 200, 214);
+      color: white;
+      letter-spacing: 5px;
+      border-radius: 8px 8px;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+        transition: 0.4s;
+      }
+    }
+  }
+}
