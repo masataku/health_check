@@ -26,7 +26,7 @@ class StudentsController < ApplicationController
       @student.student_password = "correct"
       @student.save
       session[:student_id] = @student.id
-      redirect_to school_students_path(@student.school)
+      redirect_to school_students_path(@student.school), notice: "登録できました"
     else
       render 'new'
     end    
@@ -34,7 +34,7 @@ class StudentsController < ApplicationController
 
   def destroy
     session[:student_id] = nil
-    redirect_to new_school_student_path
+    redirect_to new_school_student_path, notice: "あなたの情報を登録してください"
   end  
   
   private

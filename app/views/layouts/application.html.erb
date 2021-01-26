@@ -67,8 +67,13 @@
             </li>
           <% end %>   
         </ul>
-      </div>        
+      </div>     
     </header>
+    <% if notice %> 
+      <div class="notice-bar">
+        <div class="notice"><%= notice %></div>
+      </div>
+    <% end %> 
     <%= yield %>
     <footer>
       HealtySchool

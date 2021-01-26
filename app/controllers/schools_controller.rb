@@ -20,7 +20,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
     if @school.valid?
       @school.save
       session[:school_id] = @school.id
-      redirect_to school_path(@school)
+      redirect_to school_path(@school), notice: "学校が作成できました"
     else
       render 'new'
     end    
@@ -36,7 +36,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
   def update
     @school = School.find(params[:id])
     if @school.update(school_params)
-      redirect_to school_path(@school)
+      redirect_to school_path(@school), notice: "編集しました"
     else
       render 'edit'
     end    
@@ -54,7 +54,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
     if @school = School.find_by(email: school_params[:email])
       if @school.authenticate(school_params[:password])
         session[:school_id] = @school.id
-        redirect_to school_path(@school)
+        redirect_to school_path(@school), notice: "ログインしました"
       else
         render 'login_form'
       end
@@ -65,7 +65,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
 
   def logout
     session[:school_id] = nil
-    redirect_to root_path
+    redirect_to root_path, notice: "ログアウトしました"
   end  
   
   private

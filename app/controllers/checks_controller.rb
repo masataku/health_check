@@ -11,7 +11,7 @@ class ChecksController < ApplicationController
     @check = Check.new(check_params)
     if @check.valid? && @current_student.checks.find_by(date: @check.date) == nil
       @check.save
-      redirect_to school_students_path(@current_student.school)
+      redirect_to school_students_path(@current_student.school), notice: "送信できました"
     else 
       render 'new'
     end    

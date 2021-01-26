@@ -27,7 +27,7 @@ class TeachersController < ApplicationController
       @teacher.teacher_password = "correct"
       @teacher.save
       session[:teacher_id] = @teacher.id
-      redirect_to school_teachers_path
+      redirect_to school_teachers_path, notice: "登録できました"
     else
       render 'new'
     end    
@@ -37,9 +37,9 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
     @teacher.destroy
     if @current_teacher == @teacher
-      redirect_to new_school_teacher_path(@teacher.school)
+      redirect_to new_school_teacher_path(@teacher.school), notice: "削除しました"
     else
-      redirect_to school_teachers_path(@current_teacher.school)
+      redirect_to school_teachers_path(@current_teacher.school), notice: "削除されました"
     end  
   end  
 
