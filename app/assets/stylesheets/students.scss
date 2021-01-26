@@ -27,8 +27,8 @@
           }
           .my_name {
             padding: 5px 0; 
-            font-size: 1.5rem;
-            overflow: scroll;
+            font-size: 100%;
+            white-space: nowrap;
           }
         }
       }
@@ -145,5 +145,9 @@
   }
   .right-container {
     width: 32%;
+    .student-right-image {
+      height: 380px;
+      
+    }
   }
 }

@@ -3,7 +3,16 @@ class StudentsController < ApplicationController
   before_action :forbit_logout_student, only: [:index]
   before_action :forbit_current_student, only: [:new, :create]
   def index
-    
+    @teachers = Teacher.where(school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
+    @teachers1 = @teachers.select do |t|
+      t.grade == 1
+    end  
+    @teachers2 = @teachers.select do |t|
+      t.grade == 2
+    end  
+    @teachers3 = @teachers.select do |t|
+      t.grade == 3
+    end  
   end  
   
   def new
