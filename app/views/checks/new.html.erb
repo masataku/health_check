@@ -49,7 +49,7 @@
       </div>
       <div class="check-group">
         <div class="check-label">所見欄(任意)</div>
-        <p><%= f.text_area :opinion, rows: "4", class: "opinion-form" %></p>
+        <p><%= f.text_area :opinion, rows: "4", value: "", class: "opinion-form", placeholder: "40字以内で入力してください" %></p>
       </div>
       <div class="check-group-submit">
         <p><%= f.label :check, "保護者チェック欄" %><%= f.check_box :check %></p>
