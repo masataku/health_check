@@ -13,14 +13,18 @@
   <% @teachers2.each do |teacher| %>
     <ul class="teachers-lists">
       <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
-      <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
+      <% if @current_teacher %>
+        <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
+      <% end %>
     </ul>
   <% end %>
   <p>第３学年</p>
   <% @teachers3.each do |teacher| %>
     <ul class="teachers-lists">
       <li><%= "#{teacher.name}(#{teacher.my_class}組)" %></li>
-      <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
+      <% if @current_teacher %>
+        <%= link_to "削除する", school_teacher_path(teacher.school, teacher), method: :delete, class: "teacher-delete", data:{confirm: "本当に削除しますか？"} %>
+      <% end %>
     </ul>
   <% end %>
 </div>
