@@ -1,40 +1,168 @@
-.sheet-header {
-  display: flex;
-  .header-left {
-    width: 10%;
-  }
-  .header-middle {
-    width: 30%;
-  }
-  .header-right {
-    width: 60%;
-  }
-}
-
-.sheet-items {
-  display: flex;
-  .sheet-items-left {
+.sheet-box {
+  background: white;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+  .sheet-header {
     display: flex;
-  }
-  .sheet-items-right {
-    display: flex;
-  }
-}
-
-.sheet-main {
-  display: flex;
-  .main-left {
-    .student-box {
-      display: flex;
+    padding: 25px 0;
+    margin-top: 40px;
+    border-bottom: 2px solid #eeeeee;
+    align-items: center;
+    .header-left {
+      width: 20%;
+      font-size: 2.2rem;
+      text-align: right;
+      letter-spacing: 5px;
+    }
+    .header-middle {
+      width: 40%;
+      text-align: center;
+      font-size: 2.2rem;
+      letter-spacing: 5px;
+    }
+    .header-right {
+      width: 40%;
+      text-align: center;
+      font-size: 1.4rem
     }
   }
-  .main-right {
-    .main-checks-blank {
-      background: red;
-      height: 30px;
-      .main-checks {
-        display: flex;
+
+  .sheet-items {
+    display: flex;
+    border-bottom: 2px solid #eeeeee;
+    p {
+      color: rgb(48, 200, 214);
+      font-size: 1.4rem;
+    }
+    .sheet-items-left {
+      display: flex;
+      width: 20%;
+      padding: 10px 0;
+      text-align: center;
+      .num {
+        width: 20%;
       }
-    }  
+      .name {
+        width: 80%;
+        border-left: 2px solid #eeeeee;
+      }
+    }
+    .sheet-items-right {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      width: 80%;
+      p {
+        border-left: 2px solid #eeeeee;
+      }
+      .p-1 {
+        width: 5%;
+      }
+      .p-2 {
+        width: 20%;
+      }
+      .p-3 {
+        width: 10%;
+      }
+      .p-4 {
+        width: 15%;
+      }
+      .p-5 {
+        width: 10%;
+      }
+      .p-6 {
+        width: 20%;
+      }
+      .p-7 {
+        width: 10%;
+      }
+      .p-8 {
+        width: 10%;
+      }
+    }
+  }
+
+  .sheet-main {
+    display: flex;
+    .main-left {
+      width: 20%;
+      .student-box {
+        display: flex;
+        height: 50px;
+        border-bottom: 2px solid #eeeeee;
+        .number-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 10px 0;
+          width: 20%;
+        }
+        .name-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 80%;
+          .last-name-box {
+            padding: 10px 5px;
+            .last-name {
+
+            }
+            .last-name-kana {
+              font-size: 0.5rem;
+            }
+          }
+          .first-name-box {
+            padding: 10px 5px;
+            .first-name {
+
+            }
+            .first-name-kana {
+              font-size: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+    .main-right {
+      width: 80%;
+      .main-checks-blank {
+        height: 50px;
+        border-bottom: 2px solid #eeeeee;
+        .main-checks {
+          display: flex;
+          align-items: center;
+          height: 100%;
+          text-align: center;
+          p {
+            border-left: 2px solid #eeeeee;
+          }
+          .p-1 {
+            width: 5%;
+          }
+          .p-2 {
+            width: 20%;
+            font-size: 0.9rem;
+          }
+          .p-3 {
+            width: 10%;
+          }
+          .p-4 {
+            width: 15%;
+          }
+          .p-5 {
+            width: 10%;
+          }
+          .p-6 {
+            width: 20%;
+            font-size: 0.9rem;
+          }
+          .p-7 {
+            width: 10%;
+          }
+          .p-8 {
+            width: 10%;
+          }
+        }
+      }  
+    }
   }
 }

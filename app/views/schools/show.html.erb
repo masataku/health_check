@@ -1,9 +1,56 @@
+<%= javascript_pack_tag 'copy_link' %>
 <div class="top-wrapper">
   <div class="container">
-    <div class="school-name"><%= @current_school.school_name %>へようこそ</div>
-    <div class="join-btns">
-      <div class="join-btn teacher-btn"><%= link_to "教員の参加", new_school_teacher_path(@current_school) %></div>
-      <div class="join-btn student-btn"><%= link_to "生徒の参加", new_school_student_path(@current_school) %></div>
+    <div class="school-info">
+      <div class="school-name"><i class="fas fa-school"></i>    <%= @current_school.school_name %></div>
+      <div class="school-head"><i class="far fa-user"></i>  <%= "#{@current_school.head_teacher} 校長" %></div>
+      <div class="school-joiner">
+        <p><%= "今年度（#{@fiscal_year}年度）" %></p>
+        <p class="joiner"><%= "生徒数： #{@current_school.students.count}人, 教員数： #{@current_school.teachers.count}人"%></p>
+      </div>
     </div>
+  
+  <p class="join-box-title"><i class="fas fa-check-double"></i> 先生に登録してもらう</p>  
+  <div class="join-box">  
+    <div class="left-box">
+      <%= image_tag "096499.png", height: "75%" %>
+    </div>
+    <div class="right-box">
+      <p class="join-head"><i class="fas fa-sign-in-alt join-icon"></i>  教員の参加</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  この学校の先生にURLを共有しましょう</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  教員用パスワードを教えてあげましょう</p>
+      <div class="join-btns teacher-btn">
+        <div class="join-left">
+          <button id="copyTeacherButton" class="join-copy-btn"><div id="copyedT"><i class="far fa-copy copy-icon"></i>  リンクをコピー</div></button>
+          <input id="copyTeacher" class="join-copy-text" type="text" value="<%= new_school_teacher_url(@current_school) %>" readonly>
+        </div>
+        <div class="join-right">
+          <%= link_to "ここから参加", new_school_teacher_path(@current_school), class: "join-btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <p class="join-box-title"><i class="fas fa-check-double"></i> 生徒に登録してもらう</p>  
+  <div class="join-box">
+    <div class="left-box">
+      <%= image_tag "547452.png", height: "75%" %>
+    </div>  
+    <div class="right-box">
+      <p class="join-head"><i class="fas fa-sign-in-alt join-icon"></i>  生徒の参加</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  この学校の生徒(保護者)にURLを共有しましょう</p>
+      <p class="join-message"><i class="fas fa-splotch join-icon"></i>  生徒用パスワードを教えてあげましょう</p>
+      <div class="join-btns student-btn">
+        <div class="join-left">
+          <button id="copyStudentButton" class="join-copy-btn"><div id="copyedS"><i class="far fa-copy copy-icon"></i>  リンクをコピー</div></button>
+          <input id="copyStudent" class="join-copy-text" type="text" value="<%= new_school_student_url(@current_school) %>" readonly>
+        </div>
+        <div class="join-right">
+          <%= link_to "生徒の参加", new_school_student_path(@current_school), class: "join-btn" %>
+        </div>
+      </div>
+    </div>
+  </div>
+    
   </div>
 </div>

@@ -1,39 +1,42 @@
 <div class="top-wrapper">
   <div class="container">
-    <%= form_with model: [@school, @student], url: school_students_path, local: true do |f| %>
+    <%= form_with model: [@school, @student], url: school_students_path, class: "school-form", local: true do |f| %>
+      <p class="form-head">生徒登録</p>
       <div class="form-group">
         <div class="label">学年</div>
-        <%= f.text_field :grade, class: "form", maxlength: 1 %>
+        <%= f.text_field :grade, class: "form", placeholder: "半角数字 1 ~ 3 で入力してください", maxlength: 1 %>
       </div>
       <div class="form-group">
         <div class="label">クラス</div>
-        <%= f.text_field :my_class, class: "form", maxlength: 2 %>
+        <%= f.text_field :my_class, class: "form", placeholder: "半角数字 1 ~ 入力してください", maxlength: 2 %>
       </div>
       <div class="form-group">
         <div class="label">出席番号</div>
-        <%= f.text_field :number, class: "form", maxlength: 2 %>
+        <%= f.text_field :number, class: "form", placeholder: "半角数字 1 ~ 入力してください", maxlength: 2 %>
       </div>
       <div class="form-group">
         <div class="label">苗字</div>
-        <%= f.text_field :last_name, class: "form" %>
+        <%= f.text_field :last_name, class: "form", placeholder: "例： 山田" %>
       </div>
       <div class="form-group">
         <div class="label">名前</div>
-        <%= f.text_field :first_name, class: "form" %>
+        <%= f.text_field :first_name, class: "form", placeholder: "例： 太郎" %>
       </div>
       <div class="form-group">
         <div class="label">苗字(カタカナ)</div>
-        <%= f.text_field :last_name_kana, class: "form" %>
+        <%= f.text_field :last_name_kana, class: "form", placeholder: "例： ヤマダ(全角カタカナで入力してください)" %>
       </div>
       <div class="form-group">
         <div class="label">名前(カタカナ)</div>
-        <%= f.text_field :first_name_kana, class: "form" %>
+        <%= f.text_field :first_name_kana, class: "form", placeholder: "例： タロウ(全角カタカナで入力してください)" %>
       </div>
       <div class="form-group">
         <div class="label">生徒確認パスワード</div>
-        <%= f.text_field :student_password, class: "form" %>
+        <%= f.text_field :student_password, class: "form", placeholder: "自分の学校のパスワードを入力してください" %>
       </div>
-      <%= f.submit '生徒登録する', class: "submit-btn" %>
+      <div class="form-btns">
+        <%= f.submit "生徒登録する", class: "submit-btn" %>
+      </div>
     <% end %>
   </div>
 </div>

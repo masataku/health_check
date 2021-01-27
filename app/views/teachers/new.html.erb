@@ -1,22 +1,25 @@
 <div class="top-wrapper">
   <div class="container">
-    <%= form_with model: [@school, @teacher], url: school_teachers_path, local: true do |f| %>
+    <%= form_with model: [@school, @teacher], url: school_teachers_path, class: "school-form", local: true do |f| %>
+      <p class="form-head">教員登録</p>
       <div class="form-group">
         <div class="label">学年</div>
-        <%= f.text_field :grade, class: "form", maxlength: 1 %>
+        <%= f.text_field :grade, class: "form", placeholder: "半角数字 1 ~ 3 で入力", maxlength: 1 %>
       </div>
       <div class="form-group">
         <div class="label">クラス</div>
-        <%= f.text_field :my_class, class: "form", maxlength: 2 %>
+        <%= f.text_field :my_class, class: "form", placeholder: "半角数字 1 ~ 入力", maxlength: 2 %>
       </div><div class="form-group">
         <div class="label">名前</div>
-        <%= f.text_field :name, class: "form" %>
+        <%= f.text_field :name, class: "form", placeholder: "例: 山田太郎(担任)" %>
       </div>
       <div class="form-group">
         <div class="label">教員確認パスワード</div>
-        <%= f.text_field :teacher_password, class: "form" %>
+        <%= f.text_field :teacher_password, class: "form", placeholder: "自分の学校のパスワードを入力してください" %>
       </div>
-      <%= f.submit '教員として入る', class: "submit-btn" %>
+      <div class="form-btns">
+        <%= f.submit "教員として入る", class: "submit-btn" %>
+      </div>
     <% end %>
   </div>
 </div>

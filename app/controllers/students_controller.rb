@@ -3,7 +3,16 @@ class StudentsController < ApplicationController
   before_action :forbit_logout_student, only: [:index]
   before_action :forbit_current_student, only: [:new, :create]
   def index
-    
+    @teachers = Teacher.where(school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
+    @teachers1 = @teachers.select do |t|
+      t.grade == 1
+    end  
+    @teachers2 = @teachers.select do |t|
+      t.grade == 2
+    end  
+    @teachers3 = @teachers.select do |t|
+      t.grade == 3
+    end  
   end  
   
   def new
@@ -17,7 +26,7 @@ class StudentsController < ApplicationController
       @student.student_password = "correct"
       @student.save
       session[:student_id] = @student.id
-      redirect_to school_students_path(@student.school)
+      redirect_to school_students_path(@student.school), notice: "登録できました"
     else
       render 'new'
     end    
@@ -25,7 +34,7 @@ class StudentsController < ApplicationController
 
   def destroy
     session[:student_id] = nil
-    redirect_to new_school_student_path
+    redirect_to new_school_student_path, notice: "あなたの情報を登録してください"
   end  
   
   private

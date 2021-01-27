@@ -1,27 +1,68 @@
-<%# <%= @current_student.first_name %>
-<%= link_to "セッション削除", school_student_path(@current_student.school, @current_student), method: :delete %>
+<%= javascript_pack_tag "slide" %>
+<div class="top-wrapper">
+  <div class="container">
+    <div class="parent-container">
+      <div class="left-container">
+        <div class="student-info-box">
+          <div class="name-info">
+            <div class="student-image"><i class="fas fa-user-alt"></i></div>
+            <div class="student-info">
+              <div class="my_class">
+                <%= "#{@current_student.grade}年 #{@current_student.my_class}組 #{@current_student.number}番" %>
+              </div>
+              <div class="my_name">
+                <%= "#{@current_student.last_name}  #{@current_student.first_name}" %>
+              </div>
+            </div>
+          </div>
+          <div class="checked-info">
+            <p><i class="fas fa-clipboard-check"></i>  本日のチェック</p>
+            <p>送信済みですor未送信です</p>
+          </div>
+          <div class="health-info">
+            <p>これまでの健康率</p>
+            <p>100%</p>
+          </div>
+        </div>
 
-<div class="parent-container">
-  <div class="left-container">
-    <div class="student-info-box">
-      <div class="name-info">
-        <div class="student-image"></div>
-        <div class="student-info">
-          <div class="my_class"></div>
-          <div class="my_name"></div>
+        <p class="check-box-title"><i class="fas fa-check-double"></i> 今日の健康チェックをする</p>  
+        <div class="check-box">  
+          <div class="left-box">
+            <%= image_tag "547458.png", height: "75%" %>
+          </div>
+          <div class="right-box">
+            <p class="check-head"><i class="fas fa-sign-in-alt check-icon"></i>  今日の健康チェック</p>
+            <p class="check-message"><i class="fas fa-splotch check-icon"></i>  本日の未送信or送信済みかをご確認ください</p>
+            <p class="check-message"><i class="fas fa-splotch check-icon"></i>  入力内容に間違いがないかをご確認ください</p>
+            <div class="check-btns">
+              <div class="btn-left">
+                <%= link_to "本日のCHECKを始める", new_school_student_check_path(@current_student.school, @current_student), class: "check-btn" %>
+              </div>
+              <div class="btn-right">
+                <div id="slide-btn" class="learn-btn">チェック項目確認</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="learn-box">
+          <ul id="slide-lists" class="learn-lists">
+            <li><i class="fas fa-check"></i>  体調について</li>
+            <li><i class="fas fa-check"></i>  症状の有無</li>
+            <li><i class="fas fa-check"></i>  朝ごはんを食べたか</li>
+            <li><i class="fas fa-check"></i>  就寝時刻はいつか</li>
+            <li><i class="fas fa-check"></i>  体温は何度か</li>
+            <li><i class="fas fa-check"></i>  出欠の確認</li>
+            <li><i class="fas fa-check"></i>  所見欄(任意)</li>
+          </ul>
         </div>
       </div>
-      <div class="checked-info">
-        <p><%= link_to "本日のCHECKを始める", new_school_student_check_path(@current_student.school, @current_student) %></p>
-        <p>送信済みですor未送信です</p>
-      </div>
-      <div class="health-info">
-        <p>これまでの健康率</p>
-        <p>100%</p>
+      <div class="right-container">
+        <%= render partial: "sheets/calendar" %>
+        <%= render partial: "teachers/index" %>
+        <%= image_tag "706164.png", class: "student-right-image" %>
       </div>
     </div>
   </div>
-  <div class="right-container">
-    カレンダー
-  </div>
 </div>
+
+<%= link_to "セッション削除", school_student_path(@current_student.school, @current_student), method: :delete %>

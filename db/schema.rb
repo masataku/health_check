@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_20_062034) do
+ActiveRecord::Schema.define(version: 2021_01_26_031846) do
 
   create_table "check_symptoms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "check_id", null: false
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_062034) do
     t.bigint "sheet_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "temperature_id", null: false
     t.index ["sheet_id"], name: "index_checks_on_sheet_id"
     t.index ["student_id"], name: "index_checks_on_student_id"
   end
@@ -48,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_01_20_062034) do
     t.string "student_password", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "head_teacher", null: false
   end
 
   create_table "sheets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

@@ -6,10 +6,11 @@ RSpec.describe Check, type: :model do
       @check = FactoryBot.build(:check)
     end  
     context '健康チェックの作成に成功する時' do
-      it 'date,condition_id,check,bed_time_id,symptoms_idが空ではない,
+      it 'date,condition_id,check,bed_time_id,symptoms_id,temperature_idが空ではない,
           condition_id,bed_time_id,symptoms_idは半角数字,
           condition_idは1~3が選ばれている,
           bed_time_idは2~12が選ばれている,
+          temperature_idは2~22が選ばれている,
           symptoms_idは1か2が選ばれている,
           breakfast,attend,leave_early,lateはtrueまたはfalseである,
           opinionは40字以内で入力されている' do
@@ -96,6 +97,26 @@ RSpec.describe Check, type: :model do
         @check.symptoms_id = 3
         @check.valid?
         expect(@check.errors.full_messages).to include("Symptoms must be less than 3")
+      end 
+      it 'temperature_idが空' do
+        @check.temperature_id = nil
+        @check.valid?
+        expect(@check.errors.full_messages).to include("Temperature can't be blank")
+      end 
+      it 'temperature_idが全角数字' do
+        @check.temperature_id = "２"
+        @check.valid?
+        expect(@check.errors.full_messages).to include("Temperature is not a number")
+      end   
+      it 'temperature_idが2より小さい' do
+        @check.temperature_id = 1
+        @check.valid?
+        expect(@check.errors.full_messages).to include("Temperature must be greater than 1")
+      end  
+      it 'temperature_idが22より大きい' do
+        @check.temperature_id = 23
+        @check.valid?
+        expect(@check.errors.full_messages).to include("Temperature must be less than 23")
       end 
       it 'breakfastがnil' do
         @check.breakfast = nil

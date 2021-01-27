@@ -1,9 +1,14 @@
 <div class="top-wrapper">
   <div class="container">
     <%= form_with model: @current_school, url: school_path, class: "school-form", local: true do |f| %>
+      <p class="form-head">学校編集</p>
       <div class="form-group">
         <div class="label">学校名</div>
         <%= f.text_field :school_name, class: "form" %>
+      </div>
+      <div class="form-group">
+        <div class="label">校長名</div>
+        <%= f.text_field :head_teacher, class: "form" %>
       </div>
       <div class="form-group">
         <div class="label">メールアドレス</div>
@@ -25,7 +30,10 @@
         <div class="label">新しいパスワード(確認)</div>
         <%= f.text_field :password_confirmation, class: "form" %>
       </div>
-      <%= f.submit 'Edit School', class: "submit-btn" %>
+      <div class="form-btns">
+        <%= f.submit "編集完了", class: "submit-btn" %>
+        <div class="back-btn"><%= link_to "やめる", school_path(@current_school) %></div>
+      </div>
     <% end %>
   </div>
 </div>

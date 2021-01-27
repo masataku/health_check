@@ -6,7 +6,7 @@ RSpec.describe School, type: :model do
       @school = FactoryBot.build(:school)
     end
     context '学校の作成がうまく行く時' do
-      it 'school_name,email,password,teacher_password,student_password,password_confirmationが空ではない.
+      it 'school_name,head_teacher,email,password,teacher_password,student_password,password_confirmationが空ではない.
           emailは@が含まれ,半角英数字と-_.の記号のみで入力されており,一意性がある.
           password,teacher_password,student_passwordは6文字以上で入力されている.
           password,teacher_password,student_passwordは半角英小文字数字のみでどちらも含まれる.
@@ -20,6 +20,11 @@ RSpec.describe School, type: :model do
         @school.school_name = nil
         @school.valid?
         expect(@school.errors.full_messages).to include("School name can't be blank")
+      end
+      it 'head_teacherが空' do
+        @school.head_teacher = nil
+        @school.valid?
+        expect(@school.errors.full_messages).to include("Head teacher can't be blank")
       end
       it 'emailが空' do
         @school.email = nil

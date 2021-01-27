@@ -1,38 +1,60 @@
-<div class="check-container">
-  <%= form_with model: [@current_student.school, @current_student, @check], url: school_student_checks_path, local: true do |f| %>
-    <div class="check-group">
-      <div class="check-label">Q1.今日の体調はいかがですか？</div>
-      <%= f.radio_button :condition_id, 1, checked: true %>元気
-      <%= f.radio_button :condition_id, 2 %>少し悪い
-      <%= f.radio_button :condition_id, 3 %>悪い
-    </div>
-    <div class="check-group">
-      <div class="check-label">Q2.何か症状はありますか？</div>
-      <%= f.radio_button :symptoms_id, 1, checked: true %>特に無し
-      <%= f.radio_button :symptoms_id, 2 %>有り
-      <%= collection_check_boxes(:check, :symptom_ids, Symptom.all, :id, :name) do |b| %>
-        <%= b.label {b.check_box + b.text} %>
-      <% end %>
-    </div>
-    <div class="check-group">
-      <div class="check-label">Q3.朝ごはんは食べましたか？</div>
-      <%= f.radio_button :breakfast, true, checked: true %>食べた
-      <%= f.radio_button :breakfast, false %>食べていない
-    </div>
-    <div class="check-group">
-      <div class="check-label">Q4.就寝時刻は何時ごろですか？</div>
-        就寝時刻<%= f.collection_select(:bed_time_id, BedTime.all, :id, :name, {}) %>
-    </div>
-    <div class="check-group">
-      <div class="check-label">Q5.本日の出欠確認</div>
-        <%= f.radio_button :attend, true, checked: true %>出席
-        <%= f.radio_button :attend, false %>欠席
-    </div>
-    <div class="check-group">
-      <div class="check-label">所見欄(任意)</div>
-      <%= f.text_area :opinion, row: "3" %>
-    </div>
-    保護者チェック欄<%= f.check_box :check %>
-    <%= f.submit "送信する" %>
-  <% end %>
+<%= javascript_pack_tag "symptoms_slide" %>
+<div class="top-wrapper">
+  <div class="container">
+    <p class="check-head">健康チェックシート</p>
+    <%= form_with model: [@current_student.school, @current_student, @check], url: school_student_checks_path, class: "check-container", local: true do |f| %>
+      <div class="check-group">
+        <div class="check-label">Q1.今日の体調はいかがですか？</div>
+        <p>
+          <%= f.radio_button :condition_id, 1, checked: true %><%= f.label :condition_id, '元気', value: 1 %>
+          <%= f.radio_button :condition_id, 2 %><%= f.label :condition_id, '少し悪い', value: 2 %>
+          <%= f.radio_button :condition_id, 3 %><%= f.label :condition_id, '悪い', value: 3 %>
+        </p>
+      </div>
+      <div class="check-group">
+        <div class="check-label">Q2.何か症状はありますか？</div>
+        <div class="symptoms-form">
+          <%= f.radio_button :symptoms_id, 1, checked: true, id: "not-symptoms" %><%= f.label :symptoms_id, '特に無し', for: "not-symptoms" %>
+          <%= f.radio_button :symptoms_id, 2, id: "has-symptoms" %><%= f.label :symptoms_id, '有り', for: "has-symptoms" %>
+        </div>
+        <div id="symptoms">
+        <p>
+          <%= collection_check_boxes(:check, :symptom_ids, Symptom.all, :id, :name) do |b| %>
+            <%= b.label {b.check_box + b.text} %>
+          <% end %>
+        </p>  
+        </div>
+      </div>
+      <div class="check-group">
+        <div class="check-label">Q3.朝ごはんは食べましたか？</div>
+        <p>
+          <%= f.radio_button :breakfast, true, checked: true %><%= f.label :breakfast, '食べた', value: "true" %>
+          <%= f.radio_button :breakfast, false %><%= f.label :breakfast, '食べていない', value: "false" %>
+        </p>
+      </div>
+      <div class="check-group">
+        <div class="check-label">Q4.就寝時刻は何時ごろですか？</div>
+        <p><%= f.label :bed_time_id, '就寝時刻' %><%= f.collection_select(:bed_time_id, BedTime.all, :id, :name, {}, class: "select-form") %></p>
+      </div>
+      <div class="check-group">
+        <div class="check-label">Q5.体温は何度ですか？</div>
+        <p><%= f.label :temperature_id, '体温' %><%= f.collection_select(:temperature_id, Temperature.all, :id, :name, {}, class: "select-form") %></p>
+      </div>
+      <div class="check-group">
+        <div class="check-label">Q6.本日の出欠確認</div>
+        <p>
+          <%= f.radio_button :attend, true, checked: true %><%= f.label :attend, '出席', value: "true" %>
+          <%= f.radio_button :attend, false %><%= f.label :attend, '欠席', value: "false" %>
+        </p>
+      </div>
+      <div class="check-group">
+        <div class="check-label">所見欄(任意)</div>
+        <p><%= f.text_area :opinion, rows: "4", value: "", class: "opinion-form", placeholder: "40字以内で入力してください" %></p>
+      </div>
+      <div class="check-group-submit">
+        <p><%= f.label :check, "保護者チェック欄" %><%= f.check_box :check %></p>
+        <%= f.submit "送信する", class: "check-submit-btn" %>
+      </div>
+    <% end %>
+  </div>
 </div>

@@ -3,7 +3,7 @@ class TeachersController < ApplicationController
   before_action :forbit_current_teacher, only: [:new, :create]
 
   def index
-    @sheets = Sheet.where(date: Date.today).order(grade: :asc, my_class: :asc)
+    @sheets = Sheet.where(date: Date.today, school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
     @teachers = Teacher.where(school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
     @teachers1 = @teachers.select do |t|
       t.grade == 1
@@ -27,7 +27,7 @@ class TeachersController < ApplicationController
       @teacher.teacher_password = "correct"
       @teacher.save
       session[:teacher_id] = @teacher.id
-      redirect_to school_teachers_path
+      redirect_to school_teachers_path, notice: "登録できました"
     else
       render 'new'
     end    
@@ -37,18 +37,19 @@ class TeachersController < ApplicationController
     @teacher = Teacher.find(params[:id])
     @teacher.destroy
     if @current_teacher == @teacher
-      redirect_to new_school_teacher_path(@teacher.school)
+      redirect_to new_school_teacher_path(@teacher.school), notice: "削除しました"
     else
-      redirect_to school_teachers_path(@current_teacher.school)
+      redirect_to school_teachers_path(@current_teacher.school), notice: "削除されました"
     end  
   end  
 
   
-  private 
+  private  
 
   def teacher_params
     params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: params[:school_id], year: fiscal_year)
   end 
+ 
   
   def forbit_current_teacher
     if @current_teacher
