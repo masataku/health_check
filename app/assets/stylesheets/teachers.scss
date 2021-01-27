@@ -44,6 +44,7 @@
         width: 20%;
         .sheet-teachers {
           overflow: scroll;
+          white-space: nowrap;
         }
       }
     }
@@ -110,7 +111,7 @@
       }
     }
     .right-image {
-      height: 50%;
+      height: 40%;
     }
   }
 }
