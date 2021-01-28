@@ -9,7 +9,7 @@
       <% if @current_school == nil %>
         <%= link_to "今すぐはじめる", new_school_path, class: "signup-btn" %>
       <% else %>
-        <%= link_to "#{@current_school.school_name}へ入る", school_path(@current_school), class: "signup-btn" %>
+        <%= link_to "#{@current_school.school_name}へ入る", school_path(@current_school), class: "signup-btn", data: {"turbolinks" => false} %>
       <% end %>  
     </div>
     <div class="catch-image">
