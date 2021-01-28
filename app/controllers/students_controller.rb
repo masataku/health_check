@@ -13,6 +13,9 @@ class StudentsController < ApplicationController
     @teachers3 = @teachers.select do |t|
       t.grade == 3
     end  
+    if @current_student.checks
+      @check = @current_student.checks.first
+    end
   end  
   
   def new

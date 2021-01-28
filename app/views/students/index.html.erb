@@ -17,7 +17,11 @@
           </div>
           <div class="checked-info">
             <p><i class="fas fa-clipboard-check"></i>  本日のチェック</p>
-            <p>送信済みですor未送信です</p>
+            <% if @check && @check.date == Date.today %>
+              <p>本日は送信済みです</p>
+            <% else %>
+              <p>本日は未送信です</p>  
+            <% end %>
           </div>
           <div class="health-info">
             <p>これまでの健康率</p>
