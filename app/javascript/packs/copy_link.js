@@ -22,4 +22,7 @@ window.addEventListener('load', () => {
     document.execCommand('Copy');
     copyedS.setAttribute('class', 'copyed');
   });
-}); 
+});
+
+
+

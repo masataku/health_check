@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'copy_link', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
@@ -23,7 +23,7 @@
           <% if current_page?(root_path) %>
             <% if @current_school %>
               <li class="header-list">
-                <%= link_to @current_school.school_name, school_path(@current_school) %>
+                <%= link_to @current_school.school_name, school_path(@current_school), data: {"turbolinks" => false} %>
               </li>
               <li class="header-list">
                 <%= link_to "学校を出る", logout_schools_path %>
@@ -45,7 +45,7 @@
             </li>
           <% elsif @current_school && current_page?(school_path(@current_school)) || @current_school && current_page?(confirm_school_path(@current_school)) || @current_school && current_page?(edit_school_path(@current_school)) %>
             <li class="header-list">
-              <%= link_to @current_school.school_name, school_path(@current_school) %>
+              <%= link_to @current_school.school_name, school_path(@current_school), data: {"turbolinks" => false} %>
             </li>
             <li class="header-list">
               <%= link_to "設定する", confirm_school_path(@current_school) %>
