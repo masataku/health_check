@@ -13,9 +13,11 @@
     <header>
       <div class="heading">
         <% if @current_school || current_page?(root_path) || current_page?(new_school_path) || current_page?(login_form_schools_path) %>
-          <%= link_to "HealthySchool", root_path %>
+          <%= link_to root_path do %>
+            <%= image_tag "logo (5).png", height: "65px" %>
+          <% end %>
         <% else %>
-          HealthySchool
+          <%= image_tag "logo (5).png", height: "65px" %>
         <% end %>
       </div>
       <div class="header-nav">  
@@ -76,7 +78,7 @@
     <% end %> 
     <%= yield %>
     <footer>
-      HealtySchool
+      Healthy School
     </footer>
   </body>
 </html>
