@@ -47,16 +47,20 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
   end
 
   def login_form
-    @school = School.new
+    
   end  
   
   def login
-    if @school = School.find_by(email: school_params[:email]) && @school.authenticate(school_params[:password])
-      session[:school_id] = @school.id
-      redirect_to school_path(@school), notice: "ログインしました"
+    if @school = School.find_by(email: school_params[:email])
+      if @school.authenticate(school_params[:password])
+        session[:school_id] = @school.id
+        redirect_to school_path(@school), notice: "ログインしました"
+      else
+        render 'login_form'
+      end  
     else
       render 'login_form'
-    end    
+    end  
   end  
 
   def logout
@@ -67,7 +71,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
   private
 
   def school_params 
-    params.permit(:school_name, :head_teacher, :email, :password, :password_confirmation, :teacher_password, :student_password)
+    params.require(:school).permit(:school_name, :head_teacher, :email, :password, :password_confirmation, :teacher_password, :student_password)
   end 
   
   def ensure_correct_school
