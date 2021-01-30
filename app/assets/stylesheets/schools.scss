@@ -40,10 +40,12 @@
     text-align: center;
     color: white;
     border-radius: 6px 6px;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.6;
+      transition: 0.4s;
+    }  
   }
-  .school-btn {
-
-  } 
 }
 
 // new.html.erb, login_form.html.erb/////////////////////////////////////////
