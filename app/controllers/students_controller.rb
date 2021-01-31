@@ -25,7 +25,7 @@ class StudentsController < ApplicationController
 
   def create
     @student = Student.new(student_params)
-    if @student.valid? && @student.student_password == @student.school.student_password && Student.find_by(grade: @student.grade, my_class: @student.my_class, number: @student.number, year: @student.year) == nil
+    if @student.valid? && @student.student_password == @student.school.student_password && Student.find_by(grade: @student.grade, my_class: @student.my_class, number: @student.number, year: @student.year, school_id: params[:school_id]) == nil
       @student.student_password = "correct"
       @student.save
       session[:student_id] = @student.id
