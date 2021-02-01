@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     end 
     collection do
       get 'login_form'
-      get 'login'
+      post 'login'
       get 'logout'
     end 
     resources :teachers, only: [:index, :new, :create, :destroy] do  

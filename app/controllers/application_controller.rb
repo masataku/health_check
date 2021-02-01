@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   
   def fiscal_year
     fiscal_year = Date.today.year
-    if Date.today.month == 1..3
+    if Date.today.month == 1 || Date.today.month == 2 || Date.today.month == 3
       return fiscal_year - 1
     else
       return fiscal_year

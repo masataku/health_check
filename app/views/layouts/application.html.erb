@@ -6,7 +6,7 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'copy_link', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'copy_link' %>
   </head>
 
   <body>
@@ -25,7 +25,7 @@
           <% if current_page?(root_path) %>
             <% if @current_school %>
               <li class="header-list">
-                <%= link_to @current_school.school_name, school_path(@current_school), data: {"turbolinks" => false} %>
+                <%= link_to @current_school.school_name, school_path(@current_school) %>
               </li>
               <li class="header-list">
                 <%= link_to "学校を出る", logout_schools_path %>
@@ -35,7 +35,7 @@
                 <%= link_to "新規学校作成", new_school_path %>
               </li>
               <li class="header-list">
-                <%= link_to "自分の学校へ行く", login_form_schools_path %>
+                <%= link_to "自分の学校へ行く", login_form_schools_path, class: "signin-btn" %>
               </li>
             <% end %>
           <% elsif current_page?(new_school_path) || current_page?(login_form_schools_path) %>
@@ -43,14 +43,14 @@
               <%= link_to "新規学校作成", new_school_path %>
             </li>
             <li class="header-list">
-              <%= link_to "自分の学校へ行く", login_form_schools_path %>
+              <%= link_to "自分の学校へ行く", login_form_schools_path, class: "signin-btn" %>
             </li>
           <% elsif @current_school && current_page?(school_path(@current_school)) || @current_school && current_page?(confirm_school_path(@current_school)) || @current_school && current_page?(edit_school_path(@current_school)) %>
             <li class="header-list">
-              <%= link_to @current_school.school_name, school_path(@current_school), data: {"turbolinks" => false} %>
+              <%= link_to @current_school.school_name, school_path(@current_school) %>
             </li>
             <li class="header-list">
-              <%= link_to "設定する", confirm_school_path(@current_school) %>
+              <%= link_to "設定する", confirm_school_path(@current_school), class: "confirm-btn" %>
             </li>
           <% elsif @current_teacher && current_page?(school_teachers_path(@current_teacher.school)) || @current_teacher && current_page?(school_sheets_path(@current_teacher.school)) || @current_teacher && current_page?(school_sheet_path(@current_teacher.school)) %> 
             <li class="header-list">

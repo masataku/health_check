@@ -103,8 +103,19 @@
               &:hover {
                 opacity: 0.6;
                 transition: 0.4s;
-
-                }
+              }
+            }
+            .checked-btn {
+              display: block;
+              width: 50%;
+              padding: 15px;
+              margin: 0 auto;
+              background: red;
+              color: white;
+              text-align: center;
+              font-size: 0.8rem;
+              border-radius: 6px 6px;
+              cursor: default;
             }    
           }
           .btn-right {

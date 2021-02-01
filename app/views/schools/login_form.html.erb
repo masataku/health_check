@@ -1,23 +1,25 @@
 <div class="top-wrapper">
   <div class="container">
-    <%= form_with model: @school, url: login_schools_path, class: "school-form", method: :get, local: true do |f| %>
-      <p class="form-head">学校へログイン</p>
-      <div class="form-group">
-        <div class="label">メールアドレス</div>
-        <%= f.text_field :email, class: "form", value: "" %>
-      </div>
-      <div class="form-group">
-        <div class="label">パスワード</div>
-        <%= f.password_field :password, class: "form" %>
-      </div>
-      <div class="form-group">
-        <div class="label">パスワード(確認)</div>
-        <%= f.password_field :password_confirmation, class: "form" %>
-      </div>
-      <div class="form-btns">
-        <%= f.submit "ログイン", class: "submit-btn" %>
-        <div class="back-btn"><%= link_to "Back", root_path %></div>
-      </div>  
-    <% end %>
+    <div class="school-form">
+      <%= form_for :school, url: login_schools_path, local: true do |f| %>
+        <p class="form-head">学校へログイン</p>
+        <div class="form-group">
+          <div class="label">メールアドレス</div>
+          <%= f.text_field :email, class: "form", value: "" %>
+        </div>
+        <div class="form-group">
+          <div class="label">パスワード</div>
+          <%= f.password_field :password, class: "form" %>
+        </div>
+        <div class="form-group">
+          <div class="label">パスワード(確認)</div>
+          <%= f.password_field :password_confirmation, class: "form" %>
+        </div>
+        <div class="form-btns">
+          <%= f.submit "ログイン", class: "submit-btn" %>
+          <div class="back-btn"><%= link_to "Back", root_path %></div>
+        </div>  
+      <% end %>
+    </div>
   </div>
 </div>

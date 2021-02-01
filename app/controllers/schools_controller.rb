@@ -47,7 +47,7 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
   end
 
   def login_form
-    @school = School.new
+    
   end  
   
   def login
@@ -57,10 +57,10 @@ before_action :forbit_login_school, only: [:new, :create, :login_form, :login]
         redirect_to school_path(@school), notice: "ログインしました"
       else
         render 'login_form'
-      end
+      end  
     else
-      render 'login_form'    
-    end    
+      render 'login_form'
+    end  
   end  
 
   def logout
