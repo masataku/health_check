@@ -27,7 +27,8 @@ class ChecksController < ApplicationController
     if sheet_today = Sheet.find_by(grade: @current_student.grade,
                                    my_class: @current_student.my_class,
                                    year: @current_student.year,
-                                   date: Date.today
+                                   date: Date.today,
+                                   school_id: params[:school_id]
                                   )
       return sheet_today.id
     else
