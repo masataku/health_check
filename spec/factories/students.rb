@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :student do
-    grade {2}
-    my_class {3}
+    grade {1}
+    my_class {2}
     number {12}
     first_name {Faker::Name.initials(number: 3)}
     last_name {Faker::Name.initials(number: 2)}
