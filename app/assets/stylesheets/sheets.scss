@@ -113,7 +113,10 @@
           .first-name-box {
             padding: 10px 5px;
             .first-name {
-
+              .not-attend {
+                color: red;
+                display: none;
+              }
             }
             .first-name-kana {
               font-size: 0.5rem;
@@ -133,6 +136,10 @@
           height: 100%;
           text-align: center;
           p {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
             border-left: 2px solid #eeeeee;
           }
           .p-1 {

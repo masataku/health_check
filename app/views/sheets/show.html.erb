@@ -24,70 +24,147 @@
       </div>
       <div class="sheet-main">
         <div class="main-left">
-          <% @students.each do |student| %>
-          <div class="student-box">
-            <div class="number-box"><%= student.number %>番</div>
-            <div class="name-box">
-              <div class="last-name-box">
-                <div class="last-name"><%= student.last_name %></div>
-                <div class="last-name-kana"><%= student.last_name_kana %></div>
-              </div>
-              <div class="first-name-box">
-                <div class="first-name"><%= student.first_name %></div>
-                <div class="first-name-kana"><%= student.first_name_kana %></div>
+          <% @students.each_with_index do |student, i| %>
+            <div id=<%= "s_#{i}" %> class="student-box">
+              <div class="number-box"><%= student.number %>番</div>
+              <div class="name-box">
+                <div class="last-name-box">
+                  <div class="last-name"><%= student.last_name %></div>
+                  <div class="last-name-kana"><%= student.last_name_kana %></div>
+                </div>
+                <div class="first-name-box">
+                  <div class="first-name"><%= student.first_name %><span class="not-attend">(欠)</span></div>
+                  <div class="first-name-kana"><%= student.first_name_kana %></div>
+                </div>
               </div>
             </div>
-          </div>
           <% end %>
         </div>
         <div class="main-right">
-          <% @students.each do |student| %>
+          <% @students.each_with_index do |student, i| %>
           <div class="main-checks-blank">
             <% @checks.each do |check| %>
               <% if student == check.student %>
               <div class="main-checks">
-                <p class="p-1">
-                  <% if check.condition_id == 1 %>
-                  ○
+                <% if check.condition_id == 1 %>
+                  <p class="p-1">
+                    ○
+                  </p>
                   <% elsif check.condition_id == 2 %>
-                  △
+                  <p class="p-1 caution">
+                    △
+                  <script>
+                    $(function(){
+                      $(".p-1.caution").css("background", "#ffeab6");
+                    });
+                  </script>
+                  </p>
                   <% elsif check.condition_id == 3 %>
-                  ×
-                  <% end %>
-                </p>
-                <p class="p-2">
-                  <% if check.symptoms_id == 1 %>
-                  なし
-                  <% elsif check.symptoms_id == 2 %>
-                  あり   
+                  <p class="p-1 danger">
+                    ×
+                  </p>
+                  <script>
+                    $(function(){
+                      $(".p-1.danger").css("background", "#ff8db3");
+                    });
+                  </script>
+                <% end %>
+                <% if check.symptoms_id == 1 %>
+                  <p class="p-2">
+                    なし
+                  </p>
+                <% elsif check.symptoms_id == 2 %>
+                  <p class="p-2 danger">
+                    あり   
                     <% symptoms = check.symptoms %>
                     <% symptoms.each do |symptom| %>
                       /<%= symptom.name %>
                     <% end %>
-                  <% end %>
-                </p>
-                <p class="p-3">
-                  <% if check.breakfast %>
-                  食べた
-                  <% else %>
-                  食べてない
-                  <% end %>
-                </p>
+                  </p>
+                  <script>
+                    $(function(){
+                      $(".p-2.danger").css("background", "#ff8db3");
+                    });
+                  </script>
+                <% end %>
+                <% if check.breakfast %>
+                  <p class="p-3">
+                    食べた
+                  </p>
+                <% else %>
+                  <p class="p-3 danger">
+                    食べてない
+                  </p>
+                  <script>
+                    $(function(){
+                      $(".p-3.danger").css("background", "#ff8db3");
+                    });
+                  </script>
+                <% end %>
+                <% if check.bed_time_id >= 2 && check.bed_time_id <= 7 %>
                 <p class="p-4">
-                  <%# <%= BedTime.data.detect{|o| o[:id] == check.bed_time_id}[:name] %>
                   <%= check.bed_time.name %>
                 </p>
-                <p class="p-5">
-                  <%= check.temperature.name %>
+                <% elsif check.bed_time_id >= 8 && check.bed_time_id <= 11 %>
+                <p class="p-4 caution">
+                  <%= check.bed_time.name %>
                 </p>
+                <script>
+                  $(function(){
+                    $(".p-4.caution").css("background", "#ffeab6");
+                  });
+                  </script>
+                <% else %>
+                <p class="p-4 danger">
+                  <%= check.bed_time.name %>
+                </p>
+                <script>
+                  $(function(){
+                    $(".p-4.danger").css("background", "#ff8db3");
+                  });
+                  </script>
+                <% end %>
+                <% if check.temperature_id >= 2 && check.temperature_id <=11 %>
+                  <p class="p-5">
+                    <%= check.temperature.name %>
+                  </p>
+                <% elsif check.temperature_id >= 12 && check.temperature_id <=14 %>
+                  <p class="p-5 caution">
+                    <%= check.temperature.name %>
+                  </p>
+                  <script>
+                  $(function(){
+                    $(".p-5.caution").css("background", "#ffeab6");
+                  });
+                  </script>
+                <% else %>
+                  <p class="p-5 danger">
+                    <%= check.temperature.name %>
+                  </p>
+                  <script>
+                  $(function(){
+                    $(".p-5.danger").css("background", "#ff8db3");
+                  });
+                  </script>
+                <% end %>
                 <p class="p-6"><%= check.opinion %></p>
-                <p class="p-7">
-                  <% if check.attend %>
-                  出席
-                  <% else %>
-                  欠席
-                  <% end %>
-                </p>
+                
+                <% if check.attend %>
+                  <p class="p-7">
+                    出席
+                  </p>
+                <% else %>
+                  <p class="p-7 danger">
+                    欠席
+                  <script>
+                    $(function(){
+                      $(".p-7.danger").css("background", "#ff8db3");
+                      $("#s_<%= i %>").css("color", "red");
+                      $("#s_<%= i %>").find(".not-attend").css("display", "inline");
+                    });
+                  </script>
+                  </p>
+                <% end %>
                 <p class="p-8">
                   <%= link_to "作成", "#" %>
                   <%= link_to "確認", "#" %>
