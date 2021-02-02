@@ -33,7 +33,7 @@ student_password: 12345a(生徒の新規登録に必要)
 
 # DEMO
 ### トップページ
-https://gyazo.com/512f453aba491fb81f7df35e26dd692a
+[![Image from Gyazo](https://i.gyazo.com/512f453aba491fb81f7df35e26dd692a.png)](https://gyazo.com/512f453aba491fb81f7df35e26dd692a)
 
 
 
