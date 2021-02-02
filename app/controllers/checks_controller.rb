@@ -1,5 +1,6 @@
 class ChecksController < ApplicationController
   before_action :forbit_logout_student
+  before_action :forbit_current_teacher
   before_action :ensure_correct_student
   before_action :already_checked_today
 

@@ -45,7 +45,7 @@
             <li class="header-list">
               <%= link_to "自分の学校へ行く", login_form_schools_path, class: "signin-btn" %>
             </li>
-          <% elsif @current_school && current_page?(school_path(@current_school)) || @current_school && current_page?(confirm_school_path(@current_school)) || @current_school && current_page?(edit_school_path(@current_school)) %>
+          <% elsif current_page?(school_path(@current_school)) || current_page?(confirm_school_path(@current_school)) || current_page?(edit_school_path(@current_school)) %>
             <li class="header-list">
               <%= link_to @current_school.school_name, school_path(@current_school) %>
             </li>

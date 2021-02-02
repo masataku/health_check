@@ -1,5 +1,6 @@
 class SheetsController < ApplicationController
   before_action :ensure_correct_teacher
+  before_action :forbit_current_student
 
   def index
     @sheets = Sheet.where(school_id: params[:school_id], date: params[:date]).order(grade: :asc, my_class: :asc)

@@ -2,6 +2,7 @@ class StudentsController < ApplicationController
   before_action :is_fiscal_year?
   before_action :forbit_logout_student, only: [:index]
   before_action :forbit_current_student, only: [:new, :create]
+  before_action :forbit_current_teacher
   def index
     @teachers = Teacher.where(school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
     @teachers1 = @teachers.select do |t|
@@ -37,7 +38,7 @@ class StudentsController < ApplicationController
 
   def destroy
     session[:student_id] = nil
-    redirect_to new_school_student_path, notice: "あなたの情報を登録してください"
+    redirect_to new_school_student_path, notice: "情報を登録してください"
   end  
   
   private
@@ -58,13 +59,6 @@ class StudentsController < ApplicationController
     @school = School.find(params[:school_id])
     if @current_student == nil
       redirect_to new_school_student_path(@school)  
-    end  
-  end
-
-  def forbit_current_student
-    if @current_student 
-      @school = School.find(params[:school_id])
-      redirect_to school_students_path(@school)
     end  
   end
   

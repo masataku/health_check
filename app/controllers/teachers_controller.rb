@@ -1,6 +1,7 @@
 class TeachersController < ApplicationController
   before_action :ensure_correct_teacher, only: [:index, :destroy]
   before_action :forbit_current_teacher, only: [:new, :create]
+  before_action :forbit_current_student
 
   def index
     @sheets = Sheet.where(date: Date.today, school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
@@ -49,13 +50,6 @@ class TeachersController < ApplicationController
   def teacher_params
     params.require(:teacher).permit(:name, :grade, :my_class, :teacher_password).merge(school_id: params[:school_id], year: fiscal_year)
   end 
- 
-  
-  def forbit_current_teacher
-    if @current_teacher
-      redirect_to school_teachers_path(@current_teacher.school)  
-    end  
-  end  
 
   def ensure_correct_teacher
     if @current_teacher == nil || @current_teacher.school.id != params[:school_id].to_i
