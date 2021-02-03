@@ -34,7 +34,13 @@ student_password: 12345a(生徒の新規登録に必要)
 # DEMO
 ### トップページ
 [![Image from Gyazo](https://i.gyazo.com/512f453aba491fb81f7df35e26dd692a.png)](https://gyazo.com/512f453aba491fb81f7df35e26dd692a)
-
+- トップページ中央の「今すぐはじめる」またはヘッダー右上の「新規学校作成」をクリックすると、新規学校作成フォームへ進めます。
+[![Image from Gyazo](https://i.gyazo.com/931885bdd8cc350a21edf4f860a79dee.gif)](https://gyazo.com/931885bdd8cc350a21edf4f860a79dee)
+- 新規登録ページで必要な情報を入力し、「この学校ではじめる」をクリックすると、登録が完了しマイページへ進みます。
+[![Image from Gyazo](https://i.gyazo.com/58601e26f7041daca99f6efe59144d8e.gif)](https://gyazo.com/58601e26f7041daca99f6efe59144d8e)
+- 右上の「自分の学校へ行く」をクリックすると、学校ログインフォームへ進めます。
+[![Image from Gyazo](https://i.gyazo.com/295729aaa820879988e21ab6792daf8a.gif)](https://gyazo.com/295729aaa820879988e21ab6792daf8a)
+- 
 
 
 # 工夫した点
