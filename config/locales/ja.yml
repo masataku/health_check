@@ -2,6 +2,8 @@ ja:
   activerecord:
     errors:
       messages:
+        not_select: 選択してください
+        not_check: "チェックをしてください"
         record_invalid: 'バリデーションに失敗しました: %{errors}'
         restrict_dependent_destroy:
           has_one: "%{record}が存在しているので削除できません"
@@ -31,3 +33,8 @@ ja:
         last_name_kana: 苗字(カタカナ)
         first_name_kana: 名前(カタカナ)
         student_password: 生徒用パスワード
+    attributes:
+      check:
+        bed_time_id: ""
+        temperature_id: ""
+        check: ""
