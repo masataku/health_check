@@ -57,10 +57,10 @@ before_action :forbit_current_student
         session[:school_id] = @school.id
         redirect_to school_path(@school), notice: "ログインしました"
       else
-        render 'login_form'
+        redirect_to login_form_schools_path, notice: "メールアドレスまたはパスワードが間違っています"
       end  
     else
-      render 'login_form'
+      redirect_to login_form_schools_path, notice: "メールアドレスまたはパスワードが間違っています"
     end  
   end  
 
