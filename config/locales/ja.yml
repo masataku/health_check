@@ -15,7 +15,7 @@ ja:
         head_teacher: 校長名
         email: メールアドレス
         password: パスワード
-        password_confirmation: 同じパスワード
+        password_confirmation: パスワードの確認
         teacher_password: 教員用パスワード
         student_password: 生徒用パスワード
       teacher:
@@ -36,3 +36,4 @@ ja:
         bed_time_id: ""
         temperature_id: ""
         check: ""
+        opinion: 所見欄

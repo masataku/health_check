@@ -31,117 +31,117 @@ RSpec.describe Check, type: :model do
       it 'dateが空' do
         @check.date = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Date can't be blank")
+        expect(@check.errors.full_messages).to include("Dateが未入力です")
       end  
       it 'condition_idが空' do
         @check.condition_id = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Condition can't be blank")
+        expect(@check.errors.full_messages).to include("Conditionが未入力です")
       end  
       it 'condition_idが全角数字' do
         @check.condition_id = "２"
         @check.valid?
-        expect(@check.errors.full_messages).to include("Condition is not a number")
+        expect(@check.errors.full_messages).to include("Conditionは数値で入力してください")
       end  
       it 'condition_idが1より小さい' do
         @check.condition_id = 0
         @check.valid?
-        expect(@check.errors.full_messages).to include("Condition must be greater than 0")
+        expect(@check.errors.full_messages).to include("Conditionは0より大きい値にしてください")
       end  
       it 'condition_idが3より大きい' do
         @check.condition_id = 4
         @check.valid?
-        expect(@check.errors.full_messages).to include("Condition must be less than 4")
+        expect(@check.errors.full_messages).to include("Conditionは4より小さい値にしてください")
       end  
       it 'checkが空' do
         @check.check = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Check can't be blank")
+        expect(@check.errors.full_messages).to include("チェックをしてください")
       end  
       it 'bed_time_idが空' do
         @check.bed_time_id = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Bed time can't be blank")
+        expect(@check.errors.full_messages).to include("が未入力です")
       end 
       it 'bed_time_idが全角数字' do
         @check.bed_time_id = "２"
         @check.valid?
-        expect(@check.errors.full_messages).to include("Bed time is not a number")
+        expect(@check.errors.full_messages).to include("選択してください")
       end   
       it 'bed_time_idが2より小さい' do
         @check.bed_time_id = 1
         @check.valid?
-        expect(@check.errors.full_messages).to include("Bed time must be greater than 1")
+        expect(@check.errors.full_messages).to include("選択してください")
       end 
       it 'bed_time_idが12より大きい' do
         @check.bed_time_id = 13
         @check.valid?
-        expect(@check.errors.full_messages).to include("Bed time must be less than 13")
+        expect(@check.errors.full_messages).to include("選択してください")
       end 
       it 'symptoms_idが空' do
         @check.symptoms_id = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Symptoms can't be blank")
+        expect(@check.errors.full_messages).to include("Symptomsが未入力です")
       end 
       it 'symptoms_idが全角数字' do
         @check.symptoms_id = "２"
         @check.valid?
-        expect(@check.errors.full_messages).to include("Symptoms is not a number")
+        expect(@check.errors.full_messages).to include("Symptomsは数値で入力してください")
       end   
       it 'symptoms_idが1より小さい' do
         @check.symptoms_id = 0
         @check.valid?
-        expect(@check.errors.full_messages).to include("Symptoms must be greater than 0")
+        expect(@check.errors.full_messages).to include("Symptomsは0より大きい値にしてください")
       end  
       it 'symptoms_idが2より大きい' do
         @check.symptoms_id = 3
         @check.valid?
-        expect(@check.errors.full_messages).to include("Symptoms must be less than 3")
+        expect(@check.errors.full_messages).to include("Symptomsは3より小さい値にしてください")
       end 
       it 'temperature_idが空' do
         @check.temperature_id = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Temperature can't be blank")
+        expect(@check.errors.full_messages).to include("が未入力です")
       end 
       it 'temperature_idが全角数字' do
         @check.temperature_id = "２"
         @check.valid?
-        expect(@check.errors.full_messages).to include("Temperature is not a number")
+        expect(@check.errors.full_messages).to include("選択してください")
       end   
       it 'temperature_idが2より小さい' do
         @check.temperature_id = 1
         @check.valid?
-        expect(@check.errors.full_messages).to include("Temperature must be greater than 1")
+        expect(@check.errors.full_messages).to include("選択してください")
       end  
       it 'temperature_idが22より大きい' do
         @check.temperature_id = 23
         @check.valid?
-        expect(@check.errors.full_messages).to include("Temperature must be less than 23")
+        expect(@check.errors.full_messages).to include("選択してください")
       end 
       it 'breakfastがnil' do
         @check.breakfast = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Breakfast is not included in the list")
+        expect(@check.errors.full_messages).to include("Breakfastは一覧にありません")
       end  
       it 'attendがnil' do
         @check.attend = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Attend is not included in the list")
+        expect(@check.errors.full_messages).to include("Attendは一覧にありません")
       end 
       it 'leave_earlyがnil' do
         @check.leave_early = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Leave early is not included in the list")
+        expect(@check.errors.full_messages).to include("Leave earlyは一覧にありません")
       end   
       it 'lateがnil' do
         @check.late = nil
         @check.valid?
-        expect(@check.errors.full_messages).to include("Late is not included in the list")
+        expect(@check.errors.full_messages).to include("Lateは一覧にありません")
       end  
       it 'opinionが40字より多く入力される' do
         @check.opinion = "あいうえおかきくけこさしすせそたちつてとなにぬねのはひふへほまみむめもやゆよらりるれろわおん"
         @check.valid?
-        expect(@check.errors.full_messages).to include("Opinion is too long (maximum is 40 characters)")
+        expect(@check.errors.full_messages).to include("所見欄は40文字以内で入力してください")
       end  
     end  
   end  

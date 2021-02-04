@@ -61,6 +61,9 @@
         <div class="check-label">所見欄(任意)</div>
         <div class="check-form">
           <%= f.text_area :opinion, rows: "4", value: "", class: "opinion-form", placeholder: "40字以内で入力してください" %>
+          <% @check.errors.full_messages_for(:opinion).each do |message| %>
+            <p><%= message %></p>
+        <% end %>
         </div>
       </div>
       <div class="check-group-submit">

@@ -15,7 +15,7 @@ RSpec.describe Symptom, type: :model do
       it 'nameが空' do
         @symptom.name = nil
         @symptom.valid?
-        expect(@symptom.errors.full_messages).to include("Name can't be blank")
+        expect(@symptom.errors.full_messages).to include("Nameが未入力です")
       end  
     end  
   end  
