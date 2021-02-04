@@ -2,7 +2,7 @@ class StudentsController < ApplicationController
   before_action :is_fiscal_year?
   before_action :forbit_logout_student, only: [:index]
   before_action :forbit_current_student, only: [:new, :create]
-  before_action :forbit_current_teacher
+  
   def index
     @teachers = Teacher.where(school_id: params[:school_id]).order(grade: :asc, my_class: :asc)
     @teachers1 = @teachers.select do |t|

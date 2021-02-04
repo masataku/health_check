@@ -29,7 +29,7 @@ class ApplicationController < ActionController::Base
   end  
 
   def forbit_current_student
-    if @current_school && @current_student || @current_teacher && @current_student
+    if @current_school || @current_teacher || @current_school && @current_student || @current_teacher && @current_student
       return
     elsif @current_student    
       redirect_to school_students_path(@current_student.school)
