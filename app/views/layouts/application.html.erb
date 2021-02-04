@@ -25,7 +25,9 @@
             <%= image_tag "logo (5).png", height: "65px" %>
           <% end %>
         <% else %>
-          <%= image_tag "logo (5).png", height: "65px" %>
+          <%= link_to root_path do %>
+            <%= image_tag "logo (5).png", height: "65px" %>
+          <% end %>  
         <% end %>
       </div>
       <div class="header-nav">  
