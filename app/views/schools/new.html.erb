@@ -6,30 +6,51 @@
       <div class="form-group">
         <div class="label">学校名</div>
         <%= f.text_field :school_name, class: "form", placeholder: "(例) 青山中学校" %>
+        <% @school.errors.full_messages_for(:school_name).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="label">校長名</div>
         <%= f.text_field :head_teacher, class: "form", placeholder: "(例) 青山太郎" %>
+        <% @school.errors.full_messages_for(:head_teacher).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="label">メールアドレス</div>
         <%= f.text_field :email, class: "form", placeholder: "(例) Example-school@example.com" %>
+        <% @school.errors.full_messages_for(:email).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="label">パスワード</div>
         <%= f.password_field :password, class: "form", placeholder: "6字以上 半角英小文字,数字どちらも含む" %>
+        <% @school.errors.full_messages_for(:password).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="label">パスワード(確認)</div>
         <%= f.password_field :password_confirmation, class: "form", placeholder: "同じパスワードを入力してください" %>
+        <% @school.errors.full_messages_for(:password_confirmation).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="label">教員用パスワード</div>
         <%= f.password_field :teacher_password, class: "form", placeholder: "6字以上 半角英小文字,数字どちらも含む" %>
+        <% @school.errors.full_messages_for(:teacher_password).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="label">生徒用パスワード</div>
         <%= f.password_field :student_password, class: "form", placeholder: "6字以上 半角英小文字,数字どちらも含む" %>
+        <% @school.errors.full_messages_for(:student_password).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-btns">
         <%= f.submit "この学校ではじめる", class: "submit-btn" %>

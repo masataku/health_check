@@ -27,7 +27,7 @@
       border-bottom: 1px solid #eee;
       font-size: 1.5rem;
     }
-    p {
+    .check-form {
       padding: 40px 0;
       border-bottom: 1px solid #eee;
       font-size: 1.5rem;
@@ -36,9 +36,16 @@
         font-size: 1.5rem;
         opacity: 0.6;
       }
+      p {
+        margin-top: 10px;
+        color: #ff8db3;
+        font-size: 1.2rem;
+      }
     }
     .opinion-form {
+      width: 50%;
       border: 1px solid #5876a3;
+      font-size: 2rem;
       &:focus {
         outline: none;
         border: 1px solid #8be0e6;
@@ -48,12 +55,15 @@
   }
   .check-group-submit {
     text-align: center;
+    padding: 40px;
     p {
-      padding: 30px;
+      margin-top: 10px;
+      color: #ff8db3;
+      font-size: 1.2rem;
     }
     .check-submit-btn {
       padding: 15px 60px;
-      margin-bottom: 40px;
+      margin: 30px 0;
       background: rgb(48, 200, 214);
       border: 1px solid rgb(48, 200, 214);
       color: white;

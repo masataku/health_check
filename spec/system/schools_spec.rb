@@ -61,7 +61,7 @@ RSpec.describe "Schools", type: :system do
         fill_in "school_password", with: @school.password
         fill_in "school_password_confirmation", with: @school.password_confirmation
         find('input[name="commit"]').click
-        expect(current_path).to eq "/schools/login"
+        expect(current_path).to eq "/schools/login_form"
       end
     end  
   end

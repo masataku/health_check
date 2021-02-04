@@ -1,0 +1,39 @@
+ja:
+  activerecord:
+    errors:
+      messages:
+        blank: が未入力です
+        not_select: 選択してください
+        not_check: "チェックをしてください"
+        record_invalid: 'バリデーションに失敗しました: %{errors}'
+        restrict_dependent_destroy:
+          has_one: "%{record}が存在しているので削除できません"
+          has_many: "%{record}が存在しているので削除できません"
+    attributes:
+      school:
+        school_name: 学校名
+        head_teacher: 校長名
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワードの確認
+        teacher_password: 教員用パスワード
+        student_password: 生徒用パスワード
+      teacher:
+        grade: 学年
+        my_class: 組番号
+        name: 名前
+        teacher_password: 教員用パスワード
+      student:
+        grade: 学年
+        my_class: 組番号
+        number: 出席番号
+        last_name: 苗字
+        first_name: 名前
+        last_name_kana: 苗字(カタカナ)
+        first_name_kana: 名前(カタカナ)
+        student_password: 生徒用パスワード
+      check:
+        bed_time_id: ""
+        temperature_id: ""
+        check: ""
+        opinion: 所見欄

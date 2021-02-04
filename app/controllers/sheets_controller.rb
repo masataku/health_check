@@ -1,6 +1,7 @@
 class SheetsController < ApplicationController
   before_action :ensure_correct_teacher
   before_action :forbit_current_student
+  before_action :ensure_correct_teacher
 
   def index
     @sheets = Sheet.where(school_id: params[:school_id], date: params[:date]).order(grade: :asc, my_class: :asc)
@@ -23,6 +24,12 @@ class SheetsController < ApplicationController
   end
 
   private 
+
+  def ensure_correct_teacher
+    if @current_teacher == nil || @current_teacher.school.id != params[:school_id].to_i
+      redirect_to root_path
+    end  
+  end  
 
   def ensure_correct_teacher
     if @current_teacher == nil || @current_teacher.school.id != params[:school_id].to_i

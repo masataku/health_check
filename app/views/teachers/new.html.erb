@@ -5,17 +5,30 @@
       <div class="form-group">
         <div class="label">学年</div>
         <%= f.text_field :grade, class: "form", placeholder: "半角数字 1 ~ 3 で入力", maxlength: 1 %>
+        <% @teacher.errors.full_messages_for(:grade).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
         <div class="label">クラス</div>
         <%= f.text_field :my_class, class: "form", placeholder: "半角数字 1 ~ 入力", maxlength: 2 %>
-      </div><div class="form-group">
-        <div class="label">名前</div>
-        <%= f.text_field :name, class: "form", placeholder: "例: 山田太郎(担任)" %>
+        <% @teacher.errors.full_messages_for(:my_class).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-group">
-        <div class="label">教員確認パスワード</div>
+        <div class="label">名前</div>
+        <%= f.text_field :name, class: "form", placeholder: "例: 山田太郎(担任)" %>
+        <% @teacher.errors.full_messages_for(:name).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
+      </div>
+      <div class="form-group">
+        <div class="label">教員確認パスワード(※正しく入力されないと登録できません)</div>
         <%= f.text_field :teacher_password, class: "form", placeholder: "自分の学校のパスワードを入力してください" %>
+        <% @teacher.errors.full_messages_for(:teacher_password).each do |message| %>
+          <p><%= message %></p>
+        <% end %>
       </div>
       <div class="form-btns">
         <%= f.submit "教員として入る", class: "submit-btn" %>

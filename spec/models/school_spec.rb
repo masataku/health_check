@@ -19,123 +19,123 @@ RSpec.describe School, type: :model do
       it 'school_nameが空' do
         @school.school_name = nil
         @school.valid?
-        expect(@school.errors.full_messages).to include("School name can't be blank")
+        expect(@school.errors.full_messages).to include("学校名が未入力です")
       end
       it 'head_teacherが空' do
         @school.head_teacher = nil
         @school.valid?
-        expect(@school.errors.full_messages).to include("Head teacher can't be blank")
+        expect(@school.errors.full_messages).to include("校長名が未入力です")
       end
       it 'emailが空' do
         @school.email = nil
         @school.valid?
-        expect(@school.errors.full_messages).to include("Email can't be blank")
+        expect(@school.errors.full_messages).to include("メールアドレスが未入力です")
       end
       it 'emailに @ が含まれない' do
         @school.email = "123-ab_c.com"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Email を適切に入力してください")
+        expect(@school.errors.full_messages).to include("メールアドレスを適切に入力してください")
       end
       it 'emailに全角英大文字が含まれる' do
         @school.email = "Ａbcd@123.com"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Email を適切に入力してください")
+        expect(@school.errors.full_messages).to include("メールアドレスを適切に入力してください")
       end
       it 'emailに全角英小文字が含まれる' do
         @school.email = "ａbcd@123.com"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Email を適切に入力してください")
+        expect(@school.errors.full_messages).to include("メールアドレスを適切に入力してください")
       end
       it 'emailが一意性がない' do
         another_school = FactoryBot.create(:school)
         @school.email = another_school.email
         @school.valid?
-        expect(@school.errors.full_messages).to include("Email has already been taken")
+        expect(@school.errors.full_messages).to include("メールアドレスはすでに存在します")
       end
       it 'passwordが空' do
         @school.password = nil
         @school.valid?
-        expect(@school.errors.full_messages).to include("Password can't be blank")
+        expect(@school.errors.full_messages).to include("パスワードが未入力です")
       end
       it 'passwordが5文字以下' do
         @school.password = "1234a"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("パスワードを適切に入力してください")
       end
       it 'passwordに全角英大文字が含まれる' do
         @school.password = "1234aＡ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("パスワードを適切に入力してください")
       end
       it 'passwordに全角英小文字が含まれる' do
         @school.password = "1234aｂ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("パスワードを適切に入力してください")
       end
       it 'passwordに全角文字が含まれる' do
         @school.password = "1234aあ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("パスワードを適切に入力してください")
       end
       it 'password_confirmationが空' do
         @school.password_confirmation = nil
         @school.valid?
-        expect(@school.errors.full_messages).to include("Password confirmation can't be blank")
+        expect(@school.errors.full_messages).to include("パスワードの確認が未入力です")
       end  
       it 'passwordとpassword_confirmationが不一致' do
         @school.password_confirmation = "12345b"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Password confirmation doesn't match Password")
+        expect(@school.errors.full_messages).to include("パスワードの確認とパスワードの入力が一致しません")
       end
       it 'teacher_passwordが空' do
         @school.teacher_password = nil
         @school.valid?
-        expect(@school.errors.full_messages).to include("Teacher password can't be blank")
+        expect(@school.errors.full_messages).to include("教員用パスワードが未入力です")
       end
       it 'teacher_passwordが5文字以下' do
         @school.teacher_password = "1234a"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Teacher password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("教員用パスワードを適切に入力してください")
       end
       it 'teacher_passwordに全角英大文字が含まれる' do
         @school.teacher_password = "1234aＢ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Teacher password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("教員用パスワードを適切に入力してください")
       end
       it 'teacher_passwordに全角英小文字が含まれる' do
         @school.teacher_password = "1234aｂ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Teacher password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("教員用パスワードを適切に入力してください")
       end
       it 'teacher_passwordに全角文字が含まれる' do
         @school.teacher_password = "1234aあ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Teacher password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("教員用パスワードを適切に入力してください")
       end
       it 'student_passwordが空' do
         @school.student_password = nil
         @school.valid?
-        expect(@school.errors.full_messages).to include("Student password can't be blank")
+        expect(@school.errors.full_messages).to include("生徒用パスワードが未入力です")
       end
       it 'student_passwordが5文字以下' do
         @school.student_password = "1234a"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Student password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("生徒用パスワードを適切に入力してください")
       end
       it 'student_passwordに全角英大文字が含まれる' do
         @school.student_password = "1234aＢ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Student password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("生徒用パスワードを適切に入力してください")
       end
       it 'student_passwordに全角英小文字が含まれる' do
         @school.student_password = "1234aｂ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Student password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("生徒用パスワードを適切に入力してください")
       end
       it 'student_passwordに全角文字が含まれる' do
         @school.student_password = "1234aあ"
         @school.valid?
-        expect(@school.errors.full_messages).to include("Student password を適切に入力してください")
+        expect(@school.errors.full_messages).to include("生徒用パスワードを適切に入力してください")
       end
     end
   end

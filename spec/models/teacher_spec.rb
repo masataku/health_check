@@ -17,67 +17,67 @@ RSpec.describe Teacher, type: :model do
       it "nameが空" do
         @teacher.name = nil
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Name can't be blank")
+        expect(@teacher.errors.full_messages).to include("名前が未入力です")
       end  
       it "gradeが空" do
         @teacher.grade = nil
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Grade can't be blank")
+        expect(@teacher.errors.full_messages).to include("学年が未入力です")
       end
       it "gradeが全角数字" do
         @teacher.grade = "３"
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Grade is not a number")
+        expect(@teacher.errors.full_messages).to include("学年は数値で入力してください")
       end
       it "gradeが1より小さい" do
         @teacher.grade = 0
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Grade must be greater than 0")
+        expect(@teacher.errors.full_messages).to include("学年は0より大きい値にしてください")
       end
       it "gradeが3より大きい" do
         @teacher.grade = 4
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Grade must be less than 4")
+        expect(@teacher.errors.full_messages).to include("学年は4より小さい値にしてください")
       end
       it "my_classが空" do
         @teacher.my_class = nil
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("My class can't be blank")
+        expect(@teacher.errors.full_messages).to include("組番号が未入力です")
       end  
       it "my_classが全角数字" do
         @teacher.my_class = "３"
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("My class is not a number")
+        expect(@teacher.errors.full_messages).to include("組番号は数値で入力してください")
       end
       it "my_classが1より小さい" do
         @teacher.my_class = 0
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("My class must be greater than 0")
+        expect(@teacher.errors.full_messages).to include("組番号は0より大きい値にしてください")
       end
       it "yearが空" do
         @teacher.year = nil
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Year can't be blank")
+        expect(@teacher.errors.full_messages).to include("Yearが未入力です")
       end  
       it "yearが全角数字" do
         @teacher.year = "２０２０"
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Year is not a number")
+        expect(@teacher.errors.full_messages).to include("Yearは数値で入力してください")
       end  
       it "yearが4より小さい" do
         @teacher.year = 202
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Year is the wrong length (should be 4 characters)")
+        expect(@teacher.errors.full_messages).to include("Yearは4文字で入力してください")
       end  
       it "yearが4より大きい" do
         @teacher.year = 20200
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Year is the wrong length (should be 4 characters)")
+        expect(@teacher.errors.full_messages).to include("Yearは4文字で入力してください")
       end  
       it "teacher_passwordが空" do
         @teacher.teacher_password = nil
         @teacher.valid?
-        expect(@teacher.errors.full_messages).to include("Teacher password can't be blank")
+        expect(@teacher.errors.full_messages).to include("教員用パスワードが未入力です")
       end
     end  
   end
