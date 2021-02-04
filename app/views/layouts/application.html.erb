@@ -16,6 +16,10 @@
           <%= link_to root_path do %>
             <%= image_tag "logo (5).png", height: "65px" %>
           <% end %>
+        <% elsif @current_student && current_page?(school_students_path(@current_student.school)) || @current_student && current_page?(new_school_student_check_path(@current_student.school, @current_student)) %>
+          <%= link_to school_students_path(@current_student.school) do %>
+            <%= image_tag "logo (5).png", height: "65px" %>
+          <% end %>
         <% else %>
           <%= image_tag "logo (5).png", height: "65px" %>
         <% end %>

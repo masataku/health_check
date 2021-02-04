@@ -1,7 +1,6 @@
 class SchoolsController < ApplicationController
 before_action :ensure_correct_school, only: [:show, :confirm, :edit, :update]
 before_action :forbit_current_school, only: [:new, :create, :login_form, :login]
-before_action :forbit_current_student
 
   def index
     @schools = School.all
