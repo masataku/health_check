@@ -64,11 +64,14 @@
         </div>
       </div>
       <div class="check-group-submit">
-        <%= f.label :check, "保護者チェック欄" %><%= f.check_box :check %>
+        <div>
+          <%= f.label :check, "保護者チェック欄" %><%= f.check_box :check %>
+        </div>
         <% @check.errors.full_messages_for(:check).each do |message| %>
           <p><%= message %></p>
         <% end %>
         <%= f.submit "送信する", class: "check-submit-btn" %>
+        <div class="back-btn"><%= link_to "Back", school_students_path(@current_student.school) %></div>
       </div>
     <% end %>
   </div>
