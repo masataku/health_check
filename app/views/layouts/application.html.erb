@@ -4,7 +4,7 @@
     <title>HealthCheck</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'copy_link' %>
   </head>
@@ -14,19 +14,23 @@
       <div class="heading">
         <% if @current_school %>
           <%= link_to root_path do %>
-            <%= image_tag "logo (5).png", height: "65px" %>
+            <%= image_tag "logo (5).png", class: "heading-image-big" %>
+            <%= image_tag "logo (8).png", class: "heading-image-small", height: "10px" %>
           <% end %>
         <% elsif @current_teacher %>
           <%= link_to school_teachers_path(@current_teacher.school) do %>
-            <%= image_tag "logo (5).png", height: "65px" %>
+            <%= image_tag "logo (5).png", class: "heading-image-big" %>
+            <%= image_tag "logo (8).png", class: "heading-image-small" %>
           <% end %>
         <% elsif @current_student %>
           <%= link_to school_students_path(@current_student.school) do %>
-            <%= image_tag "logo (5).png", height: "65px" %>
+            <%= image_tag "logo (5).png", class: "heading-image-big" %>
+            <%= image_tag "logo (8).png", class: "heading-image-small" %>
           <% end %>
         <% else %>
           <%= link_to root_path do %>
-            <%= image_tag "logo (5).png", height: "65px" %>
+            <%= image_tag "logo (5).png", class: "heading-image-big" %>
+            <%= image_tag "logo (8).png", class: "heading-image-small" %>
           <% end %>  
         <% end %>
       </div>
@@ -42,19 +46,19 @@
               </li>
             <% else %>
               <li class="header-list">
-                <%= link_to "新規学校作成", new_school_path %>
+                <%= link_to "新規学校作成", new_school_path, class: "signup-btn" %>
               </li>
               <li class="header-list">
-                <%= link_to "自分の学校へ行く", login_form_schools_path, class: "signin-btn" %>
+                <%= link_to "ログイン", login_form_schools_path, class: "signin-btn" %>
               </li>
             <% end %>
           <% end %>  
           <% if current_page?(new_school_path) || current_page?(login_form_schools_path) %>
             <li class="header-list">
-              <%= link_to "新規学校作成", new_school_path %>
+              <%= link_to "新規学校作成", new_school_path, class: "signup-btn" %>
             </li>
             <li class="header-list">
-              <%= link_to "自分の学校へ行く", login_form_schools_path, class: "signin-btn" %>
+              <%= link_to "ログイン", login_form_schools_path, class: "signin-btn" %>
             </li>
           <% end %>  
           <% if @current_school && current_page?(school_path(@current_school)) || @current_school && current_page?(confirm_school_path(@current_school)) || @current_school && current_page?(edit_school_path(@current_school)) %>
