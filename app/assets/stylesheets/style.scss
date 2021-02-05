@@ -23,6 +23,12 @@ header {
     align-items: center;
     width: 50%;
     font-size: 30px;
+    .heading-image-big {
+      height: 65px;
+    }
+    .heading-image-small {
+      display: none;
+    }
   }
   .header-nav {
     width: 50%;
@@ -33,12 +39,6 @@ header {
       align-items: center;
       .header-list {
         margin-left: 50px;
-        .heading-image-big {
-          height: 65px;
-        }
-        .heading-image-small {
-          display: none;
-        }
       }
       .name {
         color: black;
@@ -187,7 +187,7 @@ footer {
   footer {
     background: white;
     border-top: 1px solid #eee;
-    padding: 30px 50px;
-    font-size: 2rem;
+    padding: 30px 20px;
+    font-size: 1rem;
   }
 }

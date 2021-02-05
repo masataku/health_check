@@ -46,7 +46,7 @@
               </li>
             <% else %>
               <li class="header-list">
-                <%= link_to "新規学校作成", new_school_path, class: "signup-btn" %>
+                <%= link_to "新規学校登録", new_school_path, class: "signup-btn" %>
               </li>
               <li class="header-list">
                 <%= link_to "ログイン", login_form_schools_path, class: "signin-btn" %>
@@ -55,7 +55,7 @@
           <% end %>  
           <% if current_page?(new_school_path) || current_page?(login_form_schools_path) %>
             <li class="header-list">
-              <%= link_to "新規学校作成", new_school_path, class: "signup-btn" %>
+              <%= link_to "新規学校登録", new_school_path, class: "signup-btn" %>
             </li>
             <li class="header-list">
               <%= link_to "ログイン", login_form_schools_path, class: "signin-btn" %>
