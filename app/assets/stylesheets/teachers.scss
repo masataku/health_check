@@ -1,117 +1,252 @@
-.parent-container {
-  display: flex;
-  margin: 60px 140px;
-  .left-container {
-    width: 68%;
-    .sheet-head {
-      margin-bottom: 30px;
-      border-bottom: 1px solid #eeeeee;
-      font-size: 2.5rem;
-      text-align: center;
+@media (min-width: 1024px) {
+  .parent-container {
+    display: flex;
+    margin: 60px 140px;
+    .left-container {
+      width: 68%;
+      .sheet-head {
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eeeeee;
+        font-size: 2.5rem;
+        text-align: center;
+      }
+      .sheets-links {
+        background-color: white;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 0;
+        margin-bottom: 80px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        &:hover {
+          background: #eeeeee;
+          transition: 0.4s;
+        }
+        .sheet-image-box {
+          position: relative;
+          width: 20%;
+          .sheet-link-image {
+            position: absolute;
+            top: -45px;
+            height: 80px;
+          }
+        }
+        .sheet-link-class {
+          width: 30%;
+          p {
+            padding: 5px 0;
+            font-size: 1.2rem;
+          }
+        }  
+        .sheet-link-date {
+          width: 30%;
+        }
+        .sheet-link-teacher {
+          width: 20%;
+          .sheet-teachers {
+            overflow: scroll;
+            white-space: nowrap;
+          }
+        }
+      }
     }
-    .sheets-links {
-      background-color: white;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      padding: 20px 0;
-      margin-bottom: 80px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      &:hover {
-        background: #eeeeee;
-        transition: 0.4s;
+    .right-container {
+      width: 32%;
+      margin-left: 40px;
+      .right-title {
+        margin-bottom: 10px;
       }
-      .sheet-image-box {
-        position: relative;
-        width: 20%;
-        .sheet-link-image {
-          position: absolute;
-          top: -45px;
-          height: 80px;
-        }
-      }
-      .sheet-link-class {
-        width: 30%;
+      .calendor {
+        padding: 20px 0 20px 20px;
+        margin-bottom: 50px;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         p {
-          padding: 5px 0;
-          font-size: 1.2rem;
+          padding-left: 13px;
+          font-size: 0.8rem;
         }
-      }  
-      .sheet-link-date {
-        width: 30%;
+        .calendor-form {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          .calendor-btn {
+            padding: 5px 10px;
+            background: rgb(48, 200, 214);
+            color: white;
+            font-size: 0.6rem;
+            border-style: none;
+            border-radius: 6px 6px;
+            &:hover {
+              opacity: 0.6;
+              transition: 0.4s;
+              cursor: pointer;
+            }
+          }
+        }
       }
-      .sheet-link-teacher {
-        width: 20%;
-        .sheet-teachers {
-          overflow: scroll;
-          white-space: nowrap;
+      .teachers {
+        padding: 10px 20px;
+        margin-bottom: 50px;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        p {
+          margin-top: 20px;
+          border-bottom: 1px solid #eeeeee;
+        }
+        .teachers-lists {
+          display: flex;
+          justify-content: space-between;
+          li {
+            padding: 10px 0;
+            overflow: scroll;
+          }
+          .teacher-delete {
+            padding: 10px 0;
+            color: red;
+            opacity: 0.3;
+            &:hover {
+              opacity: 1;
+              transition: 0.4s;
+            }
+          }
+        }
+      }
+      .teacher-right-image {
+        .right-image {
+          height: 200px;
         }
       }
     }
   }
-  .right-container {
-    width: 32%;
-    margin-left: 40px;
-    .right-title {
-      margin-bottom: 10px;
-    }
-    .calendor {
-      padding: 20px 0 20px 20px;
-      margin-bottom: 50px;
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      p {
-        padding-left: 13px;
-        font-size: 0.8rem;
+}  
+
+
+@media (max-width: 380px) {
+  .parent-container {
+    width: 100%;
+    .left-container {
+      width: 100%;
+      .sheet-head {
+        margin-top: 40px;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eeeeee;
+        font-size: 2rem;
+        text-align: center;
       }
-      .calendor-form {
+      .sheets-links {
+        background-color: white;
         display: flex;
         justify-content: space-around;
         align-items: center;
-        .calendor-btn {
-          padding: 5px 10px;
-          background: rgb(48, 200, 214);
-          color: white;
-          font-size: 0.6rem;
-          border-style: none;
-          border-radius: 6px 6px;
-          &:hover {
-            opacity: 0.6;
-            transition: 0.4s;
-            cursor: pointer;
+        padding: 10px 0;
+        margin-bottom: 40px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        border-radius: 6px 6px;
+        &:active {
+          background: #eeeeee;
+          transition: 0.4s;
+        }
+        .sheet-image-box {
+          position: relative;
+          width: 12%;
+          .sheet-link-image {
+            position: absolute;
+            top: -28px;
+            height: 50px;
+          }
+        }
+        .sheet-link-class {
+          width: 30%;
+          p {
+            padding: 5px 0;
+            font-size: 1.2rem;
+          }
+        }  
+        .sheet-link-date {
+          width: 20%;
+          margin-left: -40px;
+        }
+        .sheet-link-teacher {
+          width: 30%;
+          .sheet-teachers {
+            font-size: 0.8rem;
+            overflow: scroll;
+            white-space: nowrap;
           }
         }
       }
     }
-    .teachers {
-      padding: 10px 20px;
-      margin-bottom: 50px;
-      background: white;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-      p {
-        margin-top: 20px;
-        border-bottom: 1px solid #eeeeee;
+    .right-container {
+      width: 100%;
+      margin-right: auto;
+      margin-left: auto;
+      .right-title {
+        margin-bottom: 10px;
       }
-      .teachers-lists {
-        display: flex;
-        justify-content: space-between;
-        li {
-          padding: 10px 0;
-          overflow: scroll;
+      .calendor {
+        padding: 20px 0 20px 20px;
+        margin-bottom: 50px;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        border-radius: 6px 6px;
+        p {
+          padding-left: 13px;
+          margin-bottom: 4px;
+          font-size: 0.8rem;
         }
-        .teacher-delete {
-          padding: 10px 0;
-          color: red;
-          opacity: 0.3;
-          &:hover {
-            opacity: 1;
-            transition: 0.4s;
+        .calendor-form {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          .calendor-btn {
+            padding: 5px 10px;
+            background: rgb(48, 200, 214);
+            color: white;
+            font-size: 0.6rem;
+            border-style: none;
+            border-radius: 6px 6px;
+            &:hover {
+              opacity: 0.6;
+              transition: 0.4s;
+              cursor: pointer;
+            }
           }
         }
       }
-    }
-    .right-image {
-      height: 30%;
+      .teachers {
+        padding: 10px 20px;
+        margin-bottom: 50px;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+        border-radius: 6px 6px;
+        p {
+          margin-top: 20px;
+          border-bottom: 1px solid #eeeeee;
+        }
+        .teachers-lists {
+          display: flex;
+          justify-content: space-between;
+          li {
+            padding: 10px 0;
+            overflow: scroll;
+          }
+          .teacher-delete {
+            padding: 10px 0;
+            color: red;
+            opacity: 0.3;
+            &:hover {
+              opacity: 1;
+              transition: 0.4s;
+            }
+          }
+        }
+      }
+      .teacher-right-image {
+        text-align: right;
+        .right-image {
+          height: 150px;
+        }
+      }
     }
   }
 }

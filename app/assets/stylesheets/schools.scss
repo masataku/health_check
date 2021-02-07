@@ -1,249 +1,521 @@
-
+@media (min-width: 1024px) {
 // index.html.erb///////////////////////////////////////
-.catch-copy {
-  margin-top: 80px;
-  text-align: center;
-  letter-spacing: 10px;
-  font-size: 3.5rem;
-  font-weight: 600;
-  font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
-  p {
-    margin-bottom: 20px;
-  }
-}
-.catch-image {
-  display: flex;
-  .left-image {
-    width: 40%;
-  }
-  .middle-space {
-    width: 20%;
-  }
-  .right-image {
-    width: 40%;
-  }
-}
-.joining-schools {
-  text-align: center;
-}
-.school-btns {
-  margin: 0 auto;
-  letter-spacing: 3px;  
-  .signup-btn {
-    background: rgb(48, 200, 214);
-    display: block;
-    width: 20%;
-    padding: 15px 40px;
-    margin: 0 auto;
-    margin-top: 90px;
-    margin-bottom: 40px;
+  .catch-copy {
+    margin-top: 80px;
     text-align: center;
-    color: white;
-    border-radius: 6px 6px;
-    cursor: pointer;
-    &:hover {
-      opacity: 0.6;
-      transition: 0.4s;
-    }  
-  }
-}
-
-// new.html.erb, login_form.html.erb/////////////////////////////////////////
-.school-form {
-  width: 40%;
-  margin: 0 auto;
-  .form-head {
-    margin-top: 40px;
-    margin-bottom: 40px;
-    text-align: center;
-    font-size: 2.5rem;
-    border-bottom: 1px solid #eee;
-  }
-  .form-group {
-    margin-bottom: 30px;
+    letter-spacing: 10px;
+    font-size: 3.5rem;
+    font-weight: 600;
+    font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
     p {
-      padding: 3px 0;
-      color: #ff8db3;
-    }
-    .form {
-      height: 48px;
-      width: 100%;
-      border: 1px solid rgb(186, 198, 211);
-      font-size: 1.2rem;
-      border-radius: 10px 10px;
-      &:focus {
-        outline: none;
-        border: 1px solid #8be0e6;
-        transition: 0.4s;
-      }
+      margin-bottom: 20px;
     }
   }
-  .form-btns {
-    padding: 0 80px;
-    margin-bottom: 40px;
-    .submit-btn {
-      height: 48px;
-      width: 100%;
+  .catch-image {
+    display: flex;
+    .left-image {
+      width: 40%;
+    }
+    .middle-space {
+      width: 20%;
+    }
+    .right-image {
+      width: 40%;
+    }
+  }
+  .joining-schools {
+    text-align: center;
+  }
+  .school-btns {
+    margin: 0 auto;
+    letter-spacing: 3px;  
+    .signup-btn {
       background: rgb(48, 200, 214);
-      border: 1px solid rgb(48, 200, 214);
+      display: block;
+      width: 20%;
+      padding: 15px 40px;
+      margin: 0 auto;
+      margin-top: 90px;
+      margin-bottom: 40px;
+      text-align: center;
       color: white;
-      letter-spacing: 5px;
-      font-weight: 600;
-      border-radius: 8px 8px;
+      border-radius: 6px 6px;
       cursor: pointer;
       &:hover {
         opacity: 0.6;
         transition: 0.4s;
-      }
-    }
-    .back-btn {
-      margin-top: 20px;
-      text-align: center;
+      }  
     }
   }
-}
 
-
-// show.html.erb////////////////////////////////////////
-.school-info {
-  background: white;
-  display: flex;
-  height: 100px;
-  width: 80%;
-  align-items: center;
-  margin-top: 60px;
-  margin-bottom: 200px;
-  margin-right: auto;
-  margin-left: auto;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  .school-name {
-    width: 35%;
-    text-align: center;
-    font-size: 1.8rem;
-    overflow: scroll;
-    white-space: nowrap;
-  }
-  .school-head {
-    width: 33%;
-    padding: 10px 0;
-    border-right: 2px solid #eeeeee;
-    border-left: 2px solid #eeeeee;
-    text-align: center;
-    font-size: 1.8rem;
-    overflow: scroll;
-    white-space: nowrap;
-  }
-  .school-joiner {
-    width: 32%;
-    text-align: center;
-    font-size: 1.5rem;
-    p {
-      padding: 10px 0;
-      font-size: 1.2rem;
-      
-    }
-  }
-}
-
-.join-box-title {
-  width: 60%;
-  margin-right: auto;
-  margin-left: auto;
-}
-.join-box {
-  display: flex;
-  height: 250px;
-  width: 60%;
-  padding: 20px 0;
-  margin-right: auto;
-  margin-left: auto;
-  margin-bottom: 80px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-  background: white;
-  .left-box {
+  // new.html.erb, login_form.html.erb/////////////////////////////////////////
+  .school-form {
     width: 40%;
+    margin: 0 auto;
+    .form-head {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 2.5rem;
+      border-bottom: 1px solid #eee;
+    }
+    .form-group {
+      margin-bottom: 50px;
+      p {
+        padding: 3px 0;
+        color: #ff8db3;
+      }
+      .form {
+        height: 48px;
+        width: 100%;
+        border: 1px solid rgb(186, 198, 211);
+        font-size: 1.2rem;
+        border-radius: 10px 10px;
+        &:focus {
+          outline: none;
+          border: 1px solid #8be0e6;
+          transition: 0.4s;
+        }
+      }
+    }
+    .form-btns {
+      padding: 0 80px;
+      margin-bottom: 40px;
+      .submit-btn {
+        height: 48px;
+        width: 100%;
+        background: rgb(48, 200, 214);
+        border: 1px solid rgb(48, 200, 214);
+        color: white;
+        letter-spacing: 5px;
+        font-weight: 600;
+        border-radius: 8px 8px;
+        cursor: pointer;
+        &:hover {
+          opacity: 0.6;
+          transition: 0.4s;
+        }
+      }
+      .back-btn {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+
+  // show.html.erb////////////////////////////////////////
+  .school-info {
+    background: white;
     display: flex;
+    height: 100px;
+    width: 80%;
     align-items: center;
-    justify-content: center;
-  }
-  .right-box {
-    width: 60%;
-    .join-head {
-      font-size: 2rem;
-      margin: 20px 0;
-      border-bottom: 1px solid #eeeeee;
-      letter-spacing: 6px;
-      font-weight: 600;
-      .join-icon {
-        color: rgb(48, 200, 214);
-      }
+    margin-top: 60px;
+    margin-bottom: 200px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    .school-name {
+      width: 35%;
+      text-align: center;
+      font-size: 1.8rem;
+      overflow: scroll;
+      white-space: nowrap;
     }
-    .join-message {
+    .school-head {
+      width: 33%;
       padding: 10px 0;
-      .join-icon {
-        color: orange;
+      border-right: 2px solid #eeeeee;
+      border-left: 2px solid #eeeeee;
+      text-align: center;
+      font-size: 1.8rem;
+      overflow: scroll;
+      white-space: nowrap;
+    }
+    .school-joiner {
+      width: 32%;
+      text-align: center;
+      font-size: 1.5rem;
+      p {
+        padding: 10px 0;
+        font-size: 1.2rem;
+        
       }
     }
-    .join-btns {
+  }
+
+  .join-box-title {
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .join-box {
+    display: flex;
+    height: 250px;
+    width: 60%;
+    padding: 20px 0;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 80px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    background: white;
+    .left-box {
+      width: 40%;
       display: flex;
-      margin-top: 30px;
-      .join-right { 
-        width: 50%;
-        .join-btn {
-          display: block;
-          width: 50%;
-          padding: 15px;
-          background: rgb(48, 200, 214);
-          color: white;
-          text-align: center;
-          font-size: 0.8rem;
-          border-radius: 6px 6px;
-          &:hover {
-            opacity: 0.6;
-            transition: 0.4s;
-          }
+      align-items: center;
+      justify-content: center;
+      .join-image {
+        height: 75%;
+      }
+    }
+    .right-box {
+      width: 60%;
+      .join-head {
+        font-size: 2rem;
+        margin: 20px 0;
+        border-bottom: 1px solid #eeeeee;
+        letter-spacing: 6px;
+        font-weight: 600;
+        .join-icon {
+          color: rgb(48, 200, 214);
         }
       }
-      .join-left {
-        width: 50%;
-        .join-copy-btn {
-          width: 70%;
-          border-style: none;
-          padding: 10px 10px 0 10px;
-          background: white;
-          color: purple;
-          font-size: 1.1rem;
-          cursor: pointer;
-          &:hover {
-            opacity: 0.6;
-            transition: 0.4s;
-          }
-          &:focus {
-            outline: none;
-          }
-          .copy-icon {
-            font-size: 1.5rem;
+      .join-message {
+        padding: 10px 0;
+        .join-icon {
+          color: orange;
+        }
+      }
+      .join-btns {
+        display: flex;
+        margin-top: 30px;
+        .join-right { 
+          width: 50%;
+          .join-btn {
+            display: block;
+            width: 50%;
+            padding: 15px;
+            background: rgb(48, 200, 214);
+            color: white;
+            text-align: center;
+            font-size: 0.8rem;
+            border-radius: 6px 6px;
+            &:hover {
+              opacity: 0.6;
+              transition: 0.4s;
+            }
           }
         }
-        .join-copy-text {
-        
-          opacity: 0;
+        .join-left {
+          width: 50%;
+          .join-copy-btn {
+            width: 70%;
+            border-style: none;
+            padding: 10px 10px 0 10px;
+            background: white;
+            color: purple;
+            font-size: 1.1rem;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.6;
+              transition: 0.4s;
+            }
+            &:focus {
+              outline: none;
+            }
+            .copy-icon {
+              font-size: 1.5rem;
+            }
+          }
+          .join-copy-text {
+          
+            opacity: 0;
+          }
         }
       }
     }
   }
-}
-.copyed {
-  animation: copy 0.6s ease 0s;
-}
+  .copyed {
+    animation: copy 0.6s ease 0s;
+  }
 
-@keyframes copy {
-  0% {transform: scale(1,1);}
-  40% {transform: scale(1.2,0.8);}
-  50% {transform: scale(0.8,1.4);
-       color: red;}
-  100% {transform: scale(1,1);
+  @keyframes copy {
+    0% {transform: scale(1,1);}
+    40% {transform: scale(1.2,0.8);}
+    50% {transform: scale(0.8,1.4);
         color: red;}
-}  
+    100% {transform: scale(1,1);
+          color: red;}
+  }  
 
-// new.html.erb/////////////////////////////////////////
+  // new.html.erb/////////////////////////////////////////
+}
+
+
+@media (max-width: 380px) {
+    // index.html.erb///////////////////////////////////////
+  .catch-copy {
+    margin-top: 80px;
+    text-align: center;
+    letter-spacing: 10px;
+    font-size: 2rem;
+    font-weight: 600;
+    font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
+    p {
+      margin-bottom: 20px;
+    }
+  }
+  .catch-image {
+    display: flex;
+    .left-image {
+      width: 40%;
+    }
+    .middle-space {
+      width: 20%;
+    }
+    .right-image {
+      width: 40%;
+    }
+  }
+  .joining-schools {
+    text-align: center;
+  }
+  .school-btns {
+    margin: 0 auto;
+    letter-spacing: 3px;  
+    .signup-btn {
+      background: rgb(48, 200, 214);
+      display: block;
+      width: 40%;
+      padding: 15px 40px;
+      margin: 0 auto;
+      margin-top: 40px;
+      margin-bottom: 40px;
+      font-size: 0.8rem;
+      text-align: center;
+      color: white;
+      border-radius: 6px 6px;
+      font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
+      cursor: pointer;
+      &:hover {
+        opacity: 0.6;
+        transition: 0.4s;
+      }  
+    }
+  }
+
+  // new.html.erb, login_form.html.erb/////////////////////////////////////////
+  .school-form {
+    width: 100%;
+    margin: 0 auto;
+    .form-head {
+      margin-top: 40px;
+      margin-bottom: 40px;
+      text-align: center;
+      font-size: 1.8rem;
+      border-bottom: 1px solid #eee;
+    }
+    .form-group {
+      margin-bottom: 40px;
+      p {
+        padding: 3px 0;
+        color: #ff8db3;
+        font-size: 0.8rem;
+      }
+      .form {
+        height: 48px;
+        width: 100%;
+        border: 1px solid rgb(186, 198, 211);
+        font-size: 0.85rem;
+        border-radius: 10px 10px;
+        &:focus {
+          outline: none;
+          border: 1px solid #8be0e6;
+          transition: 0.4s;
+        }
+      }
+    }
+    .form-btns {
+      padding: 0 40px;
+      margin-bottom: 40px;
+      .submit-btn {
+        height: 48px;
+        width: 100%;
+        background: rgb(48, 200, 214);
+        border: 1px solid rgb(48, 200, 214);
+        color: white;
+        font-size: 0.8rem;
+        border-radius: 8px 8px;
+        font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
+        &:active {
+          opacity: 0.6;
+          transition: 0.4s;
+        }
+      }
+      .back-btn {
+        margin-top: 20px;
+        text-align: center;
+      }
+    }
+  }
+
+
+  // show.html.erb////////////////////////////////////////
+  .school-info {
+    background: white;
+    display: flex;
+    height: 80px;
+    width: 100%;
+    align-items: center;
+    margin-top: 60px;
+    margin-bottom: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    border-radius: 8px 8px;
+    .school-name {
+      width: 35%;
+      text-align: center;
+      font-size: 0.8rem;
+      overflow: auto;
+      white-space: nowrap;
+    }
+    .school-head {
+      width: 33%;
+      padding: 10px 0;
+      border-right: 2px solid #eeeeee;
+      border-left: 2px solid #eeeeee;
+      text-align: center;
+      font-size: 0.8rem;
+      overflow: auto;
+      white-space: nowrap;
+    }
+    .school-joiner {
+      width: 32%;
+      text-align: center;
+      white-space: nowrap;
+      overflow: auto;
+      
+      p {
+        padding: 10px 0;
+        font-size: 0.6rem;
+      }
+    }
+  }
+
+  .join-box-title {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .join-box {
+    display: flex;
+    height: 250px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 80px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+    background: white;
+    border-radius: 8px 8px;
+    .left-box {
+      width: 40%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .join-image {
+        margin-top: -50px;
+        height: 35%;
+      }
+    }
+    .right-box {
+      width: 60%;
+      .join-head {
+        font-size: 1.2rem;
+        margin: 20px 0;
+        border-bottom: 1px solid #eeeeee;
+        letter-spacing: 6px;
+        font-weight: 600;
+        .join-icon {
+          color: rgb(48, 200, 214);
+        }
+      }
+      .join-message {
+        padding: 10px;
+        font-size: 0.75rem;
+        text-align: center;
+        .join-icon {
+          color: orange;
+        }
+      }
+      .join-btns {
+        position: relative;
+        display: flex;
+        margin-top: 30px;
+        .join-right { 
+          width: 50%;
+          .join-btn {
+            position: absolute;
+            right: 10px;
+            display: block;
+            width: 50%;
+            padding: 15px;
+            background: rgb(48, 200, 214);
+            color: white;
+            text-align: center;
+            font-size: 0.8rem;
+            border-radius: 6px 6px;
+            &:active {
+              opacity: 0.6;
+              transition: 0.4s;
+            }
+          }
+        }
+        .join-left {
+          width: 60%;
+          .join-copy-btn {
+            position: absolute;
+            left: -115px;
+            width: 160px;
+            border-style: none;
+            padding: 10px 10px 0 10px;
+            background: white;
+            color: purple;
+            font-size: 1rem;
+            cursor: pointer;
+            &:active {
+              opacity: 0.6;
+              transition: 0.4s;
+            }
+            &:focus {
+              outline: none;
+            }
+            .copy-icon {
+              font-size: 1.5rem;
+            }
+          }
+          .join-copy-text {
+          
+            opacity: 0;
+          }
+        }
+      }
+    }
+  }
+  .copyed {
+    animation: copy 0.6s ease 0s;
+  }
+
+  @keyframes copy {
+    0% {transform: scale(1,1);}
+    40% {transform: scale(1.2,0.8);}
+    50% {transform: scale(0.8,1.4);
+        color: red;}
+    100% {transform: scale(1,1);
+          color: red;}
+  }  
+
+  // new.html.erb/////////////////////////////////////////
+
+}

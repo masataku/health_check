@@ -32,7 +32,7 @@
         <p class="check-box-title"><i class="fas fa-check-double"></i> 今日の健康チェックをする</p>  
         <div class="check-box">  
           <div class="left-box">
-            <%= image_tag "547458.png", height: "75%" %>
+            <%= image_tag "547458.png", class: "check-image" %>
           </div>
           <div class="right-box">
             <p class="check-head"><i class="fas fa-sign-in-alt check-icon"></i>  今日の健康チェック</p>
@@ -69,7 +69,9 @@
       <div class="right-container">
         <%= render partial: "sheets/calendar" %>
         <%= render partial: "teachers/index" %>
-        <%= image_tag "706164.png", class: "student-right-image" %>
+        <div class="student-right-image">
+          <%= image_tag "706164.png", class: "right-image" %>
+        </div>
       </div>
     </div>
   </div>
