@@ -4,7 +4,7 @@
     <title>HealthCheck</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <% unless @current_teacher && @sheet && current_page?(school_sheet_path()) %>
+    <% unless @current_teacher && @sheet && current_page?(school_sheet_path) %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <% end %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -110,8 +110,10 @@
       </div>
     <% end %> 
     <%= yield %>
-    <footer>
-      Healthy School
-    </footer>
+    <% unless @current_teacher && @sheet && current_page?(school_sheet_path) %>
+      <footer>
+        Healthy School
+      </footer>
+    <% end %>
   </body>
 </html>
