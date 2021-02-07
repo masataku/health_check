@@ -20,7 +20,7 @@
         <div id="symptoms">
           <div class="check-form">
             <%= collection_check_boxes(:check, :symptom_ids, Symptom.all, :id, :name) do |b| %>
-              <%= b.label {b.check_box + b.text} %>
+              <div class="symptoms-label"><%= b.label {b.check_box + b.text} %></div>
             <% end %>
           </div>  
         </div>

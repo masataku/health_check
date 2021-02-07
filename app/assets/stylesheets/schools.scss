@@ -433,7 +433,7 @@
     .right-box {
       width: 60%;
       .join-head {
-        font-size: 1.2rem;
+        font-size: 1rem;
         margin: 20px 0;
         border-bottom: 1px solid #eeeeee;
         letter-spacing: 6px;
@@ -444,7 +444,7 @@
       }
       .join-message {
         padding: 10px;
-        font-size: 0.75rem;
+        font-size: 0.7rem;
         text-align: center;
         .join-icon {
           color: orange;
@@ -474,16 +474,16 @@
           }
         }
         .join-left {
-          width: 60%;
+          width: 50%;
           .join-copy-btn {
             position: absolute;
-            left: -115px;
-            width: 160px;
+            left: -100px;
+            width: 140px;
+            padding: 6px 6px;
             border-style: none;
-            padding: 10px 10px 0 10px;
             background: white;
             color: purple;
-            font-size: 1rem;
+            font-size: 0.85rem;
             cursor: pointer;
             &:active {
               opacity: 0.6;
