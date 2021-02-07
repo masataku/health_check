@@ -325,9 +325,10 @@
       }
       .form {
         height: 48px;
-        width: 100%;
+        width: 88%;
+        padding-left: 30px;
         border: 1px solid rgb(186, 198, 211);
-        font-size: 0.85rem;
+        font-size: 0.8rem;
         border-radius: 10px 10px;
         &:focus {
           outline: none;
