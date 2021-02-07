@@ -5,15 +5,15 @@
         <p class="form-head">学校へログイン</p>
         <div class="form-group">
           <div class="label">メールアドレス</div>
-          <%= f.text_field :email, class: "form" %>
+          <%= f.text_field :email, class: "form", placeholder: "メールアドレス" %>
         </div>
         <div class="form-group">
           <div class="label">パスワード</div>
-          <%= f.password_field :password, class: "form" %>
+          <%= f.password_field :password, class: "form", placeholder: "パスワード" %>
         </div>
         <div class="form-group">
           <div class="label">パスワード(確認)</div>
-          <%= f.password_field :password_confirmation, class: "form" %>
+          <%= f.password_field :password_confirmation, class: "form", placeholder: "もう一度入力してください" %>
         </div>
         <div class="form-btns">
           <%= f.submit "ログイン", class: "submit-btn" %>

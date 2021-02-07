@@ -77,7 +77,7 @@ header {
 }
 
 .top-wrapper {
-  min-height: 100vh;
+  min-height: 80vh;
   .container {
     margin: 0px 40px;
   }
@@ -131,7 +131,7 @@ footer {
             background: rgb(48, 200, 214);
             color: white;
             border-radius: 8px 8px;
-            font-weight: 600;
+            font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
             &:active {
               opacity: 0.6;
             }
@@ -178,9 +178,9 @@ footer {
   }
   
   .top-wrapper {
-    min-height: 65vh;
+    min-height: 78vh;
     .container {
-      margin: 0px 40px;
+      margin: 0px 10px;
     }
   }
   
