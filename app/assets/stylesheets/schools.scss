@@ -533,12 +533,15 @@
   .catch-image {
     display: flex;
     .left-image {
+      height: 40%;
       width: 40%;
     }
     .middle-space {
+      height: 40%;
       width: 20%;
     }
     .right-image {
+      height: 40%;
       width: 40%;
     }
   }
@@ -562,7 +565,7 @@
       border-radius: 6px 6px;
       font-family: "AvenirNext", "Lato", "Hirago KakuGothic ProN", Meiryo, sans-serif;
       cursor: pointer;
-      &:hover {
+      &:active {
         opacity: 0.6;
         transition: 0.4s;
       }  
