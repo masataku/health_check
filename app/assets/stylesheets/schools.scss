@@ -442,7 +442,6 @@
       }
       .join-message {
         padding: 12px 10px;
-        text-align: center;
         .join-icon {
           color: orange;
         }
@@ -515,6 +514,7 @@
 
   // new.html.erb/////////////////////////////////////////
 }
+
 
 
 @media (max-width: 599px) {
@@ -679,7 +679,7 @@
   }
   .join-box {
     display: flex;
-    height: 250px;
+    height: 200px;
     width: 100%;
     margin-right: auto;
     margin-left: auto;
@@ -693,15 +693,15 @@
       align-items: center;
       justify-content: center;
       .join-image {
-        margin-top: -50px;
-        height: 35%;
+        margin-top: -60px;
+        height: 50%;
       }
     }
     .right-box {
       width: 60%;
       .join-head {
-        font-size: 1rem;
-        margin: 20px 0;
+        font-size: 1.2rem;
+        margin-bottom: 20px;
         border-bottom: 1px solid #eeeeee;
         letter-spacing: 6px;
         font-weight: 600;
@@ -711,7 +711,7 @@
       }
       .join-message {
         padding: 10px;
-        font-size: 0.7rem;
+        font-size: 0.8rem;
         text-align: center;
         .join-icon {
           color: orange;
@@ -720,19 +720,18 @@
       .join-btns {
         position: relative;
         display: flex;
-        margin-top: 30px;
         .join-right { 
           width: 50%;
           .join-btn {
             position: absolute;
-            right: 10px;
+            right: 30px;
             display: block;
-            width: 50%;
+            width: 80%;
             padding: 15px;
             background: rgb(48, 200, 214);
             color: white;
             text-align: center;
-            font-size: 0.8rem;
+            font-size: 0.7rem;
             border-radius: 6px 6px;
             &:active {
               opacity: 0.6;
@@ -744,14 +743,13 @@
           width: 50%;
           .join-copy-btn {
             position: absolute;
-            left: -100px;
+            top: -5px;
             width: 140px;
             padding: 6px 6px;
             border-style: none;
             background: white;
             color: purple;
-            font-size: 0.85rem;
-            cursor: pointer;
+            font-size: 0.92rem;
             &:active {
               opacity: 0.6;
               transition: 0.4s;
