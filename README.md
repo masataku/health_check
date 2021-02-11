@@ -40,7 +40,10 @@ student_password: 12345a(生徒の新規登録に必要)
 [![Image from Gyazo](https://i.gyazo.com/58601e26f7041daca99f6efe59144d8e.gif)](https://gyazo.com/58601e26f7041daca99f6efe59144d8e)
 - 右上の「自分の学校へ行く」をクリックすると、学校ログインフォームへ進めます。
 [![Image from Gyazo](https://i.gyazo.com/295729aaa820879988e21ab6792daf8a.gif)](https://gyazo.com/295729aaa820879988e21ab6792daf8a)
-- 
+- 学校マイページの教員の参加にある「リンクをコピー」をクリックすると、自動的に教員登録用URLがコピーできるので、参加する教員にパスワードと共に共有することで登録してもらいます。
+[![Image from Gyazo](https://i.gyazo.com/89eaaee7a39de35b866b5f58328c1a92.gif)](https://gyazo.com/89eaaee7a39de35b866b5f58328c1a92)
+- 生徒も同様に生徒の参加から、コピーしたURLとパスワードを共有することで登録してもらいます。
+[![Image from Gyazo](https://i.gyazo.com/ff86c7f7dfa72e3024eed962c60f626e.gif)](https://gyazo.com/ff86c7f7dfa72e3024eed962c60f626e)
 
 
 # 工夫した点
