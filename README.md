@@ -160,7 +160,7 @@ student_password: 12345a(生徒の新規登録に必要)
 
 
 # ER図
-https://gyazo.com/b7d32429418ec5b57531b7870cf0938d
+[![Image from Gyazo](https://i.gyazo.com/d15cc8e724c0bb10256ffd13863b6c86.png)](https://gyazo.com/d15cc8e724c0bb10256ffd13863b6c86)
 
 # データベース設計
 ## schools テーブル
