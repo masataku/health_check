@@ -3,6 +3,10 @@
   <p><i class="far fa-lightbulb"></i>  以前のシートを確認</p>
   <div class="calendor-form">
     <%= date_field_tag :date, class: "calendor-date" %>
-    <input type="submit" value="シートを見にいく" class="calendor-btn">
+    <% if @current_student && current_page?(school_students_path(@current_student.school)) %>
+      <div class="calendor-btn">未実装</div>
+    <% else %>
+      <input type="submit" value="シートを見にいく" class="calendor-btn">
+    <% end %>
   </div>
 <% end %>
