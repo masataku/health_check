@@ -14,7 +14,7 @@ RSpec.describe "Checks", type: :system do
       end  
     end
     context "作成に失敗する時" do
-      it "生徒が登録されなければ健康チェックページへ飛べない" do
+      it "生徒が登録されなければ健康チェックページへとべない" do
         @student = FactoryBot.create(:student)
         visit new_school_student_check_path(@school, @student)
         expect(current_path).to eq new_school_student_path(@school)
@@ -35,7 +35,7 @@ RSpec.describe "Checks", type: :system do
         expect{find('input[name="commit"]').click}.to change {Check.count}.by(0)
         expect(current_path).to eq "/schools/#{@school.id}/students/#{Student.first.id}/checks"
       end
-      it "生徒が登録されていても,同じ日に既に健康チェックを作成済みであれば健康チェックページに飛べない" do
+      it "生徒が登録されていても,同じ日に既に健康チェックを作成済みであれば健康チェックページにとべない" do
         signup_student(@school, @student)
         create_check(@school)
         expect(page).to have_content("本日のCHECKは送信済みです")
