@@ -13,12 +13,12 @@ Healthy School
 http://54.150.91.25/
 
 # テスト用アカウント
-学校名: 青山中学校
-校長名: 青山太郎
-email: 111@111(ログインに必要)
-password: 12345a(ログインに必要)
-teacher_password: 12345a(教員の新規登録に必要)
-student_password: 12345a(生徒の新規登録に必要) 
+- 学校名: 青山中学校
+- 校長名: 青山太郎
+- email: 111@111(ログインに必要)
+- password: 12345a(ログインに必要)
+- teacher_password: 12345a(教員の新規登録に必要)
+- student_password: 12345a(生徒の新規登録に必要) 
 
 
 # 制作背景(意図)
