@@ -74,7 +74,6 @@
         </div>
       </div>
     </div>
+    <%= link_to "生徒のデータを残しログアウト.再びこの生徒ではログインできません(試験用のため)", school_student_path(@current_student.school, @current_student), method: :delete %>
   </div>
 </div>
-
-<%= link_to "セッション削除", school_student_path(@current_student.school, @current_student), method: :delete %>

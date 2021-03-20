@@ -1,4 +1,4 @@
-<p class="right-title"><i class="fas fa-chalkboard-teacher"></i>  先生一覧</p>
+<p class="right-title"><i class="fas fa-chalkboard-teacher"></i>  先生一覧  <%= "(削除でログアウト)" if @current_teacher %></p>
 <div class="teachers">
   <p>第１学年</p>
   <% @teachers1.each do |teacher| %>
