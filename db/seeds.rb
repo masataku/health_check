@@ -37,52 +37,52 @@ Teacher.create(name: "加藤りょう", grade: 3, my_class: 3, teacher_password:
 
 # students
 #1年1組
-student1 = Student.create(grade: 1, my_class: 1, number: 1, first_name: "太郎", last_name: "合田", first_name_kana: "タロウ", last_name_kana: "アイダ", student_password: "correct", year: 2020, school_id: school.id)
-student2 = Student.create(grade: 1, my_class: 1, number: 2, first_name: "太郎", last_name: "井田", first_name_kana: "タロウ", last_name_kana: "イダ", student_password: "correct", year: 2020, school_id: school.id)
-student3 = Student.create(grade: 1, my_class: 1, number: 3, first_name: "太郎", last_name: "上田", first_name_kana: "タロウ", last_name_kana: "ウエダ", student_password: "correct", year: 2020, school_id: school.id)
+student1 = Student.create(grade: 1, my_class: 1, number: 1, first_name: "太郎", last_name: "合田", first_name_kana: "タロウ", last_name_kana: "アイダ", student_password: "correct", year: 2021, school_id: school.id)
+student2 = Student.create(grade: 1, my_class: 1, number: 2, first_name: "太郎", last_name: "井田", first_name_kana: "タロウ", last_name_kana: "イダ", student_password: "correct", year: 2021, school_id: school.id)
+student3 = Student.create(grade: 1, my_class: 1, number: 3, first_name: "太郎", last_name: "上田", first_name_kana: "タロウ", last_name_kana: "ウエダ", student_password: "correct", year: 2021, school_id: school.id)
 
 #1年2組
-student4 = Student.create(grade: 1, my_class: 2, number: 1, first_name: "花子", last_name: "合田", first_name_kana: "ハナコ", last_name_kana: "アイダ", student_password: "correct", year: 2020, school_id: school.id)
-student5 = Student.create(grade: 1, my_class: 2, number: 2, first_name: "花子", last_name: "井田", first_name_kana: "ハナコ", last_name_kana: "イダ", student_password: "correct", year: 2020, school_id: school.id)
-student6 = Student.create(grade: 1, my_class: 2, number: 3, first_name: "花子", last_name: "上田", first_name_kana: "ハナコ", last_name_kana: "ウエダ", student_password: "correct", year: 2020, school_id: school.id)
+student4 = Student.create(grade: 1, my_class: 2, number: 1, first_name: "花子", last_name: "合田", first_name_kana: "ハナコ", last_name_kana: "アイダ", student_password: "correct", year: 2021, school_id: school.id)
+student5 = Student.create(grade: 1, my_class: 2, number: 2, first_name: "花子", last_name: "井田", first_name_kana: "ハナコ", last_name_kana: "イダ", student_password: "correct", year: 2021, school_id: school.id)
+student6 = Student.create(grade: 1, my_class: 2, number: 3, first_name: "花子", last_name: "上田", first_name_kana: "ハナコ", last_name_kana: "ウエダ", student_password: "correct", year: 2021, school_id: school.id)
 
 #2年1組
-student7 = Student.create(grade: 2, my_class: 1, number: 1, first_name: "孝太郎", last_name: "合田", first_name_kana: "コウタロウ", last_name_kana: "アイダ", student_password: "correct", year: 2020, school_id: school.id)
-student8 = Student.create(grade: 2, my_class: 1, number: 2, first_name: "孝太郎", last_name: "井田", first_name_kana: "コウタロウ", last_name_kana: "イダ", student_password: "correct", year: 2020, school_id: school.id)
-student9 = Student.create(grade: 2, my_class: 1, number: 3, first_name: "孝太郎", last_name: "上田", first_name_kana: "コウタロウ", last_name_kana: "ウエダ", student_password: "correct", year: 2020, school_id: school.id)
+student7 = Student.create(grade: 2, my_class: 1, number: 1, first_name: "孝太郎", last_name: "合田", first_name_kana: "コウタロウ", last_name_kana: "アイダ", student_password: "correct", year: 2021, school_id: school.id)
+student8 = Student.create(grade: 2, my_class: 1, number: 2, first_name: "孝太郎", last_name: "井田", first_name_kana: "コウタロウ", last_name_kana: "イダ", student_password: "correct", year: 2021, school_id: school.id)
+student9 = Student.create(grade: 2, my_class: 1, number: 3, first_name: "孝太郎", last_name: "上田", first_name_kana: "コウタロウ", last_name_kana: "ウエダ", student_password: "correct", year: 2021, school_id: school.id)
 
 #2年2組
-student10 = Student.create(grade: 2, my_class: 2, number: 1, first_name: "花", last_name: "合田", first_name_kana: "ハナ", last_name_kana: "アイダ", student_password: "correct", year: 2020, school_id: school.id)
-student11 = Student.create(grade: 2, my_class: 2, number: 2, first_name: "花", last_name: "井田", first_name_kana: "ハナ", last_name_kana: "イダ", student_password: "correct", year: 2020, school_id: school.id)
-student12 = Student.create(grade: 2, my_class: 2, number: 3, first_name: "花", last_name: "上田", first_name_kana: "ハナ", last_name_kana: "ウエダ", student_password: "correct", year: 2020, school_id: school.id)
+student10 = Student.create(grade: 2, my_class: 2, number: 1, first_name: "花", last_name: "合田", first_name_kana: "ハナ", last_name_kana: "アイダ", student_password: "correct", year: 2021, school_id: school.id)
+student11 = Student.create(grade: 2, my_class: 2, number: 2, first_name: "花", last_name: "井田", first_name_kana: "ハナ", last_name_kana: "イダ", student_password: "correct", year: 2021, school_id: school.id)
+student12 = Student.create(grade: 2, my_class: 2, number: 3, first_name: "花", last_name: "上田", first_name_kana: "ハナ", last_name_kana: "ウエダ", student_password: "correct", year: 2021, school_id: school.id)
 
 #3年1組
-student13 = Student.create(grade: 3, my_class: 1, number: 1, first_name: "太郎", last_name: "合田", first_name_kana: "タロウ", last_name_kana: "アイダ", student_password: "correct", year: 2020, school_id: school.id)
-student14 = Student.create(grade: 3, my_class: 1, number: 2, first_name: "太郎", last_name: "井田", first_name_kana: "タロウ", last_name_kana: "イダ", student_password: "correct", year: 2020, school_id: school.id)
-student15 = Student.create(grade: 3, my_class: 1, number: 3, first_name: "太郎", last_name: "上田", first_name_kana: "タロウ", last_name_kana: "ウエダ", student_password: "correct", year: 2020, school_id: school.id)
+student13 = Student.create(grade: 3, my_class: 1, number: 1, first_name: "太郎", last_name: "合田", first_name_kana: "タロウ", last_name_kana: "アイダ", student_password: "correct", year: 2021, school_id: school.id)
+student14 = Student.create(grade: 3, my_class: 1, number: 2, first_name: "太郎", last_name: "井田", first_name_kana: "タロウ", last_name_kana: "イダ", student_password: "correct", year: 2021, school_id: school.id)
+student15 = Student.create(grade: 3, my_class: 1, number: 3, first_name: "太郎", last_name: "上田", first_name_kana: "タロウ", last_name_kana: "ウエダ", student_password: "correct", year: 2021, school_id: school.id)
 
 #3年2組
-student16 = Student.create(grade: 3, my_class: 2, number: 1, first_name: "花子", last_name: "合田", first_name_kana: "ハナコ", last_name_kana: "アイダ", student_password: "correct", year: 2020, school_id: school.id)
-student17 = Student.create(grade: 3, my_class: 2, number: 2, first_name: "花子", last_name: "井田", first_name_kana: "ハナコ", last_name_kana: "イダ", student_password: "correct", year: 2020, school_id: school.id)
-student18 = Student.create(grade: 3, my_class: 2, number: 3, first_name: "花子", last_name: "上田", first_name_kana: "ハナコ", last_name_kana: "ウエダ", student_password: "correct", year: 2020, school_id: school.id)
+student16 = Student.create(grade: 3, my_class: 2, number: 1, first_name: "花子", last_name: "合田", first_name_kana: "ハナコ", last_name_kana: "アイダ", student_password: "correct", year: 2021, school_id: school.id)
+student17 = Student.create(grade: 3, my_class: 2, number: 2, first_name: "花子", last_name: "井田", first_name_kana: "ハナコ", last_name_kana: "イダ", student_password: "correct", year: 2021, school_id: school.id)
+student18 = Student.create(grade: 3, my_class: 2, number: 3, first_name: "花子", last_name: "上田", first_name_kana: "ハナコ", last_name_kana: "ウエダ", student_password: "correct", year: 2021, school_id: school.id)
 
 
 
 # 本日のsheets
-sheet1 = Sheet.create(grade: 1, my_class: 1, year: Date.today.year - 1, school_id: school.id, date: Date.today)
-sheet2 = Sheet.create(grade: 1, my_class: 2, year: Date.today.year - 1, school_id: school.id, date: Date.today)
-sheet3 = Sheet.create(grade: 2, my_class: 1, year: Date.today.year - 1, school_id: school.id, date: Date.today)
-sheet4 = Sheet.create(grade: 2, my_class: 2, year: Date.today.year - 1, school_id: school.id, date: Date.today)
-sheet5 = Sheet.create(grade: 3, my_class: 1, year: Date.today.year - 1, school_id: school.id, date: Date.today)
-sheet6 = Sheet.create(grade: 3, my_class: 2, year: Date.today.year - 1, school_id: school.id, date: Date.today)
+sheet1 = Sheet.create(grade: 1, my_class: 1, year: Date.today.year, school_id: school.id, date: Date.today)
+sheet2 = Sheet.create(grade: 1, my_class: 2, year: Date.today.year, school_id: school.id, date: Date.today)
+sheet3 = Sheet.create(grade: 2, my_class: 1, year: Date.today.year, school_id: school.id, date: Date.today)
+sheet4 = Sheet.create(grade: 2, my_class: 2, year: Date.today.year, school_id: school.id, date: Date.today)
+sheet5 = Sheet.create(grade: 3, my_class: 1, year: Date.today.year, school_id: school.id, date: Date.today)
+sheet6 = Sheet.create(grade: 3, my_class: 2, year: Date.today.year, school_id: school.id, date: Date.today)
 
 # 昨日のsheets
-sheet7 = Sheet.create(grade: 1, my_class: 1, year: (Date.today - 1).year - 1, school_id: school.id, date: Date.today - 1)
-sheet8 = Sheet.create(grade: 1, my_class: 2, year: (Date.today - 1).year - 1, school_id: school.id, date: Date.today - 1)
-sheet9 = Sheet.create(grade: 2, my_class: 1, year: (Date.today - 1).year - 1, school_id: school.id, date: Date.today - 1)
-sheet10 = Sheet.create(grade: 2, my_class: 2, year: (Date.today - 1).year - 1, school_id: school.id, date: Date.today - 1)
-sheet11 = Sheet.create(grade: 3, my_class: 1, year: (Date.today - 1).year - 1, school_id: school.id, date: Date.today - 1)
-sheet12 = Sheet.create(grade: 3, my_class: 2, year: (Date.today - 1).year - 1, school_id: school.id, date: Date.today - 1)
+sheet7 = Sheet.create(grade: 1, my_class: 1, year: (Date.today - 1).year, school_id: school.id, date: Date.today - 1)
+sheet8 = Sheet.create(grade: 1, my_class: 2, year: (Date.today - 1).year, school_id: school.id, date: Date.today - 1)
+sheet9 = Sheet.create(grade: 2, my_class: 1, year: (Date.today - 1).year, school_id: school.id, date: Date.today - 1)
+sheet10 = Sheet.create(grade: 2, my_class: 2, year: (Date.today - 1).year, school_id: school.id, date: Date.today - 1)
+sheet11 = Sheet.create(grade: 3, my_class: 1, year: (Date.today - 1).year, school_id: school.id, date: Date.today - 1)
+sheet12 = Sheet.create(grade: 3, my_class: 2, year: (Date.today - 1).year, school_id: school.id, date: Date.today - 1)
 
 
 
