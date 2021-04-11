@@ -69,12 +69,12 @@ student18 = Student.create(grade: 3, my_class: 2, number: 3, first_name: "花子
 
 
 # 本日のsheets
-sheet1 = Sheet.create(grade: 1, my_class: 1, year: Date.today.year, school_id: school.id, date: Date.today)
-sheet2 = Sheet.create(grade: 1, my_class: 2, year: Date.today.year, school_id: school.id, date: Date.today)
-sheet3 = Sheet.create(grade: 2, my_class: 1, year: Date.today.year, school_id: school.id, date: Date.today)
-sheet4 = Sheet.create(grade: 2, my_class: 2, year: Date.today.year, school_id: school.id, date: Date.today)
-sheet5 = Sheet.create(grade: 3, my_class: 1, year: Date.today.year, school_id: school.id, date: Date.today)
-sheet6 = Sheet.create(grade: 3, my_class: 2, year: Date.today.year, school_id: school.id, date: Date.today)
+sheet1 = Sheet.create(grade: 1, my_class: 1, year: 2021, school_id: school.id, date: Date.today)
+sheet2 = Sheet.create(grade: 1, my_class: 2, year: 2021, school_id: school.id, date: Date.today)
+sheet3 = Sheet.create(grade: 2, my_class: 1, year: 2021, school_id: school.id, date: Date.today)
+sheet4 = Sheet.create(grade: 2, my_class: 2, year: 2021, school_id: school.id, date: Date.today)
+sheet5 = Sheet.create(grade: 3, my_class: 1, year: 2021, school_id: school.id, date: Date.today)
+sheet6 = Sheet.create(grade: 3, my_class: 2, year: 2021, school_id: school.id, date: Date.today)
 
 # 昨日のsheets
 sheet7 = Sheet.create(grade: 1, my_class: 1, year: (Date.today - 1).year, school_id: school.id, date: Date.today - 1)
